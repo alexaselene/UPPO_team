@@ -1,0 +1,150 @@
+/* G E N E R A L */
+/* Padding general de la página */
+body{
+    padding: 20px;
+}
+
+/* T A R J E T A S */
+/* Contenedor para cada tarjeta */ 
+.container{
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+/* Orientación y organización para la tarjeta y su espectiva imagen*/
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch
+}
+
+/* Organización interna de cada tarjeta */
+.card{
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilo para las imágenes de cada integrante de equipo*/
+.equipo_img{
+    border-radius: 2%;
+}
+
+/* Organización interna y externa dentro de las cards */
+.col-md-8, .col-sm-8{
+    max-width: 95%;
+}
+
+.col-8{
+    max-width: 100%;
+}
+
+.col-4, .col-sm-4 .col-md-4{
+    padding: 0px;
+    padding-right: 10px;
+}
+
+/* Organización de los íconos y botones */
+.botones{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+/* Tamaño de los íconos */
+.boton_img{
+    width: 20px;
+}
+
+/* Media queery de la tablet */ 
+@media screen and (max-width: 800px){
+    /* Organización del contenedor */
+    .container{
+        padding-bottom: 30px;
+        padding-top: 15px;
+    }
+
+    /* Tamaño de los textos */
+    .texto, .texto_1{
+        font-size: 80%;
+    }
+    
+    /* Tamaño del nombre */
+    .card-title{
+        font-size: 150%;  
+    }
+
+    /* Organización del cuerpo de la tarjeta*/
+    .card-body{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    /* Tamaño y organización del botón */ 
+    .btn{
+        font-size: 80%;
+        padding: 5px;
+    }
+
+    /* Tamaño de los íconos */
+    .boton_img{
+        width: 15px;
+    }
+
+    /* Organización del ícono y botones*/
+    .botones{
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    /* Organización del container */
+    .container{
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    /* Tamaño del texto */
+    .texto{
+        font-size: 60%;
+        margin: 0px;
+    }
+
+    /* Tamaño del nombre */
+    .card-title{
+        font-size: 75%;  
+    }
+
+    /* Organización del cuerpo de la tarjeta */
+    .card-body{
+        padding: 10px 0px 0px 0px;
+    }
+
+    /* Tamaño de los botones e íconos */
+    .btn{
+        font-size: 50%;
+    }
+
+    /* Tamaño de los íconos */
+    .boton_img{
+        width: 10px;
+    }
+
+    /* Desaparecer información sobre gustos */
+    .texto_1{
+        display: none;
+    }
+    
+    /* Organización de los botones e íconos */
+    .botones{
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    /* Espacio entre botones e íconos */
+    .btn{
+        padding: 2px;
+    }
+}
