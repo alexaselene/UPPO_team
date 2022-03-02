@@ -1,7 +1,7 @@
 /* G E N E R A L */
 /*Navbar*/
 .navbar{
-    background-color: #ED959C ;
+    background-color: var(--rosa) ;
   }
  #logo{
      margin-left: 50px;
@@ -20,6 +20,7 @@
 /* Padding general de la página */
 body{
     padding: 20px;
+    background-color: var(--cafe_claro);
 }
 
 /* T A R J E T A S */
