@@ -1,4 +1,22 @@
 /* G E N E R A L */
+/*Navbar*/
+.navbar{
+    background-color: #ED959C ;
+  }
+ #logo{
+     margin-left: 50px;
+ }
+ .form-inline{
+     margin-left: 20px;
+ }
+ .collapse{
+    margin-left: 50px;
+ }
+ .iconos{
+    margin-left: 100px; 
+ }
+
+
 /* Padding general de la página */
 body{
     padding: 20px;
@@ -15,7 +33,7 @@ body{
 .row{
     display: flex;
     flex-wrap: nowrap;
-    align-items: stretch
+    align-items: stretch;
 }
 
 /* Organización interna de cada tarjeta */
