@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @import url(about_us.css);
 
@@ -9,3 +10,157 @@
     --cafe_claro: #DFC9CB;
     --azul_claro: #ECF7FB;
 }
+=======
+body{
+    padding: 50px;
+}
+
+.contenedor_i{
+    display: flexbox;
+    flex-wrap: nowrap
+}
+
+/*Separación entre inputs*/
+.container_1{
+    padding-bottom: 25px;
+   
+}
+
+/*Separación entre el botón y la imagen*/
+.container_2{
+    padding-bottom: 15px;
+    
+    
+   
+}
+
+
+.row{
+  
+    align-items: center;
+}
+
+.img_nombre{
+    background-image: url("./src/icono_cuenta.png");
+}
+
+.img_email{
+    background-image: url("./src/icono_mail.png");
+}
+
+.img_telefono{
+    background-image: url("./src/clarity_phone-handset-line.png");
+}
+
+.img_mensaje{
+    background-image: url("./src/bx_message.png");
+}
+
+.img_nombre, .img_email, .img_telefono, .img_mensaje{
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: 4%;
+    background-blend-mode: hard-light;
+    background-color: rgb(231, 211, 214);
+    padding-left: 8%;
+    border-color: rgb(231, 211, 214);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queery de la tablet */ 
+@media screen and (max-width: 800px){
+
+/* Organización del contenedor */
+.container{
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+
+
+
+
+}
+
+
+/* Media queery de la phone */ 
+@media screen and (max-width: 600px){    
+
+    .container{
+        
+        padding-top: 10px;
+    }
+
+     /* Tamaño del texto */
+    .text_1{
+        font-size: 50%;
+        
+
+        
+        
+    }
+
+    body{
+        padding: 50px;
+    }
+
+    /*Separación entre inputs*/
+    .container_1{
+        padding-bottom: 10px;
+       
+    }
+
+     /*Tamao de letra del botón "contactános"*/
+    .btn{
+        font-size: 50%;
+        
+    }
+    
+  
+    .row{
+  
+        align-items: center;
+    }
+
+
+
+
+
+    /*Iconos de los botones*/
+    .img_nombre, .img_email, .img_telefono, .img_mensaje{
+        
+        background-position: 2%;
+        background-size: 6%;
+       
+    }
+    
+    /*Separación entre el botón y la imagen*/
+    .container_2{
+    padding-bottom: 5px;
+    
+    
+   
+}
+
+
+
+    
+
+    
+
+
+
+
+}
+>>>>>>> 26b560c3c6204c61f6738feea487812d25e61ca2
