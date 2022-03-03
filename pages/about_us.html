@@ -9,26 +9,27 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../src/CSS/about_us.css">
+    <link rel="stylesheet" href="../src/CSS/main.css">
 </head>
 
 <body>
-    <div>   
+    <div class="container-xxl">   
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg ">
-        <img id="logo" src= "https://lh3.googleusercontent.com/kE2XUzVtH0XmCZ8noGtvxugEIpy-PGw-QCp5_lbgCPNZ4k4saZ4AlaAWPUaboV7jP6sUVkONBCmTlFgbIl6eoJZFqC8I22XNVaTw8Przg0WeUo5I__VGRYdXIJaCfrgd_xbw3XELGtYSYsXn1rRGzsnjG_bmDn57GZKQbM3Xpd9fiY5ucY1b9qu9c9pXXOuTjs62MIPkRzF90tnO0OL0jtajE5mKNt7ZzWYYfkcbL82TqrF3cJB2QmqJLEJ-y6_huSUI3thphXGEsOKspt-OGjL9S3lq-bqZp_fjv72hBjoSvNvBGk1BBXES4rAZX5JdYZtehBOVonJRmlscwghlcTD4G1L1Uqo90S_3lNFge7nsAHa92zcPo_GrNKvblXghUhLUy_nlA6VEYbL10IJsXFOF5YbQorNuLF69SP83yDAfWwNDv1y2P4x4zJ2YI4e7rjkoof49agstYtPjCSozyYQpTE8_-qqCxKF4BoE6ya0OyV-VRmc2mekRDPhgtZHxYKqGmiWegMYHMXjwMtkiYmdXYgy0f24L8hLSgFCq2WdhCN1T2bi6Wj8I9Tth581RYBcOsZ9ZRrdJErA5aDhNnUfmqrv2VRXNf3qsW9DIhk1knVhdFoROxUt70-a6TpIt4yGXf90D8vsK3Fs0kuWbivBa39GHi9UxTW9rpptvQiKzJwcaJFgorjkI9icHEWLCHqjfpIhUAgnvvz8ttw3roHc=w328-h331-no?authuser=1" width= "70px" height= "70px">
+        <img id="logo" src="../src/img/logo_maria-removebg-preview (1).png" width= "100px" height= "100px">
         <!--menú de hamburguesa-->
-        <nav class="navbar navbar-expand-lg navbar-light ">
+        <nav class="navbar navbar-expand-lg navbar-light hamburguesa ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link text-white contactanos" href="#">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                Catalogo
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Catálogo
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Productos</a>
@@ -37,8 +38,8 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                Contactanos
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Contáctanos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Acerca de Maria haro Ceramica </a>
@@ -51,16 +52,25 @@
         </div>
       </nav>
         <!--Barra de Busqueda-->
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Encuentra la magía" aria-label="Search">
+           <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
+            <form class="w-50 me-3 barra_busqueda">
+            <input class="form-control mr-sm-2" type="search" placeholder="🔍  Encuentra la magia " aria-label="Search"> 
             </form>
          <!--Iconos de usuario y compras hay que agregarles el link-->
          <div class="iconos">
-          <img src="http://assets.stickpng.com/images/585e4beacb11b227491c3399.png" width="25px" height="25px">
-          <img src="https://cdn-icons-png.flaticon.com/512/3394/3394009.png" width="25px" height="25px">
+          <img class="inicio_sesion" src="../src/img/iniciar-sesion (1).png" width="40px" height="40px">
+          <img class="carrito_compra" src="../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
           </div> 
        
     </div>
+    <!--Jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container desaparece">
+          <h1 class="display-4 titulo_equipo">Conoce al equipo UPPO</h1>
+          <p class="lead texto_equipo">Equipo de desarrollo de esta página</p>
+        </div>
+      </div>
+
     <!-- T A R J E T A S    D E L    E Q U I P O -->
     <!-- Diana Colín -->
     <div class = "container">
@@ -69,10 +79,10 @@
                 <img src= "../src/img/Diana.png" alt=" foto de Diana" class = "img-fluid equipo_img">
             </div>
         
-            <div class="card mb3">
+            <div class="card mb3 fondo_card">
                 <div class="col-md-8 col-sm-8 col-8">
                     <div class="card-body">
-                        <h1 class="card-title card-text texto">Diana Carolina Colín Ochoa</h1>
+                        <h1 class="card-title card-text texto nombre">Diana Carolina Colín Ochoa</h1>
                         <p class="card-text card-subtitle texto"><small class="text-muted">Ingeniería Biomédica</small></p>
                                     
                         <p class="card-text texto_1">Me gusta enfrentarme a retos lógicos y creativos. Disfruto la lectura, el dibujo y conocer nuevos lugares</p>
@@ -80,10 +90,10 @@
                     </div>
 
                     <div class = "row botones">
-                        <a href = "mailto:colindiana6c@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                        <a href = "mailto:colindiana6c@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png " class = "boton_img"></a>
                         <a href = "https://github.com/DianaColin99" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                         <a href = "https://www.linkedin.com/in/diana-col%C3%ADn/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                        <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                        <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                     </div>     
                 </div>
             </div> 
@@ -96,22 +106,22 @@
                 <img src= "../src/img/José.png" alt=" foto de jose" class = "img-fluid equipo_img">
             </div>
         
-            <div class="card mb3">
+            <div class="card mb3 fondo_card">
                 <div class="col-md-8 col-sm-8 col-8">
                     <div class="card-body">
-                        <h1 class="card-title card-text texto">José García Ramírez</h1>
-                        <p class="card-text card-subtitle texto"><small class="text-muted">tecnico en aplicaciones moviles</small></p>
+                        <h1 class="card-title card-text texto nombre">José García Ramírez</h1>
+                        <p class="card-text card-subtitle texto"><small class="text-muted">Técnico en aplicaciones móviles</small></p>
                                     
-                        <p class="card-text texto_1">Disfruta de la literatura de ciencia ficción, Me encantan los reto</p>
-                        <p class="card-text texto">Mis múltiples empleos en los que labore me han construido muchas habilidades como trabajo en equipo, comunicación efectiva y una gran ética laboral</p>
+                        <p class="card-text texto_1">Disfruto de la literatura de ciencia ficción y me encantan los retos</p>
+                        <p class="card-text texto">En los múltiples empleos en los que he laborado he construído muchas habilidades como trabajo en equipo, comunicación efectiva y una gran ética laboral</p>
                     </div>
 
                     <div class = "row botones">
                         <a href = "mailto:josegarciaramirez20@gmail.com
-                        " target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                        " target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                         <a href = "https://github.com/josegr102" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                         <a href = "https://www.linkedin.com/in/jose-garcia-ramirez/ " type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                        <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                        <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                     </div>     
                 </div>
             </div> 
@@ -124,21 +134,21 @@
                 <img src= "../src/img/Clau.png" alt=" foto de Clau" class = "img-fluid equipo_img">
             </div>
         
-            <div class="card mb3">
+            <div class="card mb3 fondo_card">
                 <div class="col-md-8 col-sm-8 col-8">
                     <div class="card-body">
-                        <h1 class="card-title card-text texto">Claudia Castorena</h1>
+                        <h1 class="card-title card-text texto nombre">Claudia Castorena</h1>
                         <p class="card-text card-subtitle texto"><small class="text-muted">Diseñadora UX / UI - Frontend Developer</small></p>
                                     
                         <p class="card-text texto_1">Me gusta la creación de productos digitales, soy una apasionada por la tecnología y la innovación.</p>
-                        <p class="card-text texto">El trabajo en equipo y la persistencia son algo que me caracteriza.</p>
+                        <p class="card-text texto">El trabajo en equipo, la persistencia y mentalidad de crecimiento son algo que me caracteriza.</p>
                     </div>
 
                     <div class = "row botones">
-                        <a href = "mailto:clau.castorena96@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                        <a href = "mailto:clau.castorena96@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                         <a href = "https://github.com/claucast/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                         <a href = "https://www.linkedin.com/in/claucastorena/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                        <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                        <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                     </div>     
                 </div>
             </div> 
@@ -151,10 +161,10 @@
                 <img src= "../src/img/Alexa.png" alt="Foto de Alexa" class = "img-fluid equipo_img">
             </div>
         
-            <div class="card mb3">
+            <div class="card mb3 fondo_card">
                 <div class="col-md-8 col-sm-8 col-8">
                     <div class="card-body">
-                        <h1 class="card-title card-text texto">Alexa Alcántara</h1>
+                        <h1 class="card-title card-text texto nombre">Alexa Selene Alcántara Torres</h1>
                         <p class="card-text card-subtitle texto"><small class="text-muted">Química Farmacéutico Biológica</small></p>
                                     
                         <p class="card-text texto_1">Disfruto de actividades como fútbol, natación y running. Me gusta ver películas y amo la pizza.</p>
@@ -162,10 +172,10 @@
                     </div>
 
                     <div class = "row botones">
-                        <a href = "mailto:alexa.selene.at@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                        <a href = "mailto:alexa.selene.at@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                         <a href = "https://github.com/alexaselene" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                         <a href = "https://www.linkedin.com/in/alexaalcantara/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                        <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                        <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                     </div>     
                 </div>
             </div> 
@@ -178,10 +188,10 @@
             <img src= "../src/img/Maricruz.png" alt="Foto de Maricruz" class = "img-fluid equipo_img">
         </div>
     
-        <div class="card mb3">
+        <div class="card mb3 fondo_card">
             <div class="col-md-8 col-sm-8 col-8">
                 <div class="card-body">
-                    <h1 class="card-title card-text texto">Maricruz Bautista Ramírez</h1>
+                    <h1 class="card-title card-text texto nombre">Maricruz Bautista Ramírez</h1>
                     <p class="card-text card-subtitle texto"><small class="text-muted">Ingeniera Química</small></p>
                                 
                     <p class="card-text texto_1"> Me apasiona la música y hacer deporte. Me gustan los cambios y descubrir nuevas cosas, personas y lugares.</p>
@@ -189,10 +199,10 @@
                 </div>
 
                 <div class = "row botones">
-                    <a href = "mailto:maricruz.bautista1229@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                    <a href = "mailto:maricruz.bautista1229@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                     <a href = "https://github.com/maricruz2912" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                     <a href = "https://www.linkedin.com/feed/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                    <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                    <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                 </div>     
             </div>
         </div> 
@@ -205,10 +215,10 @@
             <img src= "../src/img/Sebas.png" alt="Foto de Sebastian" class = "img-fluid equipo_img">
         </div>
     
-        <div class="card mb3">
+        <div class="card mb3 fondo_card">
             <div class="col-md-8 col-sm-8 col-8">
                 <div class="card-body">
-                    <h1 class="card-title card-text texto">Sebastian Vargas</h1>
+                    <h1 class="card-title card-text texto nombre">Sebastian Vargas Vazquez</h1>
                     <p class="card-text card-subtitle texto"><small class="text-muted">Java FullStack Developer</small></p>
                                 
                     <p class="card-text texto_1"> El deporte y la música me gustan. Viajar y conocer personas es mi meta y poder compartirlo con la gente cercana.</p>
@@ -216,10 +226,10 @@
                 </div>
 
                 <div class = "row botones">
-                    <a href = "mailto:sebastian.vargas.vzqz@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                    <a href = "mailto:sebastian.vargas.vzqz@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                     <a href = "https://github.com/SebastianVVz" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                     <a href = "https://www.linkedin.com/in/svv/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                    <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                    <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                 </div>     
             </div>
         </div> 
@@ -232,10 +242,10 @@
             <img src= "../src/img/Amy.png" alt=" foto de jose" class = "img-fluid equipo_img">
         </div>
     
-        <div class="card mb3">
+        <div class="card mb3 fondo_card">
             <div class="col-md-8 col-sm-8 col-8">
                 <div class="card-body">
-                    <h1 class="card-title card-text texto">Amizaday Hernández Angulo</h1>
+                    <h1 class="card-title card-text texto nombre">Amizaday Hernández Angulo</h1>
                     <p class="card-text card-subtitle texto"><small class="text-muted">Ingeniera en sistemas eléctronicos y de telecomunicaciones</small></p>
                                 
                     <p class="card-text texto_1">Empática, Resolución de problemas, Calidad, Resiliencia </p>
@@ -244,10 +254,10 @@
 
                 <div class = "row botones">
                     <a href = "mailto:amizaday.hean@gmail.com
-                    " target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                    " target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                     <a href = "https://github.com/Amyhean" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                     <a href = " https://www.linkedin.com/in/amizaday-hern%C3%A1ndez-52631b1b4/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                    <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                    <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                 </div>     
             </div>
         </div> 
@@ -261,10 +271,10 @@
             <img src= "../src/img/Amy.png" alt=" foto de Geraldine" class = "img-fluid equipo_img">
         </div>
     
-        <div class="card mb3">
+        <div class="card mb3 fondo_card">
             <div class="col-md-8 col-sm-8 col-8">
                 <div class="card-body">
-                    <h1 class="card-title card-text texto">Geraldine Martínez Torres</h1>
+                    <h1 class="card-title card-text texto nombre">Geraldine Martínez Torres</h1>
                     <p class="card-text card-subtitle texto"><small class="text-muted">Ingeniería Biomédica</small></p>
                                 
                     <p class="card-text texto_1">Me gusta viajar, conocer nuevos lugares. Practico tenis, soy una apasionada de la fotografía y me gusta leer libros de ciencia ficción
@@ -274,10 +284,10 @@
                 </div>
 
                 <div class = "row botones">
-                    <a href = "mailto:geraldine.mtts@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email.png" class = "boton_img"></a>
+                    <a href = "mailto:geraldine.mtts@gmail.com" target="_blank" type="button" class="btn btn-link"><img src = "../src/img/email3.png" class = "boton_img"></a>
                     <a href = "https://github.com/HeyGera" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/github.png" class = "boton_img"></a>
                     <a href = "https://www.linkedin.com/in/gmts/" type="button" target="_blank" class="btn btn-link"><img src = "../src/img/linkedin.png" class = "boton_img"></a>
-                    <button type="button" class="btn btn-light btn-block">Descargar CV</button>    
+                    <button type="button" class="btn btn-light btn-block color_boton text-white">Descargar CV</button>    
                 </div>     
             </div>
         </div> 
