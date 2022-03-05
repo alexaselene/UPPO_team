@@ -1,0 +1,73 @@
+
+
+
+.jumbotron{
+    background-image: url(./src/taza_maria_haro.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.title_curses{
+    text-align: center;
+    color: white;
+}
+
+
+.img_cursos{
+    border-radius: 2%;
+   
+    
+}
+
+/* Organización interna y externa dentro de las cards */
+.col-md-8{
+    max-width: 98%;
+}
+
+.col-sm-8{
+    max-width: 98%;
+}
+
+.col-8{
+    max-width: 100%;
+}
+
+.col-4, .col-sm-4 .col-md-4{
+    padding: 0px;
+    padding-right: 50px;
+}
+
+/* Orientación y organización para la tarjeta y su espectiva imagen*/
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    
+}
+
+.texto{
+    text-align: center;
+}
+
+
+/* Organización de los íconos y botones */
+.botones{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+/* Tamaño de los íconos */
+.boton_img{
+    width: 40px;
+    height: 40px;
+    
+  
+  
+}
+.btn{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
