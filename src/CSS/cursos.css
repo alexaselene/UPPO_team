@@ -40,7 +40,7 @@
     padding-right: 50px;
 }
 
-/* Orientación y organización para la tarjeta y su espectiva imagen*/
+/* Orientación y organización para la tarjeta*/
 .row{
     display: flex;
     flex-wrap: nowrap;
