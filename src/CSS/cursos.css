@@ -1,8 +1,8 @@
 
-
+/*Diseño del jumbotrón*/
 
 .jumbotron{
-    background-image: url(./src/taza_maria_haro.png);
+    background-image: url(../img/taza_maria_haro.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -13,13 +13,16 @@
 }
 
 
+
+
+/* Organización interna y externa dentro de la card*/
+
 .img_cursos{
     border-radius: 2%;
    
     
 }
 
-/* Organización interna y externa dentro de las cards */
 .col-md-8{
     max-width: 98%;
 }
