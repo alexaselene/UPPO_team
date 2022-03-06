@@ -50,6 +50,7 @@ body{
 }
 /* media query para celular de navbar*/
 @media screen and (max-width: 600px){
+/*Diseño del jumbotrón*/
 
     .titulo_equipo{
         
@@ -98,7 +99,7 @@ body{
 
 /*Jumbotron*/
 .jumbotron{
-    background-image: url(./src/taza_maria_haro.png);
+    background-image: url(../img/taza_maria_haro.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -109,13 +110,16 @@ body{
 }
 
 
+
+
+/* Organización interna y externa dentro de la card*/
+
 .img_cursos{
     border-radius: 2%;
    
     
 }
 
-/* Organización interna y externa dentro de las cards */
 .col-md-8{
     max-width: 98%;
 }
@@ -133,7 +137,7 @@ body{
     padding-right: 50px;
 }
 
-/* Orientación y organización para la tarjeta y su espectiva imagen*/
+/* Orientación y organización para la tarjeta*/
 .row{
     display: flex;
     flex-wrap: nowrap;
