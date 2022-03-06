@@ -1,6 +1,103 @@
+/*GENERAL*/
+:root{
+    --font_base: "Roboto", sans-serif;
+    --gris_obscuro: #6B6A7A;
+    --gris_claro: #a5a5b1;
+    --beige: #EAE2D7;
+    --rosa: #ED959C;
+    --cafe_claro: #DFC9CB;
+    --azul_claro: #ECF7FB;
+    --lila: #D99BFF;
 
+}
+/*Navbar*/
+.navbar{
+    background-color: var(--gris_obscuro) ;
+    display: flex;
+    justify-content: space-between;
+
+  }
+.contactanos{
+    font-size: 22px;
+}
+ #logo{
+     margin-left: 50px;
+ }
+ .form-inline{
+     margin-left: 20px;
+ }
+ .collapse{
+    margin-left: 50px;
+ }
+ .iconos{
+    
+    margin-left: 100px; 
+    display: flex;
+    align-items: flex-end;
+ }
+ .inicio_sesion{
+     margin-right: 30px;
+ }
+ .carrito_compra{
+     margin-right: 30px;
+ }
+
+
+/* Padding general de la página */
+body{
+    /*padding: 20px;*/
+    background-color: var(--cafe_claro);
+}
+/* media query para celular de navbar*/
+@media screen and (max-width: 600px){
 /*Diseño del jumbotrón*/
 
+    .titulo_equipo{
+        
+        font-weight: normal;
+        font-size: 20px;
+    }
+    .texto_equipo{
+        font-size:15px;
+    }
+    #logo{
+        display:none;
+    /* width: 50px; height: 50px;
+     margin-left: 0px;*/
+    }
+    .barra_busqueda{
+     display: none;
+
+    }
+    .inicio_sesion{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        
+        display: flex;
+        align-items: flex-start;
+    }
+    .carrito_compra{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        
+        
+    }
+    .iconos{
+        display: flex;
+        flex-wrap: flex-start;
+        
+        
+    }
+    .text-muted{
+        font-weight: bold;
+        font-size: 10px;
+        
+    }
+    
+
+}
+
+/*Jumbotron*/
 .jumbotron{
     background-image: url(../img/taza_maria_haro.png);
     background-repeat: no-repeat;
