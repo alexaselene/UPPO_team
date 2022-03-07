@@ -281,6 +281,31 @@ body{
         grid-gap:30px;
         padding: 0px 0px;
     }
+    
+   .img_mh_1{
+       display: none;
+   }
+   
+   .img_mh_3{
+       display:none;
+   }
+   
+   .maria{
+       height: 300px;
+       width: 500px;
+       margin:0px;
+   }
+   .marcela{
+    height: 300px;
+    width: 500px; 
+   }
+    
+    .instagram{
+     font-size: 20px;
+     grid-template-columns: repeat(1, 1fr);
+    grid-gap:20px;
+    padding: 0px 0px;
+    }
 
     
 }
