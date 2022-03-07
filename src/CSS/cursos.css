@@ -43,10 +43,11 @@
  }
 
 
-/* Padding general de la página */
+/* Color general de la página */
 body{
     /*padding: 20px;*/
     background-color: var(--cafe_claro);
+    
 }
 /* media query para celular de navbar*/
 @media screen and (max-width: 600px){
@@ -97,18 +98,24 @@ body{
 
 }
 
+
 /*Jumbotron*/
 .jumbotron{
-    background-image: url(../img/taza_maria_haro.png);
+    background-image: url(./../img/godetes.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size:cover;
-}
-.title_curses{
+    background-size: cover;
+   /* background-color: var(--beige)*/
     text-align: center;
-    color: white;
+    color: var(--azul_claro);
 }
-
+.titulo_equipo{
+    font-weight: bolder;
+}
+.texto_equipo{
+    color:var(--azul_claro);
+    font-size: 30px;
+}
 
 
 
@@ -116,9 +123,11 @@ body{
 
 .img_cursos{
     border-radius: 2%;
+    width: 320px;
    
     
 }
+
 
 .col-md-8{
     max-width: 98%;
@@ -138,7 +147,7 @@ body{
 }
 
 /* Orientación y organización para la tarjeta*/
-.row{
+.primera_parte{
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
@@ -147,6 +156,7 @@ body{
 
 .texto{
     text-align: center;
+    padding: 30px 30px 30px 30px;
 }
 
 
@@ -155,22 +165,80 @@ body{
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 20px;
+    padding-bottom: 40px;
     justify-content: center;
+    
 }
 
-/* Tamaño de los íconos */
+/* *****Se retira boton*****
 .boton_img{
     width: 40px;
     height: 40px;
-    
   
-  
-}
-.btn_2{
+}*/
+/* Tamaño de los íconos */
+.btn-danger{
     padding-left: 20%;
     padding-right: 20%;
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    font-weight: bolder;
 }
 
+/************************************************/
+/*Letras del curso*/
+
+.taller{
+    justify-content: center;
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+}
+
+/*Foto y card*/
+.foto_card{
+    justify-content: center;
+    
+}
+
+/*Alienar todo al centro*/
+.general{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.aprenderas{
+    background-color: var(--azul_claro);
+    border: var(--azul_claro);
+    border-radius: 20px;
+    padding: 40px 40px 40px 40px;
+    text-align: justify;
+    
+}
+
+.aprender_lista{
+    display: flex;
+    justify-content:space-around;
+}
+
+
+
+.incluye{
+    padding: 30px 30px 30px 30px;
+    margin-top: 40px;
+    background-color: var(--azul_claro);
+    border: var(--azul_claro);
+    border-radius: 20px;
+}
+
+.incluye_lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+
+}
 
 /*Footer*/
 
@@ -256,5 +324,23 @@ body{
         padding: 0px 0px;
     }
 
+    .primera_parte{
+        display: flex;
+        flex-direction: column;
+    }
     
+    .img_cursos{    
+        width: 300px;
+        align-content: center;
+        margin: 15px;
+    }
+}
+
+/*RESPOSIVE DE TABLET*/
+@media screen and (max-width: 800px){
+    .img_cursos{    
+        width: 200px;
+        align-content: center;
+        margin: 15px;
+    }
 }
