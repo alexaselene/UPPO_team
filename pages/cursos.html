@@ -68,11 +68,11 @@
  
 
  <div class="jumbotron jumbotron-fluid">
-    <div class="container  ">
-      <h1 class="display-4  title_curses">Cursos</h1>
-      
-    </div>
+  <div class="container desaparece">
+    <h1 class="display-4 titulo_equipo text-white">Cursos</h1>
+    <p class="lead texto_equipo text-white">Crea tus propios artículos de cerámica</p>
   </div>
+</div>
   
   <!-- Aquí termina el jumbotron-->
   
@@ -85,36 +85,38 @@
 <!--Aquí empieza la card-->
 
 
-<div class = "container">
+<div class = "container general">
 
-    <div>
+    <div class="taller general">
         <h2>Taller de Cerámica</h2>
         <p>Un curso impartido por María Haro, en el cual aprenderas a hacer:</p>
     </div>
 
-
-    <div class="row">
+  <section class="foto_card">
+    <div class="row primera_parte">
         <div class="col-md-4 col-sm-4 col-4">
-            <img src="./../src/img/taza_maria_cursos.png " alt="taza cursos" class = "img-fluid img_cursos">
+            <img src="./../src/img/taza_maria_cursos.png " alt="taza cursos" class = "img_cursos">
         </div>
         
 
-        <div class="card mb-3">
+        <div class="mb-3">
               <div class="col-md-8 col-sm-8 col-8">
-                  <div class="card-body">
-                    <h5 class="card-title">¿Qué aprenderás?</h5>
-                     <li> Macetas</li>
-                     <li> Tazas</li>
-                     <li>Floreros</li>
-                     <li> Figurita de nuestra mascota</li>        
+                  <div class="card-body aprenderas">
+                    <h3 class="card-title">¿Qué aprenderás?</h3>
+                      <p> ⭐ Macetas</p>
+                      <p> ⭐ Tazas</p>
+                      <p> ⭐ Floreros</p>
+                      <p> ⭐ Figurita de nuestra mascota</p> 
+                        
                   </div>
               </div>
         </div>
     
     </div> 
+  </section>
 
-    <div>
-        <h2>Horario</h2>
+    <div class="general">
+        <h3>Horario</h3>
         <p>Jueves de 5:00 pm a 8:00 pm</p>
         <p> Sábado de 11:00 am a 2:00 pm ó 3:00 pm a 6:00 pm </p>
         <p>Domingo de 11:00 pm a 1:00 pm</p>
@@ -131,33 +133,35 @@
    
 
    
-    <div class = "container ">
+    <div class = "container general incluye">
         <div class="col-md-8 col-sm-8 col-8">
-        <h1> Incluye</h1>
-         <li> Barro</li>
-        <li>Pasta cerámica</li>
-        <li> Esmaltes</li>
-        <li>Bajo Esmaltes</li> 
-        <li>Engobes</li>
-       <li>Lustre de oro</li>
-        <li> Kit de cerámica </li>
-       <li>Quemas de sancocho, esmalte y raku</li>
+        <h3> Incluye</h3>
+        <ul class="incluye_lista">
+          <span> ⭐ Barro</span>
+          <span> ⭐ Pasta cerámica</span>
+          <span> ⭐ Esmaltes</span>
+          <span> ⭐ Bajo Esmaltes</span> 
+          <span> ⭐ Engobes</span>
+          <span> ⭐ Lustre de oro</span>
+          <span> ⭐ Kit de cerámica </span>
+          <span> ⭐ Quemas de sancocho, esmalte y raku</span>
+      </ul> 
     </div>
         
     </div>
   <!--Fin de la lista de cursos-->
 
   <div>
-   <h1 class="texto"> $220.00 </h1>
+   <h1 class="texto"> $2,200.00 </h1>
 
   </div>
 
   <div class = "row botones">
     
     
-    <button type="button" class="btn_2 btn-light">Elegir</button> 
-
-    <button type="button" class="btn_2 btn-light"><img src="./../src/img/carrito.png" class = "boton_img"  alt="carrito"></button> 
+    <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto">¡Quiero inscribirme!</button> 
+    <!--Se comenta el siguiente botón para conservar sólo 1 medio de inscripción-->
+    <!--<button type="button" class="btn_2 btn-light"><img src="./../src/img/carrito.png" class = "boton_img"  alt="carrito"></button> -->
 
              
   </div>
