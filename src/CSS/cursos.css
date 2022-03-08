@@ -10,6 +10,7 @@
     --lila: #D99BFF;
 
 }
+
 /*Navbar*/
 .navbar{
     background-color: var(--gris_obscuro) ;
@@ -342,5 +343,10 @@ body{
         width: 200px;
         align-content: center;
         margin: 15px;
+    }
+
+    /* Navbar */
+    .navbar{
+        flex-wrap: nowrap;
     }
 }
