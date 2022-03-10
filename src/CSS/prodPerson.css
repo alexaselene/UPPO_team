@@ -12,6 +12,10 @@
 
 #cuerpo{
     background-image:url(./../img/dream-sky-677367\ 2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
 @media screen and (max-width: 500px){
