@@ -59,5 +59,67 @@ console.log(arrayProductosperson);
 
 /**********************************José**************************************/ 
 
+let productos= [
+    {
+     "Nombre": "Perro alegre",
+     "Caractetristicas": " Taza de color beige con asa color azul claro, tamaño mediano",
+     "Material": "Cerámica",
+     "Precio": "$200 mxn",
+     "Stock": "Disponible"
+
+    },
+
+    {
+     "Nombre": "Gato feliz",
+     "Caractetristicas": "Taza de color beige, tamaño mediano",
+     "Material": "Cerámica",
+     "Precio": "$250 mxn",
+     "Stock": "Disponible"   
+
+    },
+
+    {
+    "Nombre": "Gatitas",
+     "Caractetristicas": "Taza color blanco con asa color rosa, tamaño mediano",
+     "Material": "Cerámica",
+     "Precio": "$250 mxn",
+     "Stock": "Dos unidades" 
+
+    },
+
+    {
+        "Nombre": "La muerte y sus flores",
+        "Caractetristicas": "Taza color beige adornada con flores,  tamaño mediano",
+        "Material": "Cerámica",
+        "Precio": "$200 mxn",
+        "Stock": "Disponible" 
+
+    },
+    {
+        "Nombre": "Colibrí",
+        "Caractetristicas": "Taza color blanco con asa color rosa, diseño minimalista,  tamaño mediano",
+        "Material": "Cerámica",
+        "Precio": "$200 mxn",
+        "Stock": "Disponible" 
+
+    },
+
+
+
+
+
+
+];
+
+
+
+
+let jsonProductos= JSON.stringify(productos);
+localStorage.setItem("productos",jsonProductos);
+let productosStorage = localStorage.getItem("productos");
+console.log(productosStorage);
+
+let arrayProductos=JSON.parse(productosStorage);
+console.log(arrayProductos);
 
 
