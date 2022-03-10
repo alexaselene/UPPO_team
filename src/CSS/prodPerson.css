@@ -1,0 +1,30 @@
+#header{
+    text-align: center;
+}
+.card{
+    justify-content: space-around;
+    align-items: center;
+}
+
+.opciones{
+    padding-top: 14%;
+}
+
+#cuerpo{
+    background-image:url(./../img/dream-sky-677367\ 2.png);
+}
+
+@media screen and (max-width: 500px){
+    .prod-img{
+        width: 150px;
+    }
+    .card-body{
+        padding: 10px 0px 0px 0px;
+        text-align: center;
+    }
+    .opciones{
+        text-align: center;
+        align-items: center;
+    }
+
+}
