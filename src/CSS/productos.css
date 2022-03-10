@@ -295,6 +295,7 @@ body{
 
 
 }
+/*Media screen de tablet*/
 @media screen and (min-width:600px) and (max-width:800px)  {
     
     .card{
