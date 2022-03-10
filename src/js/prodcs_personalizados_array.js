@@ -1,4 +1,6 @@
 
+
+/**Arreglos de los productos personalizados****/
 let productos_personalizados = [
     {
          "Nombre": "Set de mini platos emocionales",
@@ -48,16 +50,50 @@ let productos_personalizados = [
 
 
 let jsonProductosPerson= JSON.stringify(productos_personalizados);
-localStorage.setItem("productos",jsonProductosPerson);
-let productosPersonStorage = localStorage.getItem("productos");
-console.log(productosPersonStorage);
-
-let arrayProductosperson=JSON.parse(productosPersonStorage);
-console.log(arrayProductosperson);
 
 
+/**Arreglos de los talleres****/
 
-/**********************************José**************************************/ 
+let talleres = [
+    {
+         "Horario": "Jueves",
+         "Tiempo": " 5:00 pm a 8:00 pm",
+    },
+
+    {
+        "Horario": "Sábado",
+        "Tiempo 1": " 11:00 pm a 2:00 pm " ,
+        "Tiempo 2": " 3:00 pm a 6:00 pm" ,
+        
+   },
+
+   {
+    "Horario": "Domingo",
+    "Tiempo": "11:00 pm a 1:00 pm" ,
+    
+},
+
+];
+
+let jsontalleres= JSON.stringify(talleres);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**Arreglos de los productos (tazas) ****/
+
+/**José**/ 
 
 let productos= [
     {
@@ -112,14 +148,7 @@ let productos= [
 ];
 
 
-
-
 let jsonProductos= JSON.stringify(productos);
-localStorage.setItem("productos",jsonProductos);
-let productosStorage = localStorage.getItem("productos");
-console.log(productosStorage);
 
-let arrayProductos=JSON.parse(productosStorage);
-console.log(arrayProductos);
 
 
