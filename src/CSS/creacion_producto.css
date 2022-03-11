@@ -223,3 +223,14 @@ body{
         padding: 0px 0px;
     }
 }
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}

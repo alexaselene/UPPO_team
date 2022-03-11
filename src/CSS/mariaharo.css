@@ -315,3 +315,14 @@ body{
         flex-wrap: nowrap;
     }
 }
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}
