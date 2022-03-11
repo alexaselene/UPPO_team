@@ -386,3 +386,9 @@ body{
     }
 }
 
+.btn-block{
+
+    background-color:#ED959C;
+    border-color: #ED959C;
+    color:white;
+}
