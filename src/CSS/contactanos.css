@@ -144,7 +144,9 @@ body{
     background-color: var(--beige);
 }
 
-
+.caracteres{
+    text-align: right;
+}
 
 
 
