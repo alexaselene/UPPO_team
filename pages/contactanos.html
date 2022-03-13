@@ -81,17 +81,29 @@
           <form class="form-group ">
             <div class="contenedor_i">
               <small id="" class="form-text text-muted datos_contactanos">¿Cuál es tu nombre?</small>
-              <div class="container_1 "><input type="text" class="form-control  img_nombre text_1" placeholder="Nombre"
-                  id="nombre"></div>
-              <small id="" class="form-text text-muted datos_contactanos">Compartenos tu correo:</small>
-              <div class="container_1 "><input type="text" class="form-control img_email text_1"
-                  placeholder="Correo Electrónico" id="email"></div>
+              <div class="container_1 ">
+                <input type="text" class="form-control  img_nombre text_1" placeholder="Nombre" id="nombre">
+                <div class="valid-feedback">¡El nombre ingresado es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">Debes ingresar nombre y apellido</div>
+              </div>
+                <small id="" class="form-text text-muted datos_contactanos">Compartenos tu correo:</small>
+              <div class="container_1 ">
+                <input type="text" class="form-control img_email text_1" placeholder="Correo Electrónico" id="email">
+                <div class="valid-feedback">¡El correo electrónico es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">Tu correo electrónico es inválido</div>
+              </div>
               <small id="" class="form-text text-muted datos_contactanos">Y algún número de teléfono:</small>
-              <div class="container_1 "><input type="number" class="form-control img_telefono text_1"
-                  placeholder="Teléfono" id="telefono"></div>
+              <div class="container_1 "><input type="number" class="form-control img_telefono text_1" placeholder="Teléfono" id="telefono">
+                <div class="valid-feedback">¡El teléfono es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡El teléfono es inválido!</div>
+              </div>
               <small id="" class="form-text text-muted datos_contactanos">Dinos lo que gustes, lo leeremos:</small>
-              <div class="container_1 "><textarea type="text" class="form-control img_mensaje text_1"
-                  placeholder="Mensaje" id="mensaje" rows="1"></textarea></div>
+              <div class="container_1 ">
+                <input type="text" class="form-control img_mensaje text_1" placeholder="Mensaje" id="mensaje" rows="1"></input>
+                <div class = "text-muted caracteres" id = "caracteres_mensaje">0 - 150 caracteres</div>
+                <div class = "valid-feedback">¡El mensaje es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡Sobrepasaste el límite de caracteres!</div>
+              </div>
               <p id="guardaremos" class="form-text ">No compartiremos tus datos con nadie.</p>
             </div>
           </form>
@@ -99,7 +111,7 @@
 
         <div class="col-md-5 col-sm-4 col-5 acuarela">
           <img src="./../src/img/Acuarela.PNG" class=" container_2 img-fluid">
-          <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto">Contáctanos</button>
+          <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto" disabled>Contáctanos</button>
         </div>
       </div>
     </div>
