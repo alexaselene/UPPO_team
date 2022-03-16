@@ -118,6 +118,11 @@ body{
 .boton_img{
     width: 30px;
     border-radius: 15%;
+
+}
+.boton_img:hover{
+    background-color: var(--cafe_claro)
+
 }
 
 /* Media queery de la tablet */ 
