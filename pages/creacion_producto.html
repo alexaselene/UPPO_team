@@ -8,6 +8,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="./../src/CSS/creacion_producto.css">
+    <link href="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -110,10 +111,18 @@
                 </div>
     
                 <div class = "col-md-6 col-sm-4 col-5">
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-                    <button class = "btn btn-danger mb-2 btn-block">Añadir producto</button>
-                </div>
+                  <h5>Carga la imagen del producto</h5> <!--Titulo de carga de la imagen-->
+                  <!-- Input file donde se adjunta la imagen -->
+                  <input type="file" id="image" class="img-fluid">
+                  <h5>Recorta la imagen del producto</h5> <!--Titulo del recorte de la imagen-->
+                  <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
+                  <div id="editor"></div>
+                  <h5>Así se verá la imagen:</h5> <!--Titulo de la imagen recortada-->
+                  <!-- Vista previa del recorte -->
+                  <canvas id="preview" class="img-fluid"></canvas>
+                  <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
+                  <button class = "btn btn-danger mb-2 btn-block">Añadir producto</button>
+              </div>
             </div>
         </div>
 
@@ -151,5 +160,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
     <script src = "./../src/js/creacion_producto.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.js"></script>
 </body>
 </html>
