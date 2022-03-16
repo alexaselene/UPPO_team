@@ -13,8 +13,34 @@
 // Stock
 // Imagen - 3 personas -> Clau, Alexa, José
 
+//Validación de la imagen
+function ValidarImagen(obj){
+    let uploadFile = obj.files[0];
+    
+    if (!window.FileReader) {
+        alert('El navegador no soporta la lectura de archivos');
+        return;
+    }
 
-// Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
+    if (!(/\.(jpg|jpeg|png|gif)$/i).test(uploadFile.name)) {
+        alert('Selecciona una imagen para la foto del producto.' + "\n" +
+        'Pueden ser: jpg, jpeg y png.');
+    }
+    
+    else {
+        let img = new Image();
+        img.onload = function () {
+           
+            if (uploadFile.size > 500000)
+            {
+                alert('El peso de la imagen no puede exceder los 5MB')
+            }
+           
+        };
+        img.src = URL.createObjectURL(uploadFile);
+    }                 
+}
+// Recorte de la imagen
 document.addEventListener('DOMContentLoaded', () => {
 
     // Input File
