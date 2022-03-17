@@ -15,7 +15,7 @@
 
 <body>
 
-  <div class="container-xxl">
+<div class="container-xxl">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg ">
       <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width="100px"
@@ -68,59 +68,69 @@
         <img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px">
         <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
       </div>
+</div>
 
-  </div>
-  
-
-<!--Formulario-->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-sm-8 col-7">
-        <form class="form-group">
-          <div>
-            <div class="container_1">
+<!-- F O R M U L A R I O -->
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-6 col-sm-8 col-7">
+      <form class = "form-group">
+          <div class = "container_i">
+            <div class = "container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id="nombre" autofocus>
-            </div>
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir la categoría del producto</small>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Selecciona una opción</option>
-                <option>Productos</option>
-                <option>Productos personalizados</option>
-                <option>Talleres</option>
-              </select>
+              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id = "nombre" autofocus>
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">¡El nombre del producto es inválido!</div>
             </div>
 
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las etiquetas del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Etiquetas del producto" id="etiquetas">
-            </div>
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Precio del producto" id="precio">
-            </div>
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
-              <textarea type="text" class="form-control text_1" placeholder="Características del producto"
-                id="carecterísticas" rows="5"></textarea>
-            </div>
-
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-              <div class="row">
-                <button> + </button>
-                <input type="number" class="form-control text_1" placeholder="0" id="stock">
-                <button> - </button>
-              </div>
-
-            </div>
+                            
+          <div class = "container_1">
+            <small id="" class="form-text text-muted descripcion">Selecciona una opción</small>
+            <select class="form-control" id="seleccion">
+              <option class = "text-muted">Selecciona</option>
+              <option>Productos</option>
+              <option>Productos personalizados</option>
+              <option>Talleres</option>
+            </select>
+            <div class = "valid-feedback">¡Opción válida!</div>
+            <div id="validationServer04Feedback" class="invalid-feedback">Debes seleccionar una categoría</div>
           </div>
-        </form>
-      </div>
-      <!--Imagen-->
-      <div class="col-md-6 col-sm-4 col-5">
-        <!--Titulo de carga de la imagen-->
+
+          <div class = "container_1">
+            <small id="" class="form-text text-muted descripcion">Añadir las etiquetas del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Etiquetas del producto" id = "etiquetas">
+              <div class = "valid-feedback">¡Etiqueta guardada!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar letras</div>
+          </div>
+          
+          <div class = "container_1">
+            <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
+            <input type="text" class="form-control text_1" placeholder="Precio del producto" id = "precio">
+            <div class="valid-feedback">¡Muy bien!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡El precio del producto es inválido!</div>
+          </div>
+          
+          <div class = "container_1">
+            <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
+            <textarea type="text" class="form-control text_1" placeholder="Características del producto" id = "carecterísticas" rows="5"></textarea>
+            <div class = "text-muted caracteres" id = "letras_mensaje">0 - 150 caracteres</div>
+            <div class="valid-feedback">¡Muy bien!</div>
+            <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!</div>
+
+          </div>
+
+          <div class = "container_1">
+            <small id = "" class = "form-text text-muted descripcion">Añadir el número de productos en Stock</small>
+            <div class = "row"> 
+              <input type="number" class="form-control text_1" placeholder="0" id = "stock">
+            </div>                
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <div class = "col-md-6 col-sm-4 col-5">
+      	<!--Titulo de carga de la imagen-->
         <h5>Carga la imagen del producto</h5>
         <!-- Input file donde se adjunta la imagen -->
         <input type="file" id="image" class="img-fluid" name="file" onchange="ValidarImagen(this);" />
@@ -138,9 +148,10 @@
         <!--<code id="base64"></code>-->
         <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
         <button class="btn btn-danger mb-2 btn-block">Añadir producto</button>
-      </div>
     </div>
   </div>
+</div>
+
 
   <!--Footer-->
   <footer class="pie_pagina">
