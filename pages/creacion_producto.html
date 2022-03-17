@@ -79,17 +79,8 @@
             <div class = "container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
               <input type="text" class="form-control text_1" placeholder="Nombre del producto" id = "nombre" autofocus>
-            </div>
-            
-<!-- F O R M U L A R I O -->
-<div class = "container">
-  <div class = "row">
-    <div class = "col-md-6 col-sm-8 col-7">
-      <form class = "form-group">
-          <div class = "container_i">
-            <div class = "container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id = "nombre" autofocus>
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">¡El nombre del producto es inválido!</div>
             </div>
 
                             
@@ -115,11 +106,17 @@
           <div class = "container_1">
             <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
             <input type="text" class="form-control text_1" placeholder="Precio del producto" id = "precio">
+            <div class="valid-feedback">¡Muy bien!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡El precio del producto es inválido!</div>
           </div>
           
           <div class = "container_1">
             <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
             <textarea type="text" class="form-control text_1" placeholder="Características del producto" id = "carecterísticas" rows="5"></textarea>
+            <div class = "text-muted caracteres" id = "letras_mensaje">0 - 150 caracteres</div>
+            <div class="valid-feedback">¡Muy bien!</div>
+            <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!</div>
+
           </div>
 
           <div class = "container_1">
@@ -133,28 +130,7 @@
     </div>
     
     <div class = "col-md-6 col-sm-4 col-5">
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-      <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class = "btn btn-danger mb-2 btn-block">Añadir producto</button>
-    </div>
-  </div>
-</div>
-
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-              <div class="row">
-                <button> + </button>
-                <input type="number" class="form-control text_1" placeholder="0" id="stock">
-                <button> - </button>
-              </div>
-
-            </div>
-          </div>
-        </form>
-      </div>
-      <!--Imagen-->
-      <div class="col-md-6 col-sm-4 col-5">
-        <!--Titulo de carga de la imagen-->
+      	<!--Titulo de carga de la imagen-->
         <h5>Carga la imagen del producto</h5>
         <!-- Input file donde se adjunta la imagen -->
         <input type="file" id="image" class="img-fluid" name="file" onchange="ValidarImagen(this);" />
@@ -172,9 +148,10 @@
         <!--<code id="base64"></code>-->
         <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
         <button class="btn btn-danger mb-2 btn-block">Añadir producto</button>
-      </div>
     </div>
   </div>
+</div>
+
 
   <!--Footer-->
   <footer class="pie_pagina">

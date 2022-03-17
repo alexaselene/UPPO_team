@@ -3,6 +3,124 @@
 // Selección: escoger una opción - D
 // Etiquetas de producto: 1 sola palabra (no espacios, no caracteres raros, no números) por cada enter -> acumulando en un array - D 
 // Precio: sólo número. - M
+
+
+// OBTENER ELEMENTOS
+//NOMBRE DEL PRODUCTO 
+let creacionProd = document.getElementById("nombre"); // Input donde se ingresa el nombre del producto
+let caracteristicas_prod = document.getElementById("carecterísticas"); // Input donde se ingresan las características del producto
+let precioProd = document.getElementById("precio"); // Input donde se ingresan las características del producto
+
+
+//EVENTO PARA EL INGRESO DEL NOMBRE DEL PRODUCTO
+creacionProd.addEventListener("change", (evento_p)=>{
+    evento_p.preventDefault();
+    validacion_creacionProd();
+    
+    
+
+});
+
+//EVENTO PARA EL INGRESO DEL LAS CARACTERISTICAS DE LOS PRODUCOS
+let caracteristicas_contador = 0;
+let caracteristicas_mensaje = document.getElementById("letras_mensaje");
+caracteristicas_prod.addEventListener("input", (evento_c)=>{
+    evento_c.preventDefault();
+     validacion_caracteres();
+     
+        caracteristicas_contador --;
+        let caracteristicas_restates = 150 + caracteristicas_contador;
+        caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
+    
+
+});
+
+//EVENTO PARA EL INGRESO DEL LOS PRECIOS DE LOS PRODUCTOS
+
+precioProd.addEventListener("change", (evento_c)=>{
+    evento_c.preventDefault();
+        validacion_precioProd();
+
+});
+
+//VALIDACIÓN PARA EL NOMBRE DEL PRODUCTO
+
+function validacion_creacionProd(){
+    let nombre = document.getElementById("nombre");
+    let nombreValor = nombre.value;
+    console.dir(nombre);
+
+    
+
+    if( nombreValor.length >= 3 && nombreValor.length <=50)
+    {
+        nombre.classList.add("is-valid");
+        nombre.classList.remove("is-invalid");
+        console.log("El nombre del producto es válido");   
+    } else {
+        nombre.classList.add("is-invalid")
+        nombre.classList.remove("is-valid");
+        console.log("El nombre del producto es inválido");
+    }
+};
+
+//VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
+function  validacion_caracteres(){
+    let caracteres = document.getElementById("carecterísticas");
+    let caracteresValor = caracteres.value;
+    console.dir(caracteres);
+
+  
+
+    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150))
+    {
+        caracteres.classList.add("is-valid");
+        caracteres.classList.remove("is-invalid");
+        console.log("Las caracteristicas son válidas");   
+    } else {
+        caracteres.classList.add("is-invalid")
+        caracteres.classList.remove("is-valid");
+        console.log("Las caracteristicas son inválidas");
+    }
+};
+
+
+
+//VALIDACIÓN PARA PRECIOS DEL PRODUCTO
+function validacion_precioProd(){
+    let precio = document.getElementById("precio");
+    let precioValor = precio.value;
+    console.dir(precio);
+    
+    let pattern = /^\d*(\.\d{1})?\d{0,1}$/ ; //valida hasta dos cifras con decimal
+
+    if(precioValor.match(pattern) )
+    {
+        precio.classList.add("is-valid");
+        precio.classList.remove("is-invalid");
+        console.log("El precio es válido");   
+    } else {
+        precio.classList.add("is-invalid");
+        precio.classList.remove("is-valid");
+        console.log("El precio es inválido");
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Características del producto: máximo de caracteres (150) - F 
 // Stock: no números negativos. Ingreso en input de enteros. - D
 // Imagen: tamaño de la imagen - D 
@@ -55,7 +173,7 @@ etiquetas.addEventListener("change",(e2_etiquetas) => {     // Se activa al pres
 
 /* Esta función es sensible a la presión del Backspace (borrado). Sin embargo, aún hay conflicto con el 
 uso de dicha tecla, por lo que no tiene utilidad de momento */
-/*etiquetas.addEventListener('keyup', (e) => {
+etiquetas.addEventListener('keyup', (e) => {
     if(e.key == 'Backspace'){
         e.preventDefault();
         cont -= 2;
@@ -63,7 +181,7 @@ uso de dicha tecla, por lo que no tiene utilidad de momento */
             cont = 0;
         }
     }//if Enter 
-});*/
+});
 
 function validacionEtiquetas(){                             // Función encargada de validar cada caracter ingresado en la etiqueta
     console.log(etiquetas.value.charAt(cont));              // Impresión de cada caracter ingresado en la consola
@@ -92,7 +210,7 @@ function guardarEtiqueta(){                                 // Función encargad
     etiquetas.classList.add("is-valid");                    // Añadir la clase para validar el campo
 }
 
-/*
+
 let mainForm = document.getElementById("mainForm");
 mainForm.addEventListener('keydown', function (e){
     console.log(e.key);
@@ -100,9 +218,9 @@ mainForm.addEventListener('keydown', function (e){
         e.preventDefault();
     }//if Enter 
 });
-*/
 
-/*
+
+
 //Validación de la imagen
 function ValidarImagen(obj){
     let uploadFile = obj.files[0];
@@ -204,4 +322,4 @@ document.addEventListener('DOMContentLoaded', () => {
         miNuevaImagenTemp.src = urlImage;
     }
 });
-/*
+
