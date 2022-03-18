@@ -248,7 +248,7 @@ function ValidarImagen(obj){
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
-// Recorte de la imagen
+// Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
     // Input File
@@ -322,4 +322,3 @@ document.addEventListener('DOMContentLoaded', () => {
         miNuevaImagenTemp.src = urlImage;
     }
 });
-
