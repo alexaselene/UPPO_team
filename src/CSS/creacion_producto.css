@@ -141,7 +141,8 @@ body{
 
 
 
-/* Pie de página */
+/*Footer*/
+
 .pie_pagina{
     width: 100%;
     background-color: black;
@@ -165,7 +166,6 @@ body{
 .pie_pagina .grupo_1 .box .btn-block{
     border-radius: 400px;
     background-color:#ED959C;
-    
 }
 .pie_pagina .grupo_1 .box figure img{
     width: 200px;
@@ -224,6 +224,8 @@ body{
         grid-gap:30px;
         padding: 0px 0px;
     }
+
+    
 }
 
 /*Resposive de tablet*/
