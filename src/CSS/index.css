@@ -43,6 +43,17 @@
      margin-right: 30px;
  }
 
+ .busqueda{
+    background-image: url("./../img/bi_search-heart.png");
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: 4%;
+    background-blend-mode: hard-light;
+    background-color: rgb(231, 211, 214);
+    padding-left: 8%;
+    border-color: rgb(231, 211, 214);
+ }
+
 
 /* Padding general de la página */
 body{

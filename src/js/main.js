@@ -19,7 +19,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Mascota personalizada",
-        "Características": "Perros y gatos. Texturas corrugadas y lisas, tamaños medianos y chicos, los colores pueden personalizarse",
+        "Características": "Perros y gatos. Texturas corrugadas y lisas, tamaños medianos y chicos. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$350 mxn",
         "Stock": "Disponible",
@@ -27,7 +27,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Recipiente para los pinceles del taller",
-        "Características": "Un recipiente para pinceles, base color beige, tamaño mediano y grande, los colores pueden personalizarse",
+        "Características": "Un recipiente para pinceles, base color beige, tamaño mediano y grande. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$300 mxn",
         "Stock": "Disponible",
@@ -35,7 +35,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Florero",
-        "Características": "Un florero color mármol, diseño rústico, tamaño mediano y grande, los colores pueden personalizarse",
+        "Características": "Un florero color mármol, diseño rústico, tamaño mediano y grande. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$350 mxn",
         "Stock": "Disponible", 
