@@ -53,7 +53,7 @@ ingreso_mensaje.addEventListener("input",(evento_c)=>{                  // Se ac
 // Nombre
 function validacion_name(nombre){                               // La función recibe el elemento input correspondiente al nombre
     let nombreValor = nombre.value;                             // Obtener el valor del input de nombre
-    let pattern_n =  /^[a-zA-Z]+ [a-zA-Z]+$/;                   // Definir un patrón
+    let pattern_n =  /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/;                   // Definir un patrón
     
     if(nombreValor.length >= 5 && nombreValor.match(pattern_n)){// Evaluar la longitud del valor ingresado y compararlo con el patrón
         nombre.classList.remove("is-invalid");                  // Remover la clase para invalidar el campo
