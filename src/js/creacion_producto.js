@@ -1,9 +1,12 @@
-// Validaciones:
-// Nombre de producto: longitud - F
-// Selección: escoger una opción - D
-// Etiquetas de producto: 1 sola palabra (no espacios, no caracteres raros, no números) por cada enter -> acumulando en un array - D 
-// Precio: sólo número. - M
+// BOOLEANOS DE VALIDACIÓN
+let campo_nombre = false;
+let seleccionado = false;
+let campo_precio = false;
+let campo_caracteres = false;
+let campo_stock = false;
+let campo_imagen = false;
 
+let creacion = document.getElementById("boton_creacion");
 
 // OBTENER ELEMENTOS
 //NOMBRE DEL PRODUCTO 
@@ -11,129 +14,36 @@ let creacionProd = document.getElementById("nombre"); // Input donde se ingresa 
 let caracteristicas_prod = document.getElementById("carecterísticas"); // Input donde se ingresan las características del producto
 let precioProd = document.getElementById("precio"); // Input donde se ingresan las características del producto
 
-
 //EVENTO PARA EL INGRESO DEL NOMBRE DEL PRODUCTO
 creacionProd.addEventListener("change", (evento_p)=>{
     evento_p.preventDefault();
-    validacion_creacionProd();
-    
-    
-
-});
-
-//EVENTO PARA EL INGRESO DEL LAS CARACTERISTICAS DE LOS PRODUCOS
-let caracteristicas_contador = 0;
-let caracteristicas_mensaje = document.getElementById("letras_mensaje");
-caracteristicas_prod.addEventListener("input", (evento_c)=>{
-    evento_c.preventDefault();
-     validacion_caracteres();
-     
-        caracteristicas_contador --;
-        let caracteristicas_restates = 150 + caracteristicas_contador;
-        caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
-    
-
-});
-
-//EVENTO PARA EL INGRESO DEL LOS PRECIOS DE LOS PRODUCTOS
-
-precioProd.addEventListener("change", (evento_c)=>{
-    evento_c.preventDefault();
-        validacion_precioProd();
+    campo_nombre = validacion_creacionProd();
+    habilitar_boton();
 
 });
 
 //VALIDACIÓN PARA EL NOMBRE DEL PRODUCTO
-
 function validacion_creacionProd(){
     let nombre = document.getElementById("nombre");
     let nombreValor = nombre.value;
     console.dir(nombre);
 
-    
-
-    if( nombreValor.length >= 3 && nombreValor.length <=50)
-    {
-        nombre.classList.add("is-valid");
+    if(nombreValor.length >= 3 && nombreValor.length <=50){
         nombre.classList.remove("is-invalid");
-        console.log("El nombre del producto es válido");   
+        nombre.classList.add("is-valid");
+        console.log("El nombre del producto es válido"); 
+        campo_nombre = true;
     } else {
-        nombre.classList.add("is-invalid")
         nombre.classList.remove("is-valid");
+        nombre.classList.add("is-invalid");
         console.log("El nombre del producto es inválido");
+        campo_nombre = false;
     }
+    return campo_nombre;
 };
-
-//VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
-function  validacion_caracteres(){
-    let caracteres = document.getElementById("carecterísticas");
-    let caracteresValor = caracteres.value;
-    console.dir(caracteres);
-
-  
-
-    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150))
-    {
-        caracteres.classList.add("is-valid");
-        caracteres.classList.remove("is-invalid");
-        console.log("Las caracteristicas son válidas");   
-    } else {
-        caracteres.classList.add("is-invalid")
-        caracteres.classList.remove("is-valid");
-        console.log("Las caracteristicas son inválidas");
-    }
-};
-
-
-
-//VALIDACIÓN PARA PRECIOS DEL PRODUCTO
-function validacion_precioProd(){
-    let precio = document.getElementById("precio");
-    let precioValor = precio.value;
-    console.dir(precio);
-    
-    let pattern = /^\d*(\.\d{1})?\d{0,1}$/ ; //valida hasta dos cifras con decimal
-
-    if(precioValor.match(pattern) )
-    {
-        precio.classList.add("is-valid");
-        precio.classList.remove("is-invalid");
-        console.log("El precio es válido");   
-    } else {
-        precio.classList.add("is-invalid");
-        precio.classList.remove("is-valid");
-        console.log("El precio es inválido");
-    }
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Características del producto: máximo de caracteres (150) - F 
-// Stock: no números negativos. Ingreso en input de enteros. - D
-// Imagen: tamaño de la imagen - D 
-
-// Nombre, características, precio - 2 personas 
-// Selección 
-// Etiquetas - 3 personas -> Diana, Sebas, Gera
-// Stock
-// Imagen - 3 personas -> Clau, Alexa, José
 
 // S E L E C C I Ó N
 let seleccion = document.getElementById("seleccion");           // Lista de selección de opciones de categorías
-let seleccionado = false;                                       // Booleano que se activa al seleccionar una opción válida
 
 seleccion.addEventListener("click",(e_seleccion) => {           // Evento que se activa al presionar sobre la lista de Selección
     e_seleccion.preventDefault();                               // En caso de error
@@ -173,7 +83,7 @@ etiquetas.addEventListener("change",(e2_etiquetas) => {     // Se activa al pres
 
 /* Esta función es sensible a la presión del Backspace (borrado). Sin embargo, aún hay conflicto con el 
 uso de dicha tecla, por lo que no tiene utilidad de momento */
-etiquetas.addEventListener('keyup', (e) => {
+/*etiquetas.addEventListener('keyup', (e) => {
     if(e.key == 'Backspace'){
         e.preventDefault();
         cont -= 2;
@@ -181,7 +91,7 @@ etiquetas.addEventListener('keyup', (e) => {
             cont = 0;
         }
     }//if Enter 
-});
+}); */
 
 function validacionEtiquetas(){                             // Función encargada de validar cada caracter ingresado en la etiqueta
     console.log(etiquetas.value.charAt(cont));              // Impresión de cada caracter ingresado en la consola
@@ -210,16 +120,68 @@ function guardarEtiqueta(){                                 // Función encargad
     etiquetas.classList.add("is-valid");                    // Añadir la clase para validar el campo
 }
 
-
-let mainForm = document.getElementById("mainForm");
-mainForm.addEventListener('keydown', function (e){
-    console.log(e.key);
-    if(e.key == 'Enter'){
-        e.preventDefault();
-    }//if Enter 
+//EVENTO PARA EL INGRESO DEL LOS PRECIOS DE LOS PRODUCTOS
+precioProd.addEventListener("change", (evento_c)=>{
+    evento_c.preventDefault();
+        validacion_precioProd();
+        campo_precios = habilitar_boton();
 });
 
+//VALIDACIÓN PARA PRECIOS DEL PRODUCTO
+function validacion_precioProd(){
+    let precio = document.getElementById("precio");
+    let precioValor = precio.value;
+    console.dir(precio);
+    
+    let pattern = /^\d*(\.\d{1})?\d{0,1}$/ ; //valida hasta dos cifras con decimal
 
+    if(precioValor.match(pattern) )
+    {
+        precio.classList.remove("is-invalid");
+        precio.classList.add("is-valid");
+        console.log("El precio es válido");  
+        campo_precio = true; 
+    } else {
+        precio.classList.remove("is-valid");
+        precio.classList.add("is-invalid");
+        console.log("El precio es inválido");
+        campo_precio = false;
+    }
+    return campo_precio;
+};
+
+//EVENTO PARA EL INGRESO DEL LAS CARACTERISTICAS DE LOS PRODUCTOS
+let caracteristicas_contador = 0;
+let caracteristicas_restates = 150;
+let caracteristicas_mensaje = document.getElementById("letras_mensaje");
+caracteristicas_prod.addEventListener("input", (evento_c)=>{
+    evento_c.preventDefault();
+     campo_caracteres = validacion_caracteres();
+        caracteristicas_contador --;
+        caracteristicas_restates = 150 + caracteristicas_contador;
+        caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
+});
+
+//VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
+function  validacion_caracteres(){
+    let caracteres = document.getElementById("carecterísticas");
+    let caracteresValor = caracteres.value;
+    console.dir(caracteres);
+
+    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150))
+    {
+        caracteres.classList.remove("is-invalid"); 
+        caracteres.classList.add("is-valid");
+        console.log("Las caracteristicas son válidas"); 
+        campo_caracteres = true;  
+    } else {
+        caracteres.classList.remove("is-valid");
+        caracteres.classList.add("is-invalid")
+        console.log("Las caracteristicas son inválidas");
+        campo_caracteres = false;
+    }
+    return campo_caracteres;
+};
 
 //Validación de la imagen
 function ValidarImagen(obj){
@@ -232,22 +194,19 @@ function ValidarImagen(obj){
 
     if (!(/\.(jpg|jpeg|png|gif)$/i).test(uploadFile.name)) {
         swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
-       
     }
     
     else {
         let img = new Image();
         img.onload = function () {
-           
-            if (uploadFile.size > 500000)
-            {
+            if (uploadFile.size > 500000){
                 swal('El peso de la imagen no puede exceder los 5MB')
             }
-           
         };
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
+
 // Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -321,4 +280,83 @@ document.addEventListener('DOMContentLoaded', () => {
         // Proporciona la imagen cruda, sin editarla por ahora
         miNuevaImagenTemp.src = urlImage;
     }
+});
+
+// S T O C K 
+let stock = document.getElementById("stock");
+
+stock.addEventListener("input", (e_stock)=>{        // Se activa al ingresar valores en el input
+    e_stock.preventDefault();                       // En caso de error
+    
+    campo_stock = validacionStock(stock);           // Llama a la función para validar las etiquetas
+    habilitar_boton();
+});
+
+function validacionStock(stock){
+    if(stock.value > 0){
+        stock.classList.remove("is-invalid");
+        stock.classList.add("is-valid");
+        campo_stock = true;
+    } else {
+        stock.classList.remove("is-valid");
+        stock.classList.add("is-invalid");
+        campo_stock = false;
+    }
+    return campo_stock;
+}
+
+function habilitar_boton(){
+    if(campo_nombre && seleccionado && campo_precio && campo_caracteres && campo_stock){
+        creacion.disabled = false;
+    } else {
+        creacion.disabled = true;
+    }
+};
+
+let creacion_productos = [
+];
+
+
+creacion.addEventListener("click", (e_creacion)=>{        // Se activa al ingresar valores en el input
+    e_creacion.preventDefault();                       // En caso de error
+
+    let array_productos = {
+        "Nombre" : creacionProd.value,
+        "Categoria": seleccion.value,
+        "Etiquetas": arreglo_etiquetas,
+        "Precio": precioProd.value,
+        "Caracteristicas": caracteristicas_prod.value,
+        "Stock": stock.value
+    }
+
+    // Reestablecer todo
+    creacionProd.value = "";
+    seleccion.value = "";
+    arreglo_etiquetas = ["cerámica"];
+    precioProd.value = "";
+    caracteristicas_prod.value = "";
+    stock.value = "";
+    caracteristicas_contador = 0;
+    caracteristicas_restates = 150;
+    caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
+
+    creacionProd.classList.remove("is-valid");
+    creacionProd.classList.remove("is-invalid");
+    seleccion.classList.remove("is-valid");
+    seleccion.classList.remove("is-invalid");
+    etiquetas.classList.remove("is-valid");
+    etiquetas.classList.remove("is-invalid");
+    precioProd.classList.remove("is-valid");
+    precioProd.classList.remove("is-invalid");
+    caracteristicas_prod.classList.remove("is-valid");
+    caracteristicas_prod.classList.remove("is-invalid");
+    stock.classList.remove("is-valid");
+    stock.classList.remove("is-invalid");
+
+    creacion_productos.push(array_productos);
+    console.log(creacion_productos);
+
+    let jsonProducto = JSON.stringify(creacion_productos);
+    localStorage.setItem("productosRegistrados",jsonProducto);
+
 });
