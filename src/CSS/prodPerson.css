@@ -1,36 +1,309 @@
-#header{
-    text-align: center;
+/*GENERAL*/
+:root{
+    --font_base: "Roboto", sans-serif;
+    --gris_obscuro: #6B6A7A;
+    --gris_claro: #a5a5b1;
+    --beige: #EAE2D7;
+    --rosa: #ED959C;
+    --cafe_claro: #DFC9CB;
+    --azul_claro: #ECF7FB;
+    --lila: #D99BFF;
+
 }
-.card{
-    justify-content: space-around;
-    align-items: center;
+/*Navbar*/
+.navbar{
+    background-color: var(--gris_obscuro) ;
+    display: flex;
+    justify-content: space-between;
+
+  }
+.contactanos{
+    font-size: 22px;
+}
+ #logo{
+     margin-left: 50px;
+ }
+ .form-inline{
+     margin-left: 20px;
+ }
+ .collapse{
+    margin-left: 50px;
+ }
+ .iconos{
+    
+    margin-left: 100px; 
+    display: flex;
+    align-items: flex-end;
+ }
+ .inicio_sesion{
+     margin-right: 30px;
+ }
+ .carrito_compra{
+     margin-right: 30px;
+ }
+
+
+/* Padding general de la página */
+body{
+    
+    background-color: var(--cafe_claro);
+}
+/* media query para celular de navbar*/
+@media screen and (max-width: 600px){
+
+    .titulo_equipo{
+        
+        font-weight: normal;
+        font-size: 20px;
+    }
+    .texto_equipo{
+        font-size:15px;
+    }
+    #logo{
+        display:none;
+    /* width: 50px; height: 50px;
+     margin-left: 0px;*/
+    }
+    .barra_busqueda{
+     display: none;
+
+    }
+    .inicio_sesion{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        
+        display: flex;
+        align-items: flex-start;
+    }
+    .carrito_compra{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        
+        
+    }
+    .iconos{
+        display: flex;
+        flex-wrap: flex-start;
+        
+        
+    }
+    .text-muted{
+        font-weight: bold;
+        font-size: 10px;
+        
+    }
+    
+
 }
 
-.opciones{
-    padding-top: 14%;
-}
 
-#cuerpo{
-    background-image:url(./../img/dream-sky-677367\ 2.png);
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(./../img/person.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
+   /* background-color: var(--beige)*/
+    text-align: center;
+    color: var(--azul_claro);
+}
+.titulo_equipo{
+    font-weight: bolder;
+}
+.texto_equipo{
+    color:var(--azul_claro);
+    font-size: 30px;
 }
 
-@media screen and (max-width: 500px){
-    .prod-img{
-        width: 150px;
+.card{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden; /* Para que todo elemento que este fuera de la card se oculte*/
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+/*Para la sombra y el desplazamiento de la card*/
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+/*Para la imagen de la card*/
+.card img{
+    width: 100%;
+    height: 210px;
+}
+/*Para todo el contenido de la card*/
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+/*Para el párrafo de la card*/
+.card .contenido .p{
+    line-height: 1.5;
+    color: var(--gris_obscuro);
+}
+/*Para el título de la card*/
+.card .contenido h5{
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--gris_obscuro);
+    font-weight: bolder;
+}
+/*Para el botón de la card*/
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: var(--cafe_claro);
+ 
+}
+.contenido_card{
+    padding-left: 100px;
+    padding-bottom: 100px;
+}
+/*Cards*/
+.card{
+    width: 30%;
+}
+
+
+
+/*Footer*/
+
+.pie_pagina{
+    width: 100%;
+    background-color: black;
+}
+.pie_pagina .grupo_1{
+    width: 100%;
+    max-width: 1200px;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 20px 0px;
+}
+.pie_pagina .grupo_1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie_pagina .grupo_1 .box .btn-block{
+    border-radius: 400px;
+    background-color:#ED959C;
+}
+.pie_pagina .grupo_1 .box figure img{
+    width: 200px;
+}
+
+.pie_pagina .grupo_1 .box h4{
+    color:white;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+.pie_pagina .grupo_1 .box .btn{
+    color:white;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+.pie_pagina .grupo_1 .red_social a{
+    font-size: 40px;
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: black;
+    margin-right: 20px;
+    background-color: var(--cafe_claro);
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie_pagina .grupo_1 .red_social a:hover{
+     color:rgb(235, 164, 211);
+}
+.pie_pagina .grupo_2{
+    background-color: var(--cafe_claro);
+    padding: 15px 10px;
+    text-align: center;
+    color:black;
+}
+.pie_pagina .grupo_2 small{
+    font-size: 15px;
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.siguenos{
+    margin-right: 50px;
+}
+/*Media screen de celular*/
+@media screen and (max-width:600px){
+    .pie_pagina .grupo_1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 0px 0px;
     }
+    
+    .card{
+        max-width: 90%;
+    }
+    .contenedor_c{
+        padding: 0px;
+        margin: 30px;
+        
+       
+    }
+    .contenido_card{
+        padding: 0px; 
+       
+          
+    } 
     .card-body{
-        padding: 10px 0px 0px 0px;
         text-align: center;
+        
+        line-height:5px
+     
+        
+        
     }
-    .opciones{
-        text-align: center;
-        align-items: center;
+    .img-fluid{
+        max-block-size: 120px;
+    }
+    .card-body h5{
+        font-size: 10px;
+        
+    }
+    .card-body p{
+      font-size: 10px;
+    
     }
 
+
+}
+/*Media screen de tablet*/
+@media screen and (min-width:600px) and (max-width:800px)  {
+    
+    .card{
+        width: 40%;
+    }
+    
+    
+    
 }
 
 /*Resposive de tablet*/

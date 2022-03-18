@@ -121,7 +121,7 @@ body{
 
 }
 .boton_img:hover{
-    background-color: var(--cafe_claro)
+    background-color: #B52D2D;
 
 }
 
@@ -232,8 +232,12 @@ body{
     color: var(--gris_obscuro);
 }
 /*Boton card*/
-.color_boton{
+.btn-block{
     background-color: var(--rosa);
+    font-weight: bolder;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: center;
     font-weight: bolder;
 }
 

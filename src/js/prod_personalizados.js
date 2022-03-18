@@ -41,10 +41,69 @@ let productos_personalizados = [
         "Stock": "Disponible", 
         "Imagen": "./../src/img/florero_per.jpg" 
     },
+    {
+      "Nombre": "Platos",
+      "Características": "Platos chicos, diseño minimalista, ideales para la decoración de tu hogar",
+      "Material": "Cerámica",
+      "Precio": "$350 mxn",
+      "Stock": "Disponible", 
+      "Imagen": "./../src/img/platos.jpg" 
+  },
+  {
+    "Nombre": "Enamorados",
+    "Características": "Personaliza tus figuras, del tamaño y colores que más te agraden",
+    "Material": "Cerámica",
+    "Precio": "$450 mxn",
+    "Stock": "Disponible", 
+    "Imagen": "./../src/img/enamorados.jpg" 
+},
+{
+  "Nombre": "Escultura",
+  "Características": "Personaliza tus figuras, del tamaño y colores que más te agraden",
+  "Material": "Cerámica",
+  "Precio": "$450 mxn",
+  "Stock": "Disponible", 
+  "Imagen": "./../src/img/escultura_1.jpg" 
+},
+
+{
+  "Nombre": "Godete Ballena",
+  "Características": "Personaliza tus figuras, del tamaño y colores que más te agraden",
+  "Material": "Cerámica",
+  "Precio": "$450 mxn",
+  "Stock": "Disponible", 
+  "Imagen": "./../src/img/godete_ballena.jpeg" 
+}
+
+
+
 ];
 
 //let jsonProductosPerson= JSON.stringify(productos_personalizados);
 
+//CARD VERTICAL
+// Envío de los productos con sus propiedades a sus respectivas cards
+tarjeta = document.getElementById("plantilla2");                         // Obtener el elemento donde irá la plantilla
+productos_personalizados.forEach(element => {                                          // Recorrer el arreglo
+    tarjeta.innerHTML += `<div class="card">
+    <figure >
+      <img src=${element.Imagen}  alt="... class="img-fluid" ">
+    </figure>
+    <div>
+      <h5>${element.Nombre}</h5>
+      <p>${element.Stock}</p>
+      <p class="card-text"><small class="text-muted">${element.Precio}</small></p>
+        </div>`                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
+});
+
+
+
+
+
+
+
+
+/* CARD HORIZONTAL
 tarjeta = document.getElementById("plantilla2");                         // Obtener el elemento donde irá la plantilla
 productos_personalizados.forEach(element => {                                          // Recorrer el arreglo
     tarjeta.innerHTML += `<div class="card mb-3" style="max-width: 400px">
@@ -61,4 +120,4 @@ productos_personalizados.forEach(element => {                                   
       </div>
     </div>
   </div> `                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
-});
+});*/
