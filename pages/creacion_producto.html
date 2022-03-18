@@ -123,9 +123,9 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-              <div class="row">
-                <input type="number" class="form-control text_1" placeholder="0" id="stock">
-              </div>
+              <input type="number" class="form-control text_1" placeholder="0" id="stock">
+              <div class="valid-feedback">¡Stock establecido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">No se puede agregar si no existe en Stock</div>
             </div>
           </div>
         </form>
@@ -146,7 +146,7 @@
         <!-- Vista previa del recorte -->
         <canvas id="preview" class="img-fluid"></canvas>
         <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class="btn btn-danger mb-2 btn-block">Añadir producto</button>
+        <button class="btn btn-danger mb-2 btn-block" id = "boton_creacion" disabled>Añadir producto</button>
       </div>
 
     </div>
