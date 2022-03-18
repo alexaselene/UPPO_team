@@ -170,6 +170,24 @@ body{
 }
 
 
+a.button {
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ED959C;
+    color: white;
+    cursor: pointer; 
+    background: linear-gradient(to right, transparent 50%, #ED959C 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
+    text-decoration: none;
+}
+a.button:hover {
+    background-position: right;
+    color: white;
+    font-weight: 700;
+}
 
 /*Footer*/
 
