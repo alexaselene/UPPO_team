@@ -164,9 +164,9 @@ body{
     margin: 100px;
     background-color: #ebfafd9c;
     box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
-  
+  border-radius: 20px;
     padding: 30px;
-    border-radius: 20px;
+    
 
 }
 

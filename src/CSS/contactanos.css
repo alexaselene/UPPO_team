@@ -54,6 +54,7 @@
 }
 .titulo_equipo{
     font-weight: bolder;
+    letter-spacing: 30px;
 }
 .texto_equipo{
     color:var(--azul_claro);

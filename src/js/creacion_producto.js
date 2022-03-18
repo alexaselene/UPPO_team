@@ -184,20 +184,19 @@ function  validacion_caracteres(){
 };
 
 //Validación de la imagen
-function ValidarImagen(obj){
-    let uploadFile = obj.files[0];
-    
+function validarImagen(obj){
+    var uploadFile = obj.files[0];
+
     if (!window.FileReader) {
         swal('El navegador no soporta la lectura de archivos');
         return;
     }
 
-    if (!(/\.(jpg|jpeg|png|gif)$/i).test(uploadFile.name)) {
+    if (!(/\.(jpeg|jpg|png)$/i).test(uploadFile.name)) {
         swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
     }
-    
     else {
-        let img = new Image();
+        var img = new Image();
         img.onload = function () {
             if (uploadFile.size > 500000){
                 swal('El peso de la imagen no puede exceder los 5MB')
@@ -215,8 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nodo donde estará el editor
     const editor = document.querySelector('#editor');
     // El canvas donde se mostrará la previa
-    const miCanvas = document.querySelector('#preview');
-    // Contexto del canvas
+    const miCanvas = docum0
+1    // Contexto del canvas
     const contexto = miCanvas.getContext('2d');
     // Ruta de la imagen seleccionada
     let urlImage = undefined;
