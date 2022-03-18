@@ -48,10 +48,60 @@ let productos= [
         "Stock": "Disponible" ,
         "Imagen": "./../src/img/taza_colibri.png"
     },
+
+    {
+      "Nombre": "Baby Yoda",
+      "Caracteristicas": "Taza color beige, diseño minimalista,  tamaño mediano",
+      "Material": "Cerámica",
+      "Precio": "$200 mxn",
+      "Stock": "Disponible" ,
+      "Imagen": "./../src/img/taza_yoda.jpg"
+  },
+
+  {
+    "Nombre": "Para músicos",
+    "Caracteristicas": "Taza color beige, estampado con instrumento músical,  tamaño mediano",
+    "Material": "Cerámica",
+    "Precio": "$200 mxn",
+    "Stock": "Disponible" ,
+    "Imagen": "./../src/img/musica.jpg"
+},
+{
+  "Nombre": "Personalizada",
+  "Caracteristicas": "Color personalizado, elige el nombre que quieras,  tamaño mediano",
+  "Material": "Cerámica",
+  "Precio": "$200 mxn",
+  "Stock": "Disponible" ,
+  "Imagen": "./../src/img/eduardo.jpg"
+}
+
+
+
 ];
 
 //let jsonProductos= JSON.stringify(productos);
 
+//CARD VERTICAL
+// Envío de los productos con sus propiedades a sus respectivas cards
+tarjeta = document.getElementById("plantilla");                         // Obtener el elemento donde irá la plantilla
+productos.forEach(element => {                                          // Recorrer el arreglo
+    tarjeta.innerHTML += `<div class="card">
+    <figure >
+      <img src=${element.Imagen}  alt="... class="img-fluid"">
+    </figure>
+    <div class="card-body">
+      <h5 class="card-title">${element.Nombre}</h5>
+      <p class="card-text">${element.Stock}</p>
+      <p class="card-text"><small class="text-muted">${element.Precio}</small></p>
+    </div>
+`                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
+});
+
+
+
+
+
+/* CARD HORIZONTAL
 // Envío de los productos con sus propiedades a sus respectivas cards
 tarjeta = document.getElementById("plantilla");                         // Obtener el elemento donde irá la plantilla
 productos.forEach(element => {                                          // Recorrer el arreglo
@@ -69,4 +119,4 @@ productos.forEach(element => {                                          // Recor
       </div>
     </div>
   </div> `                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
-});
+});*/

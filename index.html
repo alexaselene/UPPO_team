@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="stylesheet" href="./src/CSS/index.css">
-  <title>Home</title>
+  <link rel="shortcut icon" href="./src/img/logo_maria-removebg-preview (1).png">
+  <title>Inicio</title>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-white contactanos" href="./index.html">Home<span class="sr-only">(current)</span></a>
+                  <a class="nav-link text-white contactanos" href="./index.html">Inicio<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -32,7 +33,7 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./pages/productos.html">Productos</a>
-                    <a class="dropdown-item" href="./pages/cursos.html">Cursos</a>
+                    <a class="dropdown-item" href="./pages/cursos.html">Talleres</a>
                     <a class="dropdown-item" href="./pages/prodPerson.html">Productos Personalizados</a>
                   </div>
                 </li>
@@ -41,9 +42,9 @@
                     Contáctanos
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./pages/mariaharo.html">Acerca de Maria haro Ceramica </a>
+                    <a class="dropdown-item" href="./pages/mariaharo.html">Acerca de María Haro Cerámica </a>
                     <a class="dropdown-item" href="./pages/about_us.html">Acerca de UPPO-Team</a>
-                    
+                    <a class="dropdown-item" href="./pages/contactanos.html">Escríbenos</a>
                   </div>
                 </li>
                </ul>
@@ -53,7 +54,7 @@
             <!--Barra de Busqueda-->
                <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
                 <form class="w-50 me-3 barra_busqueda">
-                <input class="form-control mr-sm-2" type="search" placeholder="🔍  Encuentra la magia " aria-label="Search"> 
+                <input class="form-control mr-sm-2 busqueda" type="search" icon placeholder="Encuentra la magia" aria-label="Search"> 
                 </form>
              <!--Iconos de usuario y compras hay que agregarles el link-->
              <div class="iconos">
@@ -68,27 +69,27 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./src/img/plato_mh.jpg" class="d-block w-100" alt="Plato de María Haro">
+        <img src="./src/img/1.png" class="d-block w-100" alt="" width="1080px" height="450px">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Bienvenidos</h5>
-          <p>realiza tu pedido antes del 21 de Marzo y obten el envio gratis</p>
-          <a href="#" type="button">Agregar al Carrito</a>
+        <!--  <h1>Bienvenidos</h1>
+          <p>Realiza tu pedido antes del 21 de Marzo y obten el envio gratis</p>
+          <a href="./pages/prodPerson.html" class="button">Más Productos Bonitos</a>-->
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./src/img/dibujo_plato.jpg" class="d-block w-100" alt="Taza con nombre de Luis">
+        <img src="./src/img/2.png" class="d-block w-100" alt="" width="1080px" height="450px">
         <div class="carousel-caption d-none d-md-block">
-          <h5>segunda imagen</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-          <a href="#" type="button">Agregar al Carrito</a>
+        <!--  <h1>Ofertas y Rebajas</h1>
+          <p>Conoce nuestros productos</p>
+          <a href="./pages/productos.html" class="button">Realiza tu pedido aquí</a>-->
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./src/img/dibujo_taza.jpg" class="d-block w-100" alt="Taza con nombre de Diego">
+        <img src="./src/img/3.png" class="d-block w-100" alt="" width="1080px" height="450px">
         <div class="carousel-caption d-none d-md-block">
-          <h5>tercera imagen</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-          <a href="#" type="button">Agregar al Carrito</a>
+        <!--  <h1>Pedidos de magia aquí</h1>
+          <p>No dejes pasar la oportunidad de regalar amor pica el boton y obten mas información</p>
+          <a href="./pages/productos.html" class="button">Realiza tu pedido aquí</a>-->
         </div>
       </div>
     </div>
@@ -107,107 +108,25 @@
 
  
   <!--PRIMERA SECCION DE CARDS-->
+  
 
-  <!-- Tarjetas de inicio-->
-  
-  <h1 class="titulo_cursos_productos">Cursos destacados</h1>
-  <div class="container">
-    <!--Card 1-->
-    <div class="card">
-      <figure >
-        <img src="./src/img/taza_leon.jpg" alt="Taller de tazas" height="600px" width="600px">
-      </figure>
-      <div class="contenido">
-        <h5>Taller de tazas</h5>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" type="button">Elegir</a>
-      </div><!--contenido-->
-    </div> <!--card-->
-    <!--Card 2-->
-    <div class="card">
-      <figure >
-        <img src="./src/img/figura_mascota.jpg" alt="Taller de figura de mascota" height="600px" width="600px">
-      </figure>
-      <div class="contenido">
-        <h5>Taller de figura de mascota</h5>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" type="button">Elegir</a>
-      </div><!--contenido-->
-    </div> <!--card-->
-    <!--Card 3-->
-    <div class="card">
-      <figure >
-        <img src="./src/img/florero.jpg" alt="Taller de floreros" height="600px" width="600px">
-      </figure>
-      <div class="contenido">
-        <h5>Taller de floreros</h5>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" type="button">Elegir</a>
-      </div><!--contenido-->
-    </div> <!--card-->
-    <!--Card 4-->
-    <div class="card">
-      <figure >
-        <img src="./src/img/porta_lapices.jpg" alt="Taller de porta lápices" height="600px" width="600px">
-      </figure>
-      <div class="contenido">
-        <h5>Taller de porta lápices</h5>
-        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" type="button">Elegir</a>
-      </div><!--contenido-->
-    </div> <!--card-->
-  </div> <!--container-->
-  
+  <!-- Tarjetas de inicio
+   <h1 class="titulo_cursos_productos">Taller de Ceramica</h1>
+   <img src="./src/img/taller.jpeg">-->
 
     <!--SEGUNDA SECCION DE CARDS-->
 
 
-    <h1 class="titulo_cursos_productos">Productos destacados</h1>
-    <div class="container">
-      <!--Card 1-->
-      <div class="card">
-        <figure >
-          <img src="./src/img/tarza_diego.jpg" alt="Taza de diego" height="600px" width="600px">
-        </figure>
-        <div class="contenido">
-          <h5>Taza personalizada</h5>
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" type="button">Elegir</a>
-        </div><!--contenido-->
-      </div> <!--card-->
-      <!--Card 2-->
-      <div class="card">
-        <figure >
-          <img src="./src/img/taza_perro.jpg" alt="Taza de figura de mascota" height="600px" width="600px">
-        </figure>
-        <div class="contenido">
-          <h5>Taza de figura de mascota</h5>
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" type="button">Elegir</a>
-        </div><!--contenido-->
-      </div> <!--card-->
-      <!--Card 3-->
-      <div class="card">
-        <figure >
-          <img src="./src/img/taza_yoda.jpg" alt="Taza de yoda" height="600px" width="600px">
-        </figure>
-        <div class="contenido">
-          <h5>Taza de yoda</h5>
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" type="button">Elegir</a>
-        </div><!--contenido-->
-      </div> <!--card-->
-      <!--Card 4-->
-      <div class="card">
-        <figure >
-          <img src="./src/img/taza_abstracta.jpg" alt="Taza abstracta" height="600px" width="600px">
-        </figure>
-        <div class="contenido">
-          <h5>Taza con diseño abstracto</h5>
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" type="button">Elegir</a>
-        </div><!--contenido-->
-      </div> <!--card-->
+    <h1 class="titulo_cursos_productos">Productos personalizados</h1>
+    <div class="container" id="pp_producto">
+      
+    </div> <!--container-->
+    
+    
+    
+    <h1 class="titulo_cursos_productos">Productos</h1>
+    <div class="container" id="p_producto">
+      
     </div> <!--container-->
 
 
@@ -218,27 +137,26 @@
     <div class="grupo_1">
       <div class="box primero">
         <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
-        <button type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</button>
+        <a href="./pages/contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</a>
       </div>
 
       <div class="box">
         <figure>
-          <a href="#">
             <img src="./src/img/logo_maria-removebg-preview (1).png">
           </a>
         </figure>
       </div>
 
       <div class="box redes">
-        <h5 class="text-white siguenos">SIGUENOS</h5>
+        <h5 class="text-white siguenos">SÍGUENOS</h5>
         <div class="red_social">
-          <a href="" class="fa fa-facebook"></a>
-          <a href="" class="fa fa-instagram"></a>
+          <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
         </div>
       </div>
     </div>
     <div class="grupo_2">
-      <small>Copyright © 2022 María Haro Cerámica All Rights Reserved</small>
+      <small>Copyright © 2022 María Haro Cerámica. Todos los derechos reservados</small>
 
     </div>
   </footer>
@@ -251,7 +169,7 @@
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
-
+  <script src="./src/js/main.js"></script>
 </body>
 
 </html>

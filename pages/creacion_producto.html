@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link text-white contactanos" href="../index.html">Home<span
+              <a class="nav-link text-white contactanos" href="../index.html">Inicio<span
                   class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
@@ -39,7 +39,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="../pages/productos.html">Productos</a>
-                <a class="dropdown-item" href="../pages/cursos.html">Cursos</a>
+                <a class="dropdown-item" href="../pages/cursos.html">Talleres</a>
                 <a class="dropdown-item" href="../pages/prodPerson.html">Productos Personalizados</a>
               </div>
             </li>
@@ -49,8 +49,9 @@
                 Contáctanos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de Maria haro Ceramica </a>
+                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de María Haro Cerámica</a>
                 <a class="dropdown-item" href="../pages/about_us.html">Acerca de UPPO-Team</a>
+                <a class="dropdown-item" href="../pages/contactanos.html">Escríbenos</a>
 
               </div>
             </li>
@@ -61,7 +62,7 @@
       <!--Barra de Busqueda-->
       <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
       <form class="w-50 me-3 barra_busqueda">
-        <input class="form-control mr-sm-2" type="search" placeholder="🔍  Encuentra la magia " aria-label="Search">
+        <input class="form-control mr-sm-2 busqueda" type="search" placeholder="Encuentra la magia " aria-label="Search">
       </form>
       <!--Iconos de usuario y compras hay que agregarles el link-->
       <div class="iconos">
@@ -123,9 +124,9 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-              <div class="row">
-                <input type="number" class="form-control text_1" placeholder="0" id="stock">
-              </div>
+              <input type="number" class="form-control text_1" placeholder="0" id="stock">
+              <div class="valid-feedback">¡Stock establecido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">No se puede agregar si no existe en Stock</div>
             </div>
           </div>
         </form>
@@ -146,7 +147,7 @@
         <!-- Vista previa del recorte -->
         <canvas id="preview" class="img-fluid"></canvas>
         <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class="btn btn-danger mb-2 btn-block">Añadir producto</button>
+        <button class="btn btn-danger mb-2 btn-block" id = "boton_creacion" disabled>Añadir producto</button>
       </div>
 
     </div>
@@ -157,27 +158,27 @@
     <div class="grupo_1">
       <div class="box primero">
         <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
-        <button type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</button>
+        <a href="./contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</a>
       </div>
 
       <div class="box">
         <figure>
-          <a href="#">
+         
             <img src="./../src/img/logo_maria-removebg-preview (1).png">
-          </a>
+        
         </figure>
       </div>
 
       <div class="box redes">
-        <h5 class="text-white siguenos">SIGUENOS</h5>
+        <h5 class="text-white siguenos">SÍGUENOS</h5>
         <div class="red_social">
-          <a href="" class="fa fa-facebook"></a>
-          <a href="" class="fa fa-instagram"></a>
+          <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
         </div>
       </div>
     </div>
     <div class="grupo_2">
-      <small>Copyright © 2022 María Haro Cerámica All Rights Reserved</small>
+      <small>Copyright © 2022 María Haro Cerámica. Todos los derechos reservados</small>
 
     </div>
   </footer>

@@ -42,6 +42,17 @@
      margin-right: 30px;
  }
 
+ .busqueda{
+    background-image: url("./../img/bi_search-heart.png");
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: 4%;
+    background-blend-mode: hard-light;
+    background-color: rgb(231, 211, 214);
+    padding-left: 8%;
+    border-color: rgb(231, 211, 214);
+ }
+
 
 /* Padding general de la página */
 body{
@@ -109,6 +120,7 @@ body{
 }
 .titulo_equipo{
     font-weight: bolder;
+    letter-spacing: 30px;
 }
 .texto_equipo{
     color:var(--azul_claro);
@@ -124,6 +136,7 @@ body{
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
     cursor: default;
     transition: all 400ms ease;
+   
 }
 /*Para la sombra y el desplazamiento de la card*/
 .card:hover{
@@ -139,6 +152,7 @@ body{
 .card .contenido{
     padding: 15px;
     text-align: center;
+    
 }
 /*Para el párrafo de la card*/
 .card .contenido .p{
@@ -167,10 +181,12 @@ body{
 .contenido_card{
     padding-left: 100px;
     padding-bottom: 100px;
+    
 }
 /*Cards*/
 .card{
     width: 30%;
+    
 }
 
 
