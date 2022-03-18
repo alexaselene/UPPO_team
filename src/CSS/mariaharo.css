@@ -41,6 +41,21 @@
  .carrito_compra{
      margin-right: 30px;
  }
+ .card-text{
+     color: var(--gris_obscuro);
+ }
+
+ .busqueda{
+    background-image: url("./../img/bi_search-heart.png");
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: 4%;
+    background-blend-mode: hard-light;
+    background-color: rgb(231, 211, 214);
+    padding-left: 8%;
+    border-color: rgb(231, 211, 214);
+ }
+
 
 
 /* Padding general de la página */
@@ -97,13 +112,34 @@ body{
 }
 
 /*Jumbotron*/
-.jumbotron{
+/*.jumbotron{
     background-image: url(./../img/color_pastel.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     opacity: 0.5;
+    display: flex;
+
+}*/
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(./../img//cenicero.jpeg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+   /* background-color: var(--beige)*/
+    text-align: center;
+    color: var(--azul_claro);
 }
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 30px;
+}
+.texto_equipo{
+    color:var(--gris_obscuro);
+    font-size: 30px;
+}
+
 /*Título*/
 /*.titulo_qsomos{
 
@@ -113,7 +149,7 @@ body{
     color: var(--gris_obscuro);
 
 }*/
-/* Arreglo de las imagenes*/
+/*Arreglo de las imagenes*/
 
 .container{
     width: 100%;
@@ -142,10 +178,19 @@ body{
    margin-right: 100px;
    height: 300px;
    background-color: var(--azul_claro);
+   background-color: #ebfafd9c;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
    
 }
 .marcela{
+    margin-right: 100px;
+    height: 300px;
     background-color: var(--azul_claro);
+    background-color: #ebfafd9c;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
 }
 /*Títuli de las cards*/
 .maria h5{
@@ -320,9 +365,18 @@ body{
 @media screen and (max-width:800px){ 
     .barra_busqueda{
         display: none;
-   
        }
     #logo{
         display:none;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+    .marcela{
+        height: 250px;
+    }
+    .maria{
+        height: 250px;
     }
 }
