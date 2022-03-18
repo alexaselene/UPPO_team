@@ -118,6 +118,11 @@ body{
 .boton_img{
     width: 30px;
     border-radius: 15%;
+
+}
+.boton_img:hover{
+    background-color: var(--cafe_claro)
+
 }
 
 /* Media queery de la tablet */ 
@@ -375,5 +380,20 @@ body{
     }
 }
 
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}
 
+.btn-block{
 
+    background-color:#ED959C;
+    border-color: #ED959C;
+    color:white;
+}

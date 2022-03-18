@@ -1,0 +1,45 @@
+#header{
+    text-align: center;
+}
+.card{
+    justify-content: space-around;
+    align-items: center;
+}
+
+.opciones{
+    padding-top: 14%;
+}
+
+#cuerpo{
+    background-image:url(./../img/dream-sky-677367\ 2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+@media screen and (max-width: 500px){
+    .prod-img{
+        width: 150px;
+    }
+    .card-body{
+        padding: 10px 0px 0px 0px;
+        text-align: center;
+    }
+    .opciones{
+        text-align: center;
+        align-items: center;
+    }
+
+}
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}

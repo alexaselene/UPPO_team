@@ -144,7 +144,9 @@ body{
     background-color: var(--beige);
 }
 
-
+.caracteres{
+    text-align: right;
+}
 
 
 
@@ -344,6 +346,15 @@ body{
     }
 }
 
-
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}
 
 

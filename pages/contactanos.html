@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white contactanos" href="../index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white contactanos" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -36,7 +36,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../pages/productos.html">Productos</a>
-              <a class="dropdown-item" href="../pages/cursos.html">Cursos</a>
+              <a class="dropdown-item" href="../pages/cursos.html">Talleres</a>
               <a class="dropdown-item" href="../pages/prodPerson.html">Productos Personalizados</a>
             </div>
           </li>
@@ -78,20 +78,32 @@
     <div class="container beige">
       <div class="row">
         <div class="col-md-7 col-sm-8 col-7">
-          <form class="form-group ">
+          <form class="form-group">
             <div class="contenedor_i">
               <small id="" class="form-text text-muted datos_contactanos">¿Cuál es tu nombre?</small>
-              <div class="container_1 "><input type="text" class="form-control  img_nombre text_1" placeholder="Nombre"
-                  id="nombre"></div>
-              <small id="" class="form-text text-muted datos_contactanos">Compartenos tu correo:</small>
-              <div class="container_1 "><input type="text" class="form-control img_email text_1"
-                  placeholder="Correo Electrónico" id="email"></div>
+              <div class="container_1 ">
+                <input type="text" class="form-control  img_nombre text_1" placeholder="Nombre" id="nombre">
+                <div class="valid-feedback">¡El nombre ingresado es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">Debes ingresar nombre y apellido</div>
+              </div>
+                <small id="" class="form-text text-muted datos_contactanos">Compartenos tu correo:</small>
+              <div class="container_1 ">
+                <input type="text" class="form-control img_email text_1" placeholder="Correo Electrónico" id="email">
+                <div class="valid-feedback">¡El correo electrónico es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">Tu correo electrónico es inválido</div>
+              </div>
               <small id="" class="form-text text-muted datos_contactanos">Y algún número de teléfono:</small>
-              <div class="container_1 "><input type="number" class="form-control img_telefono text_1"
-                  placeholder="Teléfono" id="telefono"></div>
+              <div class="container_1 "><input type="number" class="form-control img_telefono text_1" placeholder="Teléfono" id="telefono">
+                <div class="valid-feedback">¡El teléfono es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡El teléfono es inválido!</div>
+              </div>
               <small id="" class="form-text text-muted datos_contactanos">Dinos lo que gustes, lo leeremos:</small>
-              <div class="container_1 "><textarea type="text" class="form-control img_mensaje text_1"
-                  placeholder="Mensaje" id="mensaje" rows="1"></textarea></div>
+              <div class="container_1 ">
+                <input type="text" class="form-control img_mensaje text_1" placeholder="Mensaje" id="mensaje" rows="1"></input>
+                <div class = "text-muted caracteres" id = "caracteres_mensaje">0 - 150 caracteres</div>
+                <div class = "valid-feedback">¡El mensaje es válido!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">¡Sobrepasaste el límite de caracteres!</div>
+              </div>
               <p id="guardaremos" class="form-text ">No compartiremos tus datos con nadie.</p>
             </div>
           </form>
@@ -99,7 +111,7 @@
 
         <div class="col-md-5 col-sm-4 col-5 acuarela">
           <img src="./../src/img/Acuarela.PNG" class=" container_2 img-fluid">
-          <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto">Contáctanos</button>
+          <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto" disabled>Contáctanos</button>
         </div>
       </div>
     </div>
@@ -109,27 +121,28 @@
       <div class="grupo_1">
         <div class="box primero">
          <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
-         <button type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</button> 
+         <a href="./contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</a>
         </div> 
 
         <div class="box">
           <figure>
-            <a href="#">
+            
               <img src="./../src/img/logo_maria-removebg-preview (1).png">
-            </a>
+           
           </figure>
         </div>
 
         <div class="box redes">
           <h5 class="text-white siguenos">SIGUENOS</h5>
           <div class="red_social">
-          <a href="" class="fa fa-facebook"></a>
-          <a href="" class="fa fa-instagram"></a>
+            <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
           </div>
         </div>
       </div>
       <div class="grupo_2">
         <small>Copyright © 2022 María Haro Cerámica All Rights Reserved</small>
+  
       </div>
     </footer>
 
@@ -142,7 +155,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"></script>
-    <script src="./validaciones.js"></script>
+    <script src="./../src/js/validaciones_contactanos.js"></script>
     <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
   </body>
 
