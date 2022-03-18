@@ -226,13 +226,13 @@ function ValidarImagen(obj){
     let uploadFile = obj.files[0];
     
     if (!window.FileReader) {
-        alert('El navegador no soporta la lectura de archivos');
+        swal('El navegador no soporta la lectura de archivos');
         return;
     }
 
     if (!(/\.(jpg|jpeg|png|gif)$/i).test(uploadFile.name)) {
-        alert('Selecciona una imagen para la foto del producto.' + "\n" +
-        'Pueden ser: jpg, jpeg y png.');
+        swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
+       
     }
     
     else {
@@ -241,14 +241,14 @@ function ValidarImagen(obj){
            
             if (uploadFile.size > 500000)
             {
-                alert('El peso de la imagen no puede exceder los 5MB')
+                swal('El peso de la imagen no puede exceder los 5MB')
             }
            
         };
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
-// Recorte de la imagen
+// Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
     // Input File
@@ -322,4 +322,3 @@ document.addEventListener('DOMContentLoaded', () => {
         miNuevaImagenTemp.src = urlImage;
     }
 });
-
