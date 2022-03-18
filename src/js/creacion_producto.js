@@ -222,32 +222,35 @@ mainForm.addEventListener('keydown', function (e){
 
 
 //Validación de la imagen
-function ValidarImagen(obj){
-    let uploadFile = obj.files[0];
-    
+function validarImagen(obj){
+    var uploadFile = obj.files[0];
+
     if (!window.FileReader) {
         swal('El navegador no soporta la lectura de archivos');
         return;
     }
 
-    if (!(/\.(jpg|jpeg|png|gif)$/i).test(uploadFile.name)) {
+    if (!(/\.(jpeg|jpg|png)$/i).test(uploadFile.name)) {
         swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
-       
     }
-    
     else {
-        let img = new Image();
+        var img = new Image();
         img.onload = function () {
-           
+            if (this.width.toFixed(0) != 200 && this.height.toFixed(0) != 200) {
+                alert('Las medidas deben ser: 200 * 200');
+            }
             if (uploadFile.size > 500000)
             {
-                swal('El peso de la imagen no puede exceder los 5MB')
+                swal('El peso de la imagen no puede exceder los 5MB');
             }
-           
+            else {
+                swal('Seleccionaste la imagen correcta','','success');               
+            }
         };
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
+
 // Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
