@@ -100,14 +100,14 @@ let productos= [
         "Stock": "Disponible",
         "Imagen": "./../src/img/taza_abstracta.jpg"
     },
-    {
+    /*{
         "Nombre": "Colibrí",
         "Caracteristicas": "Taza color blanco con asa color rosa, diseño minimalista,  tamaño mediano",
         "Material": "Cerámica",
         "Precio": "$200 mxn",
         "Stock": "Disponible" ,
         "Imagen": "./../src/img/taza_colibri.png"
-    },
+    },*/
 ];
 tarjeta_p = document.getElementById("p_producto");                         // Obtener el elemento donde irá la plantilla
 productos.forEach(elementp => {                                          // Recorrer el arreglo
