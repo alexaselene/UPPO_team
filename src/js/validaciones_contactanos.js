@@ -40,13 +40,11 @@ ingreso_mensaje.addEventListener("change",(evento_m)=>{     // Se activa al pres
     activacion(val_n, val_e, val_t, val_tx);                // Llamar a la función que activará el botón en caso de que todos los campos se validen    
 });
 
-let cont_caracteres = 0;                                                // Inicialización del contador de caracteres del campo de mensaje
 let caracteres_mensaje = document.getElementById("caracteres_mensaje"); // Espacio donde se imprimen los caracteres restantes
+
 ingreso_mensaje.addEventListener("input",(evento_c)=>{                  // Se activa cada que el campo del mensaje se ve modificado
     evento_c.preventDefault;                                            // En caso de error
-    cont_caracteres++;                                                  // Aumento del contador de caracteres
-    let carecteres_restantes = 150 - cont_caracteres;                   // Obtener caracteres restantes
-    caracteres_mensaje.textContent = `${carecteres_restantes}`;         // Imprimir en el espacio de texto los caracteres restantes
+    caracteres_mensaje.textContent =  150 - mensaje.value.length;              // Imprimir en el espacio de texto los caracteres restantes
 });
 
 // FUNCIONES DE VALIDACIÓN
@@ -54,8 +52,10 @@ ingreso_mensaje.addEventListener("input",(evento_c)=>{                  // Se ac
 function validacion_name(nombre){                               // La función recibe el elemento input correspondiente al nombre
     let nombreValor = nombre.value;                             // Obtener el valor del input de nombre
     let pattern_n =  /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/;                   // Definir un patrón
-    
-    if(nombreValor.length >= 5 && nombreValor.match(pattern_n)){// Evaluar la longitud del valor ingresado y compararlo con el patrón
+    let pattern_n3 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
+    let pattern_n4 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
+
+    if(nombreValor.length >= 5 && ((nombreValor.match(pattern_n)) || (nombreValor.match(pattern_n3)) || (nombreValor.match(pattern_n4)))){// Evaluar la longitud del valor ingresado y compararlo con el patrón
         nombre.classList.remove("is-invalid");                  // Remover la clase para invalidar el campo
         nombre.classList.add("is-valid");                       // Añadir la clase para validar el campo
         val_n = true;                                           // Asignar verdadero al valor del booleano de validación
@@ -70,7 +70,7 @@ function validacion_name(nombre){                               // La función r
   
 // Email
 function validacion_email(mail){                                // La función recibe el elemento input correspondiente al email
-    let pattern= /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/; // Definir un patrón
+    let pattern = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;// Definir un patrón
     
     if(mail.value.match(pattern)){                              // Comparar el valor ingresado con el patrón
         mail.classList.remove("is-invalid");                    // Remover la clase para invalidar el campo
@@ -105,7 +105,9 @@ function validacion_tel(telefono){
 // Mensaje 
 function validacion_texto(mensaje){
     let mensajeValor = mensaje.value;                                   // Obtener el valor del campo de mensaje
-    if ((mensajeValor.length >= 1) && (mensajeValor.length <= 150) ){   // Evaluar la longitud del valor ingresado
+    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0030-\u0039]+$/;
+
+    if ((mensajeValor.length >= 1) && (mensajeValor.length <= 150) && (mensajeValor.match(pattern_m))){   // Evaluar la longitud del valor ingresado
         mensaje.classList.remove("is-invalid");                         // Remover la clase para invalidar el campo
         mensaje.classList.add("is-valid");                              // Añadir la clase para validar el campo      
         val_tx = true;                                                  // Asignar verdadero el valor del booleano de validación
@@ -175,8 +177,7 @@ contactanos.addEventListener("click",(evento)=>{    // Se activa al presionar el
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'Ok.'
         });             
-    }                        // En caso de error
-    envio(ingreso_nombre.value, ingreso_telefono.value, ingreso_mensaje.value);       
+    }                        // En caso de error     
 });
 
 // Función para el envío de información al correo electrónico

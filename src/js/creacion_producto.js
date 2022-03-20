@@ -151,15 +151,11 @@ function validacion_precioProd(){
 };
 
 //EVENTO PARA EL INGRESO DEL LAS CARACTERISTICAS DE LOS PRODUCTOS
-let caracteristicas_contador = 0;
-let caracteristicas_restates = 150;
 let caracteristicas_mensaje = document.getElementById("letras_mensaje");
 caracteristicas_prod.addEventListener("input", (evento_c)=>{
     evento_c.preventDefault();
      campo_caracteres = validacion_caracteres();
-        caracteristicas_contador --;
-        caracteristicas_restates = 150 + caracteristicas_contador;
-        caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
+        caracteristicas_mensaje.textContent = 150 - caracteristicas_prod.value.length;
 });
 
 //VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
@@ -167,8 +163,9 @@ function  validacion_caracteres(){
     let caracteres = document.getElementById("carecterísticas");
     let caracteresValor = caracteres.value;
     console.dir(caracteres);
+    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0020\u0030-\u0039]+$/;
 
-    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150))
+    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150) && (caracteresValor.match(pattern_m)))
     {
         caracteres.classList.remove("is-invalid"); 
         caracteres.classList.add("is-valid");
