@@ -141,21 +141,33 @@
 
 
       <div class="col-md-6 col-sm-4 col-5">
-        <h5>Carga la imagen del producto</h5>
-        <!--Titulo de carga de la imagen-->
+        <h1>1 Introduce tu imagen</h1>
         <!-- Input file donde se adjunta la imagen -->
-        <input type="file" id="image" class="img-fluid" name="file" onchange="ValidarImagen(this);" />
-        <h5>Recorta la imagen del producto</h5>
-        <!--Titulo del recorte de la imagen-->
+        <input type="file" name="file" onchange="ValidarImagen(this);" id="image">
+        
+        
+        <h1>2 Recorta</h1>
         <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
         <div id="editor"></div>
-        <h5>Así se verá la imagen:</h5>
-        <!--Titulo de la imagen recortada-->
-        <!-- Vista previa del recorte -->
-        <canvas id="preview" class="img-fluid"></canvas>
+        
+        <h1>3 Previsualiza el resultado</h1>
+        <!-- Previa del recorte -->
+        <canvas id="preview"></canvas>
+        
+      
+  
+  
         <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
         <button class="btn btn-danger mb-2 btn-block" id ="boton_creacion">Añadir producto</button>
+
+        
       </div>
+
+
+
+
+
+
 
     </div>
   </div>

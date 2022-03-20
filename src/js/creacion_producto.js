@@ -181,28 +181,31 @@ function  validacion_caracteres(){
 };
 
 //Validación de la imagen
-function validarImagen(obj){
+function ValidarImagen(obj){
     var uploadFile = obj.files[0];
-
+    
     if (!window.FileReader) {
         swal('El navegador no soporta la lectura de archivos');
         return;
     }
 
-    if (!(/\.(jpeg|jpg|png)$/i).test(uploadFile.name)) {
+    if (!(/\.(jpg|png|jpeg)$/i).test(uploadFile.name)) {
         swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
     }
     else {
         var img = new Image();
-        img.onload = function () {
-            if (uploadFile.size > 500000){
+        img.onload = function () 
+        { if (uploadFile.size > 500000)
+            {
                 swal('El peso de la imagen no puede exceder los 5MB')
+            }
+            else {
+                swal('Haz seleccionado la imagen correcta', '', 'success')         
             }
         };
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
-
 // Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -211,8 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nodo donde estará el editor
     const editor = document.querySelector('#editor');
     // El canvas donde se mostrará la previa
-    const miCanvas = docum0
-1    // Contexto del canvas
+    const miCanvas = document.querySelector('#preview');
+    // Contexto del canvas
     const contexto = miCanvas.getContext('2d');
     // Ruta de la imagen seleccionada
     let urlImage = undefined;
@@ -277,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         miNuevaImagenTemp.src = urlImage;
     }
 });
+
 
 // S T O C K 
 let stock = document.getElementById("stock");
