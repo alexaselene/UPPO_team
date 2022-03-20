@@ -155,6 +155,11 @@ body{
     }
 
 }
+/*letra del formulario */
+.descripcion{
+    font-size: 30px;
+    font-weight: bolder;
+}
 
 /* media query para celular*/
 @media screen and (max-width: 600px){
