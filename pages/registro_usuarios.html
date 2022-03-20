@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carga de productos</title>
+  <title>Registro</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="stylesheet" href="./../src/CSS/creacion_producto.css">
-  <!--Recorte de imagen-->
-  <link href="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.css" rel="stylesheet" />
+    <!--Link CSS-->
+  <link rel="stylesheet" href="./../src/CSS/registro_usuarios.css">
 </head>
 
 <body>
@@ -74,8 +73,8 @@
   <!--Jumbotron-->
   <div class="jumbotron jumbotron-fluid">
     <div class="container desaparece">
-      <h1 class="display-4 titulo_equipo">Carga de productos</h1>
-      <p class="lead texto_equipo">Carga nuevos productos para tu página</p>
+      <h1 class="display-4 titulo_equipo">¡Únete!</h1>
+      <p class="lead texto_equipo">Registrate y forma parte de nuestra comunidad</p>
     </div>
   </div>
 
@@ -86,76 +85,50 @@
         <form class="form-group">
           <div class="container_i">
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id="nombre" autofocus>
+              <small id="" class="form-text text-muted descripcion">Ingresa tu nombre</small>
+              <input type="text" class="form-control text_1" placeholder="Nombre y apellido" id="nombre" autofocus>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El nombre del producto es inválido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">El nombre es inválido</div>
             </div>
 
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Selecciona una opción</small>
-              <select class="form-control" id="seleccion">
-                <option class="text-muted">Selecciona</option>
-                <option>Productos</option>
-                <option>Productos personalizados</option>
-                <option>Talleres</option>
-              </select>
-              <div class="valid-feedback">¡Opción válida!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Debes seleccionar una categoría</div>
-            </div>
-
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las etiquetas del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Etiquetas del producto" id="etiquetas">
-              <div class="valid-feedback">¡Etiqueta guardada!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar letras</div>
-            </div>
-
-            <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Precio del producto" id="precio">
+              <small id="" class="form-text text-muted descripcion">Ingresa tu correo electrónico</small>
+              <input type="text" class="form-control text_1" placeholder="ejemplo@correo.com" id="nombre" autofocus>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El precio del producto es inválido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">El correo es inválido</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
-              <textarea type="text" class="form-control text_1" placeholder="Características del producto"
-                id="carecterísticas" rows="5"></textarea>
-              <div class="text-muted caracteres" id="letras_mensaje">0 - 150 caracteres</div>
-              <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!
+                <small id="" class="form-text text-muted descripcion">Ingresa tu teléfono</small>
+                <input type="text" class="form-control text_1" placeholder="Teléfono" id="nombre" autofocus>
+                <div class="valid-feedback">¡Muy bien!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">El telefono debe incluir por lo menos 10 digitos</div>
               </div>
 
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Contraseña</small>
+              <input type="text" class="form-control text_1" placeholder="Escribe tu contraseña" id="etiquetas">
+              <div class="valid-feedback">¡Contraseña Válida!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">La contraseña debe incluir letras, números y por lo menos 1 caracter especial</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-              <input type="number" class="form-control text_1" placeholder="0" id="stock">
-              <div class="valid-feedback">¡Stock establecido!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">No se puede agregar si no existe en Stock</div>
+              <small id="" class="form-text text-muted descripcion">Confirma tu contraseña</small>
+              <input type="text" class="form-control text_1" placeholder="Confirma tu contraseña" id="precio">
+              <div class="valid-feedback">¡Las contraseñas coinciden!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">¡La contraseña no coincide con la anterior!</div>
             </div>
+            <button class="btn btn-danger mb-2 btn-block" id = "boton_creacion">Registrarme</button>
+            
           </div>
         </form>
       </div>
 
 
       <div class="col-md-6 col-sm-4 col-5">
-        <h5>Carga la imagen del producto</h5>
-        <!--Titulo de carga de la imagen-->
-        <!-- Input file donde se adjunta la imagen -->
-        <input type="file" id="image" class="img-fluid" name="file" onchange="ValidarImagen(this);" />
-        <h5>Recorta la imagen del producto</h5>
-        <!--Titulo del recorte de la imagen-->
-        <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
-        <div id="editor"></div>
-        <h5>Así se verá la imagen:</h5>
-        <!--Titulo de la imagen recortada-->
-        <!-- Vista previa del recorte -->
-        <canvas id="preview" class="img-fluid"></canvas>
-        <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class="btn btn-danger mb-2 btn-block" id ="boton_creacion">Añadir producto</button>
+        <img src="./../src/img/1florero.png" class=" container_2 img-fluid">
+        
       </div>
 
     </div>
@@ -193,19 +166,7 @@
   <!--Script para el footer-->
   <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
 
-  <!-- JS bootsrap -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
-  <script src="./../src/js/creacion_producto.js"></script>
-  <!--Recorte de imagen-->
-  <script src="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.js"></script>
-  <!--Sweet alert-->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 
 </html>
