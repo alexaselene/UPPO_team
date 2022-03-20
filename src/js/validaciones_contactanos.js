@@ -4,7 +4,7 @@ let ingreso_nombre = document.getElementById("nombre");         // Input donde s
 let ingreso_email = document.getElementById("email");           // Input donde se ingresa el email
 let ingreso_telefono = document.getElementById("telefono");     // Input donde se ingresa el teléfono
 let ingreso_mensaje = document.getElementById("mensaje");       // Input donde se ingresa el mensaje
-
+let limpieza = document.getElementById("btn_limpiar");
 // INICIALIZACIÓN DE BOOLEANOS PARA LA VÁLIDACIÓN / INVALIDACIÓN DE LOS CAMPOS DEL FORMULARIO
 let val_n = false;  // Booleano para el nombre
 let val_e = false;  // Booleano para el email
@@ -119,17 +119,63 @@ function validacion_texto(mensaje){
 }
 
 // Función para activar el botón de envío de datos
-function activacion(val_n, val_e, val_t, val_tx){   // La función recibe los booleanos de validación de cada campo
+/*function activacion(val_n, val_e, val_t, val_tx){   // La función recibe los booleanos de validación de cada campo
     if (val_n && val_e && val_t && val_tx){         // Evaluar si todos los booleanos de validación son verdaderos
         contactanos.disabled = false;               // Remover la deshabilitación del botón 
     } else {
         contactanos.disabled = true;                // Deshabilitar el botón. Es útil cuando los campos, ya correctos, vuelven a escribirse de forma errónea
     }
+}*/
+
+function activacion(val_n, val_e, val_t, val_tx){   
 }
+
+function reset_f(){                                    //limpieza del formulario
+    document.getElementById("formulario").reset();
+    ingreso_nombre.classList.remove("is-valid");
+    ingreso_nombre.classList.remove("is-invalid");
+    ingreso_email.classList.remove("is-valid");
+    ingreso_email.classList.remove("is-invalid");
+    ingreso_telefono.classList.remove("is-valid");
+    ingreso_telefono.classList.remove("is-invalid");
+    ingreso_mensaje.classList.remove("is-valid");
+    ingreso_mensaje.classList.remove("is-invalid");
+    val_n=false;
+    val_e=false;
+    val_t=false;
+    val_tx=false;
+    carecteres_restantes=150;
+    caracteres_mensaje.textContent = carecteres_restantes;
+}
+
+//EVENTO LIMPIAR
+
+limpieza.addEventListener("click", (evento_l)=>{
+    evento_l.preventDefault();
+    reset_f();
+})
+
 
 // EVENTO DE ENVÍO
 contactanos.addEventListener("click",(evento)=>{    // Se activa al presionar el botón Contáctanos
-    evento.preventDefault();                        // En caso de error
+    evento.preventDefault();
+    if (val_n && val_e && val_t && val_tx){    
+        Swal.fire(
+            '¡Excelente!',
+            'Pronto nos pondremos en contacto.',
+            'success'
+          )
+        envio(ingreso_nombre.value, ingreso_telefono.value, ingreso_mensaje.value);
+        reset_f();        
+    } else {
+        Swal.fire({
+            title: 'Cuidado',
+            text: "Debes llenar los campos correctamente.",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok.'
+        });             
+    }                        // En caso de error
     envio(ingreso_nombre.value, ingreso_telefono.value, ingreso_mensaje.value);       
 });
 
