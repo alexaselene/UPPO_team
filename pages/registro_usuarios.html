@@ -108,23 +108,22 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Contraseña</small>
-              <input type="text" class="form-control text_1" placeholder="Escribe tu contraseña"  id="password">
+              <input type="password" class="form-control text_1" placeholder="Escribe tu contraseña"  id="password">
               <div class="valid-feedback">¡Contraseña Válida!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback"></div>
+              <div id="validationServer04Feedback" class="invalid-feedback"> La contraseña debe contener 8 - 20 caracteres, incluyendo al menos una mayúscula, un número y un caracter especial</div>
             </div>
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Confirma tu contraseña</small>
-              <input type="text" class="form-control text_1" placeholder="Confirma tu contraseña"  id="confirmar_password">
+              <input type="password" class="form-control text_1" placeholder="Confirma tu contraseña"  id="confirmar_password">
               <div class="valid-feedback">¡Las contraseñas coinciden!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">¡La contraseña no coincide con la anterior!</div>
             </div>
-            <!-- <button class="btn btn-danger mb-2 btn-block" id = "registro">Registrarme</button> -->
-            
+            <button type="button" class="btn btn-danger mb-2" id="btn_registro">Registrarse</button>
+            <button type="reset" value="limpiar formulario" class="btn btn-secondary mb-2" id="btn_limpiar">Limpiar</button>
           </div>
         </form>
       </div>
-
 
       <div class="col-md-6 col-sm-4 col-5 imagen_f">
         <img src="./../src/img/corazon.jpeg" class=" container_2 img-fluid">
