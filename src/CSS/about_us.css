@@ -311,7 +311,7 @@ body{
 
 .pie_pagina{
     width: 100%;
-    background-color: black;
+    background-color: var(--gris_obscuro);
 }
 .pie_pagina .grupo_1{
     width: 100%;
