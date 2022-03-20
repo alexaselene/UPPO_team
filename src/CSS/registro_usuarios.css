@@ -56,7 +56,29 @@
 /* Padding general de la página */
 body{
     /*padding: 20px;*/
-    background-color: var(--cafe_claro);
+    background-image: url(./../img/vaca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(../img/perro_acostado.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50px;
+    background-position-x: left;
+  
+    background-size: cover;
+    text-align: center;
+    color: var(--azul_claro);
+  
+}
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 30px;
+}
+.texto_equipo{
+    color:var(--azul_claro);
+    font-size: 30px;
 }
 
 /* Formulario */
@@ -75,8 +97,13 @@ body{
 
 /* Inputs del formulario */
 .descripcion{
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: bolder;
 }
+.text_1{
+    font-size: 18px;
+}
+
 
 /* Botón */
 .btn-block{
@@ -86,8 +113,13 @@ body{
 }
 
 /* Imagen*/
+
 .imagen{
     padding-bottom: 20px;
+}
+.container_2{
+    margin-left: 70px;
+    border-radius: 20px;
 }
 
 /* Contenedor de cada input */
@@ -108,6 +140,24 @@ body{
     .navbar{
         flex-wrap: nowrap;
     }
+    .imagen_f{
+        margin:0px;
+    }
+    /* Tamaño del texto */
+    .text_1{
+        font-size: 20px;     
+    }
+
+    /* Texto en los input */
+    .descripcion{
+        font-size: 25px;
+    }
+    /*Tamaño de letra del botón */
+    .btn{
+        font-size: 20px;   
+    }
+    
+
 }
 
 /* Media queery de la phone */ 
@@ -121,12 +171,12 @@ body{
 
      /* Tamaño del texto */
     .text_1{
-        font-size: 50%;     
+        font-size: 80%;     
     }
 
     /* Texto en los input */
     .descripcion{
-        font-size: 70%;
+        font-size: 90%;
     }
 
     /*Separación entre inputs*/
@@ -137,16 +187,25 @@ body{
 
      /*Tamaño de letra del botón */
     .btn{
-        font-size: 50%;   
+        font-size: 70%;   
     }
     
     /* Contenedor general */
     .row{
+        display: flex;
+        justify-content: center;
         align-items: center;
     }
 
     .navbar{
         flex-wrap: wrap;
+    }
+    .titulo_equipo{
+        letter-spacing: 10px;
+    }
+    
+    .imagen_f{
+        display: none;
     }
 }
 
@@ -250,22 +309,3 @@ body{
     }
 }
 
-/*Jumbotron*/
-.jumbotron{
-    background-image: url(../img/1pieza.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-   /* background-color: var(--beige)*/
-    text-align: center;
-    color: var(--azul_claro);
-  
-}
-.titulo_equipo{
-    font-weight: bolder;
-    letter-spacing: 30px;
-}
-.texto_equipo{
-    color:var(--azul_claro);
-    font-size: 30px;
-}
