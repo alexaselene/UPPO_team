@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -82,11 +82,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-8 col-7">
-        <form class="form-group">
+        <form class="form-group" id="formulario">
           <div class="container_i">
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Ingresa tu nombre</small>
-              <input type="text" class="form-control text_1" placeholder="Nombre y apellido" id="nombre" autofocus>
+              <input type="text" class="form-control text_1" placeholder="Nombre y apellido"  id="nombre" autofocus>
               <div class="valid-feedback">¡Muy bien!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">El nombre es inválido</div>
             </div>
@@ -94,32 +94,32 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Ingresa tu correo electrónico</small>
-              <input type="text" class="form-control text_1" placeholder="ejemplo@correo.com" id="nombre" autofocus>
+              <input type="text" class="form-control text_1" placeholder="ejemplo@correo.com"  id="email" >
               <div class="valid-feedback">¡Muy bien!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">El correo es inválido</div>
             </div>
 
             <div class="container_1">
                 <small id="" class="form-text text-muted descripcion">Ingresa tu teléfono</small>
-                <input type="text" class="form-control text_1" placeholder="Teléfono" id="nombre" autofocus>
+                <input type="text" class="form-control text_1" placeholder="Teléfono"  id="telefono" >
                 <div class="valid-feedback">¡Muy bien!</div>
                 <div id="validationServer04Feedback" class="invalid-feedback">El telefono debe incluir por lo menos 10 digitos</div>
               </div>
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Contraseña</small>
-              <input type="text" class="form-control text_1" placeholder="Escribe tu contraseña" id="etiquetas">
+              <input type="text" class="form-control text_1" placeholder="Escribe tu contraseña"  id="password">
               <div class="valid-feedback">¡Contraseña Válida!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">La contraseña debe incluir letras, números y por lo menos 1 caracter especial</div>
+              <div id="validationServer04Feedback" class="invalid-feedback"></div>
             </div>
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Confirma tu contraseña</small>
-              <input type="text" class="form-control text_1" placeholder="Confirma tu contraseña" id="precio">
+              <input type="text" class="form-control text_1" placeholder="Confirma tu contraseña"  id="confirmar_password">
               <div class="valid-feedback">¡Las contraseñas coinciden!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">¡La contraseña no coincide con la anterior!</div>
             </div>
-            <button class="btn btn-danger mb-2 btn-block" id = "boton_creacion">Registrarme</button>
+            <!-- <button class="btn btn-danger mb-2 btn-block" id = "registro">Registrarme</button> -->
             
           </div>
         </form>
@@ -165,7 +165,7 @@
   </footer>
   <!--Script para el footer-->
   <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
-
+  <script src="./../src/js/resgistroUsuarios.js"></script>
 
 </body>
 
