@@ -66,7 +66,7 @@
       </form>
       <!--Iconos de usuario y compras hay que agregarles el link-->
       <div class="iconos">
-        <a href="./registro_usuarios.html"><img class="inicio_sesion"   src="./src/img/iniciar-sesion (1).png" width="40px" height="40px"></a>
+        <a href="./registro_usuarios.html"><img class="inicio_sesion"   src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px"></a>
         <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
       </div>
   </div>
@@ -120,13 +120,12 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
-              <textarea type="text" class="form-control text_1" placeholder="Características del producto"
-                id="carecterísticas" rows="5"></textarea>
+              <input type="text" class="form-control text_1" placeholder="Características del producto"
+                id="caracteristicas" rows="5"></input>
               <div class="text-muted caracteres" id="letras_mensaje">0 - 150 caracteres</div>
               <div class="valid-feedback">¡Muy bien!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!
               </div>
-
             </div>
 
             <div class="container_1">
@@ -136,6 +135,8 @@
               <div id="validationServer04Feedback" class="invalid-feedback">No se puede agregar si no existe en Stock</div>
             </div>
           </div>
+          <button type = "button" class="btn btn-danger mb-2" id ="boton_creacion">Añadir producto</button>
+          <button type="reset" value="limpiar formulario" class="btn btn-secondary mb-2" id="btn_limpiar">Limpiar</button>
         </form>
       </div>
 
@@ -153,22 +154,7 @@
         <h1>3 Previsualiza el resultado</h1>
         <!-- Previa del recorte -->
         <canvas id="preview"></canvas>
-        
-      
-  
-  
-        <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class="btn btn-danger mb-2 btn-block" id ="boton_creacion">Añadir producto</button>
-
-        
       </div>
-
-
-
-
-
-
-
     </div>
   </div>
 
@@ -216,7 +202,7 @@
   <!--Recorte de imagen-->
   <script src="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.js"></script>
   <!--Sweet alert-->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

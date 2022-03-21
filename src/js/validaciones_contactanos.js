@@ -4,13 +4,14 @@ let ingreso_nombre = document.getElementById("nombre");         // Input donde s
 let ingreso_email = document.getElementById("email");           // Input donde se ingresa el email
 let ingreso_telefono = document.getElementById("telefono");     // Input donde se ingresa el teléfono
 let ingreso_mensaje = document.getElementById("mensaje");       // Input donde se ingresa el mensaje
-let limpieza = document.getElementById("btn_limpiar");
+let limpieza = document.getElementById("btn_limpiar");          // Botón encargado de limpiar los campos del formulario
+
 // INICIALIZACIÓN DE BOOLEANOS PARA LA VÁLIDACIÓN / INVALIDACIÓN DE LOS CAMPOS DEL FORMULARIO
-let val_n = false;  // Booleano para el nombre
-let val_e = false;  // Booleano para el email
-let val_t = false;  // Booleano para el teléfono
-let val_tx = false; // Booleano para el mensaje 
-let val_tx_i = false;
+let val_n = false;          // Booleano para el nombre
+let val_e = false;          // Booleano para el email
+let val_t = false;          // Booleano para el teléfono
+let val_tx = false;         // Booleano para el mensaje 
+let val_tx_i = false;       // Booleano para caracteres del mensaje
 
 // EVENTOS DE INGRESO DE INPUT
 // Nombre
@@ -74,8 +75,7 @@ function validacion_name(nombre){                               // La función r
   
 // Email
 function validacion_email(mail){                                // La función recibe el elemento input correspondiente al email
-    let pattern = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;// Definir un patrón
-    
+    let pattern = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;    // Definir un patrón
     if(mail.value.match(pattern)){                              // Comparar el valor ingresado con el patrón
         mail.classList.remove("is-invalid");                    // Remover la clase para invalidar el campo
         mail.classList.add("is-valid");                         // Añadir la clase para validar el campo
@@ -126,33 +126,20 @@ function validacion_texto(mensaje){
     return val_tx;
 }
 
-function validacion_caracteres(caracter){
-    pattern = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040]+$/;
+function validacion_caracteres(caracter){                               // Validación para cada caracter
+    pattern = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040]+$/;            // Definir patrón
 
-    mensajeValor = caracter.value;
-    if ((mensajeValor.charAt(cont_caracter).match(pattern))){
-        console.log("Tiene valor");
-        val_tx_i = true;
-        console.log(val_tx_i);
+    mensajeValor = caracter.value;                                      // Obtener el valor del input
+    if ((mensajeValor.charAt(cont_caracter).match(pattern))){           // Validar que contenga algún caracter (letra, número, símbolo)
+        val_tx_i = true;                                                // Asignar verdadero el valor del booleano de validación
     }
-    return val_tx_i;
+    return val_tx_i;                                                    // Retornar booleano de validación
 }
 
-// Función para activar el botón de envío de datos
-/*function activacion(val_n, val_e, val_t, val_tx){   // La función recibe los booleanos de validación de cada campo
-    if (val_n && val_e && val_t && val_tx){         // Evaluar si todos los booleanos de validación son verdaderos
-        contactanos.disabled = false;               // Remover la deshabilitación del botón 
-    } else {
-        contactanos.disabled = true;                // Deshabilitar el botón. Es útil cuando los campos, ya correctos, vuelven a escribirse de forma errónea
-    }
-}*/
-
-function activacion(val_n, val_e, val_t, val_tx){   
-}
-
-function reset_f(){                                    //limpieza del formulario
-    document.getElementById("formulario").reset();
-    ingreso_nombre.classList.remove("is-valid");
+// Limpieza de los campos del formulario
+function reset_f(){                                    
+    document.getElementById("formulario").reset();                      // Limpiar valores
+    ingreso_nombre.classList.remove("is-valid");                        // Remover clases de validación
     ingreso_nombre.classList.remove("is-invalid");
     ingreso_email.classList.remove("is-valid");
     ingreso_email.classList.remove("is-invalid");
@@ -160,42 +147,43 @@ function reset_f(){                                    //limpieza del formulario
     ingreso_telefono.classList.remove("is-invalid");
     ingreso_mensaje.classList.remove("is-valid");
     ingreso_mensaje.classList.remove("is-invalid");
-    val_n=false;
-    val_e=false;
-    val_t=false;
-    val_tx=false;
-    carecteres_restantes=150;
-    caracteres_mensaje.textContent = carecteres_restantes;
+    val_n = false;                                                      // Reestablecer booleanos de activación                   
+    val_e = false;
+    val_t = false;
+    val_tx = false;
+    val_tx_i = false;
+    carecteres_restantes = 150;                                         // Reestablecer caracteres en el campo de mensaje
+    caracteres_mensaje.textContent = carecteres_restantes;              // Imprimir los caracteres restantes (totales) en el campo de mensaje
 }
 
-//EVENTO LIMPIAR
-
+//EVENTO DE LIMPIEZA
 limpieza.addEventListener("click", (evento_l)=>{
     evento_l.preventDefault();
     reset_f();
 })
 
-
 // EVENTO DE ENVÍO
 contactanos.addEventListener("click",(evento)=>{    // Se activa al presionar el botón Contáctanos
     evento.preventDefault();
-    if (val_n && val_e && val_t && val_tx){    
-        Swal.fire(
-            '¡Excelente!',
-            'Pronto nos pondremos en contacto.',
-            'success'
-          )
-        envio(ingreso_nombre.value, ingreso_telefono.value, ingreso_mensaje.value);
-        reset_f();        
+    if (val_n && val_e && val_t && val_tx){         
+        Swal.fire({                                 // Se muestra una alerta que indica Éxito 
+            title: '¡Excelente!',
+            text: 'Pronto nos pondremos en contacto.',
+            icon: 'success',
+            confirmButtonColor: '#ED959C',
+            confirmButtonText: 'Ok.' 
+            });
+        envio(ingreso_nombre.value, ingreso_telefono.value, ingreso_mensaje.value); // Enviar datos a la función de envio
+        reset_f();                                                                  // Limpiar el formulario
     } else {
-        Swal.fire({
+        Swal.fire({                                         // Se muestra una alerta que indica Error
             title: 'Cuidado',
             text: "Debes llenar los campos correctamente.",
-            icon: 'warning',
-            confirmButtonColor: '#3085d6',
+            icon: 'error',
+            confirmButtonColor: '#ED959C',
             confirmButtonText: 'Ok.'
         });             
-    }                        // En caso de error     
+    }         
 });
 
 // Función para el envío de información al correo electrónico
