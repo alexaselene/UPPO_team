@@ -104,9 +104,10 @@ function validacion_tel(telefono){
         return val_t;                                   // Retornar el booleano de validación
     };
 
-// Coontraseña
+// Contraseña
 function validacion_pass(password){
-    let pattern_p = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,20}/;  // Definir un patrón
+    let pattern_p = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&/()#.])[A-Za-z\d$@$!%*?&/()#.]{8,20}/;  // Definir un patrón
+
         
     if (password.value.match(pattern_p)){           // Evaluar el valor ingresado y compararlo con el patrón
         password.classList.remove("is-invalid");    // Remover la clase para invalidar el campo
@@ -137,12 +138,24 @@ function validacion_cpass(password, c_password){
 
 // Todos los campos
 function validacion_general(){
-    if (val_n && val_e && val_p && val_cp){
-        alert("Campos válidos");
+    console.log ("Entra")
+    if (val_n && val_e && val_t && val_p && val_cp){    
+        Swal.fire(
+            '¡Excelente!',
+            'Registro exitoso',
+            'success'
+          )        
     } else {
-        alert("Campos inválidos");
-    }
+        Swal.fire({
+            title: 'Cuidado',
+            text: "Debes llenar los campos correctamente.",
+            icon: 'warning',
+            confirmButtonColor: 'ED959C',
+            confirmButtonText: 'Ok.'
+        });             
+    }                        // En caso de error     
 }
+
 
       
 

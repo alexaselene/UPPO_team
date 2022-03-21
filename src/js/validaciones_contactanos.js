@@ -10,6 +10,7 @@ let val_n = false;  // Booleano para el nombre
 let val_e = false;  // Booleano para el email
 let val_t = false;  // Booleano para el teléfono
 let val_tx = false; // Booleano para el mensaje 
+let val_tx_i = false;
 
 // EVENTOS DE INGRESO DE INPUT
 // Nombre
@@ -42,9 +43,12 @@ ingreso_mensaje.addEventListener("change",(evento_m)=>{     // Se activa al pres
 
 let caracteres_mensaje = document.getElementById("caracteres_mensaje"); // Espacio donde se imprimen los caracteres restantes
 
+let cont_caracter = 0;
 ingreso_mensaje.addEventListener("input",(evento_c)=>{                  // Se activa cada que el campo del mensaje se ve modificado
     evento_c.preventDefault;                                            // En caso de error
     caracteres_mensaje.textContent =  150 - mensaje.value.length;              // Imprimir en el espacio de texto los caracteres restantes
+    val_tx_i = validacion_caracteres(ingreso_mensaje);
+    cont_caracter++;
 });
 
 // FUNCIONES DE VALIDACIÓN
@@ -105,12 +109,14 @@ function validacion_tel(telefono){
 // Mensaje 
 function validacion_texto(mensaje){
     let mensajeValor = mensaje.value;                                   // Obtener el valor del campo de mensaje
-    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0030-\u0039]+$/;
+    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040\s]+$/;
+    let pattern_m2 = /^[\s]+$/;
 
-    if ((mensajeValor.length >= 1) && (mensajeValor.length <= 150) && (mensajeValor.match(pattern_m))){   // Evaluar la longitud del valor ingresado
+    if ((mensajeValor.length >= 1) && (mensajeValor.length <= 150) && (mensajeValor.match(pattern_m)) && (val_tx_i == true)){   // Evaluar la longitud del valor ingresado
         mensaje.classList.remove("is-invalid");                         // Remover la clase para invalidar el campo
         mensaje.classList.add("is-valid");                              // Añadir la clase para validar el campo      
         val_tx = true;                                                  // Asignar verdadero el valor del booleano de validación
+        console.log(val_tx_i);
     }else {
         mensaje.classList.remove("is-valid");                           // Remover la clase para validar el campo
         mensaje.classList.add("is-invalid");                            // Añadir la clase para invalidar el campo
@@ -118,6 +124,18 @@ function validacion_texto(mensaje){
     };
 
     return val_tx;
+}
+
+function validacion_caracteres(caracter){
+    pattern = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040]+$/;
+
+    mensajeValor = caracter.value;
+    if ((mensajeValor.charAt(cont_caracter).match(pattern))){
+        console.log("Tiene valor");
+        val_tx_i = true;
+        console.log(val_tx_i);
+    }
+    return val_tx_i;
 }
 
 // Función para activar el botón de envío de datos
