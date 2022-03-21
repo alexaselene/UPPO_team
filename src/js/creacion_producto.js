@@ -11,7 +11,7 @@ let creacion = document.getElementById("boton_creacion");
 // OBTENER ELEMENTOS
 //NOMBRE DEL PRODUCTO 
 let creacionProd = document.getElementById("nombre"); // Input donde se ingresa el nombre del producto
-let caracteristicas_prod = document.getElementById("carecterísticas"); // Input donde se ingresan las características del producto
+let caracteristicas_prod = document.getElementById("caracteristicas"); // Input donde se ingresan las características del producto
 let precioProd = document.getElementById("precio"); // Input donde se ingresan las características del producto
 
 //EVENTO PARA EL INGRESO DEL NOMBRE DEL PRODUCTO
@@ -160,10 +160,10 @@ caracteristicas_prod.addEventListener("input", (evento_c)=>{
 
 //VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
 function  validacion_caracteres(){
-    let caracteres = document.getElementById("carecterísticas");
+    let caracteres = document.getElementById("caracteristicas");
     let caracteresValor = caracteres.value;
     console.dir(caracteres);
-    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0020\u0030-\u0039]+$/;
+    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0020-\u0040\u0013]+$/;
 
     if((caracteresValor.length >= 3) && (caracteresValor.length <= 150) && (caracteresValor.match(pattern_m)))
     {
@@ -181,28 +181,60 @@ function  validacion_caracteres(){
 };
 
 //Validación de la imagen
-function validarImagen(obj){
+function ValidarImagen(obj){
     var uploadFile = obj.files[0];
-
+    
     if (!window.FileReader) {
-        swal('El navegador no soporta la lectura de archivos');
+        Swal.fire({                                         // Se muestra una alerta que indica Error
+            title: 'Cuidado',
+            text: "El navegador no soporta la lectura de archivos",
+            icon: 'warning',
+            confirmButtonColor: '#ED959C',
+            confirmButtonText: 'Ok.'
+        });  
+        campo_imagen = false;
         return;
     }
 
-    if (!(/\.(jpeg|jpg|png)$/i).test(uploadFile.name)) {
-        swal('No has seleccionado una imagen','Prueba con: jpg,jpeg y png','error');
+    if (!(/\.(jpg|png|jpeg)$/i).test(uploadFile.name)) {
+        Swal.fire({                                         // Se muestra una alerta que indica Error
+            title: 'Cuidado',
+            text: "Archivo incorrecto. Prueba con extensiones .jpg, .jpeg y png",
+            icon: 'error',
+            confirmButtonColor: '#ED959C',
+            confirmButtonText: 'Ok.'
+        });
+        campo_imagen = false;
     }
     else {
         var img = new Image();
-        img.onload = function () {
-            if (uploadFile.size > 500000){
-                swal('El peso de la imagen no puede exceder los 5MB')
+        img.onload = function () 
+        { if (uploadFile.size > 500000)
+            {
+                Swal.fire({                                         // Se muestra una alerta que indica Error
+                    title: 'Cuidado',
+                    text: "El peso de la imagen no puede exceder los 5MB",
+                    icon: 'error',
+                    confirmButtonColor: '#ED959C',
+                    confirmButtonText: 'Ok.'
+                });  
+                campo_imagen = false;
             }
+            else {
+                Swal.fire({                                         // Se muestra una alerta que indica Éxito
+                    title: '¡Excelente',
+                    text: "Has seleccionado una imagen válida",
+                    icon: 'success',
+                    confirmButtonColor: '#ED959C',
+                    confirmButtonText: 'Ok.'
+                });          
+            }
+            img.src = URL.createObjectURL(uploadFile);
+            campo_imagen = true;
         };
-        img.src = URL.createObjectURL(uploadFile);
+        
     }                 
 }
-
 // Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -211,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nodo donde estará el editor
     const editor = document.querySelector('#editor');
     // El canvas donde se mostrará la previa
-    const miCanvas = docum0
-1    // Contexto del canvas
+    const miCanvas = document.querySelector('#preview');
+    // Contexto del canvas
     const contexto = miCanvas.getContext('2d');
     // Ruta de la imagen seleccionada
     let urlImage = undefined;
@@ -278,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // S T O C K 
 let stock = document.getElementById("stock");
 
@@ -302,7 +335,7 @@ function validacionStock(stock){
 }
 
 function habilitar_boton(){
-    if(campo_nombre && seleccionado && campo_precio && campo_caracteres && campo_stock){
+    if(campo_nombre && seleccionado && campo_precio && campo_caracteres && campo_stock && campo_imagen){
         creacion.disabled = false;
     } else {
         creacion.disabled = true;
@@ -334,7 +367,7 @@ creacion.addEventListener("click", (e_creacion)=>{        // Se activa al ingres
     stock.value = "";
     caracteristicas_contador = 0;
     caracteristicas_restates = 150;
-    caracteristicas_mensaje.textContent =`${caracteristicas_restates}`;
+    caracteristicas_mensaje.textContent = caracteristicas_restates;
 
     creacionProd.classList.remove("is-valid");
     creacionProd.classList.remove("is-invalid");
