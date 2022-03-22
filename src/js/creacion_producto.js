@@ -6,55 +6,88 @@ let campo_caracteres = false;
 let campo_stock = false;
 let campo_imagen = false;
 
-let creacion = document.getElementById("boton_creacion");
-
 // OBTENER ELEMENTOS
-//NOMBRE DEL PRODUCTO 
-let creacionProd = document.getElementById("nombre"); // Input donde se ingresa el nombre del producto
-let caracteristicas_prod = document.getElementById("caracteristicas"); // Input donde se ingresan las características del producto
-let precioProd = document.getElementById("precio"); // Input donde se ingresan las características del producto
+let nombre = document.getElementById("nombre");                         // Input donde se ingresa el nombre del producto
+let seleccion = document.getElementById("seleccion");                   // Lista de selección de opciones de categorías
+let etiquetas = document.getElementById("etiquetas");                   // Input correspondiente a las etiquetas
+let caracteristicas = document.getElementById("caracteristicas");       // Input donde se ingresan las características del producto
+let caracteristicas_mensaje = document.getElementById("letras_mensaje");// Espacio donde se imprimen los caracteres restantes del input de características
+let precio = document.getElementById("precio");                         // Input donde se ingresan el precio del producto
+let stock = document.getElementById("stock");                           // Input donde se ingresa el Stock del producto
+let creacion = document.getElementById("boton_creacion");               // Botón para guardar los valores del producto
+let limpiar = document.getElementById("btn_limpiar");                   // Botón para limpiar el producto
 
-//EVENTO PARA EL INGRESO DEL NOMBRE DEL PRODUCTO
-creacionProd.addEventListener("change", (evento_p)=>{
-    evento_p.preventDefault();
-    campo_nombre = validacion_creacionProd();
-    habilitar_boton();
-
+// EVENTOS
+// Nombre
+nombre.addEventListener("change", (evento_p)=>{         // Evento que se activa al presionar enter o cambiar de campo de nombre
+    evento_p.preventDefault();                          // En caso de error
+    campo_nombre = validacion_nombre();                 // Manda a llamar a la función para validar el nombre
 });
 
-//VALIDACIÓN PARA EL NOMBRE DEL PRODUCTO
-function validacion_creacionProd(){
-    let nombre = document.getElementById("nombre");
-    let nombreValor = nombre.value;
-    console.dir(nombre);
+// Categoría
+seleccion.addEventListener("click",(e_seleccion) => {   // Evento que se activa al presionar sobre la lista de Selección
+    e_seleccion.preventDefault();                       // En caso de error
+    seleccionado = validar_seleccionado();              // Manda a llamar a la función para validar la opción seleccionada
+});
 
-    if(nombreValor.length >= 3 && nombreValor.length <=50){
-        nombre.classList.remove("is-invalid");
-        nombre.classList.add("is-valid");
-        console.log("El nombre del producto es válido"); 
-        campo_nombre = true;
+// Etiquetas
+let cont = 0;                                           // Contador para los index del valor ingresado
+let arreglo_etiquetas = ["cerámica"];                   // Declarar un arreglo donde la etiqueta "cerámica" viene por Default
+
+etiquetas.addEventListener("input", (e_etiquetas)=>{    // Se activa al ingresar valores en el input
+    e_etiquetas.preventDefault();                       // En caso de error
+    validacionEtiquetas();                              // Llama a la función para validar las etiquetas
+    cont++;                                             // Aumenta el contador del index
+});
+
+etiquetas.addEventListener("change",(e2_etiquetas) => { // Se activa al presionar enter o cambiar de campo de etiquetas en el formulario
+    e2_etiquetas.preventDefault();                      // En caso de error
+    guardarEtiqueta();                                  // Llama a la función que guarda la etiqueta
+    cont++;                                             // Aumenta el contador del index
+});
+
+// Precio
+precio.addEventListener("change", (evento_c)=>{         // Se activa al presionar enter o cambiar de campo de precio
+    evento_c.preventDefault();                          // En caso de error
+    validacion_precio();                                // Manda llamar la función para validar el precio
+});
+
+// Características
+caracteristicas.addEventListener("input", (evento_c)=>{ // Se actiba al presionar enter o cambiar de campo de caracteristicas
+    evento_c.preventDefault();                          // En caso de error
+    campo_caracteres = validacion_caracteres();         // Manda llamar la función para validar las carecterísticas
+    caracteristicas_mensaje.textContent = 150 - caracteristicas.value.length; // Imprimir los caracteres restantes
+});
+
+//
+stock.addEventListener("change", (e_stock)=>{       // Se activa al presionar enter o cambiar de campo de caracteres
+    e_stock.preventDefault();                       // En caso de error
+    campo_stock = validacionStock(stock);           // Llama a la función para validar las etiquetas
+});
+
+// FUNCIONES DE VALIDACIÓN
+// Nombre
+function validacion_nombre(){
+    if (nombre.value.length >= 3 && nombre.value.length <= 50){ // Validar la longitud del valor ingresado
+        nombre.classList.remove("is-invalid");                  // Remover la clase para invalidar el campo
+        nombre.classList.add("is-valid");                       // Añadir la clase para validar el campo
+        campo_nombre = true;                                    // Asignar verdadero el booleano de validación
+        seleccion.focus();                                      // Cambiar cursor al campo de selección
     } else {
-        nombre.classList.remove("is-valid");
-        nombre.classList.add("is-invalid");
-        console.log("El nombre del producto es inválido");
-        campo_nombre = false;
+        nombre.classList.remove("is-valid");                    // Remover la clase para validar el campo
+        nombre.classList.add("is-invalid");                     // Añadir la clase para invalidar el campo
+        campo_nombre = false;                                   // Asignar como falso el booleano de validación
     }
-    return campo_nombre;
+    return campo_nombre;                                        // Retornar el booleano de validación
 };
 
-// S E L E C C I Ó N
-let seleccion = document.getElementById("seleccion");           // Lista de selección de opciones de categorías
-
-seleccion.addEventListener("click",(e_seleccion) => {           // Evento que se activa al presionar sobre la lista de Selección
-    e_seleccion.preventDefault();                               // En caso de error
-    seleccionado = validar_seleccionado();                      // Manda a llamar a la función para validar la opción seleccionada
-})
-
+// Selección
 function validar_seleccionado(){                                // Función que valida la opción seleccionada
     if (seleccion.value != "Selecciona") {                      // Valida si la opción es diferente de la Default
         seleccionado = true;                                    // Asignar como verdadero el booleano de selección
         seleccion.classList.remove("is-invalid");               // Remover la clase para invalidar el campo
         seleccion.classList.add("is-valid");                    // Añadir la clase para validar el campo
+        etiquetas.focus();                                      // Cambiar cursor al campo de etiquetas
     } else {
         seleccionado = false;                                   // Asignar como falso al booleano de selección
         seleccion.classList.remove("is-valid");                 // Remover la clase para validar el campo
@@ -63,41 +96,10 @@ function validar_seleccionado(){                                // Función que 
     return seleccionado;                                        // Retornar el booleano de selección
 }
 
-// E T I Q U E T A S 
-let etiquetas = document.getElementById("etiquetas");       // Acceder al input correspondiente a las etiquetas
-let cont = 0;                                               // Contador para los index del valor ingresado
-let arreglo_etiquetas = ["cerámica"];                       // Declarar un arreglo donde la etiqueta "cerámica" viene por Default
-
-etiquetas.addEventListener("input", (e_etiquetas)=>{        // Se activa al ingresar valores en el input
-    e_etiquetas.preventDefault();                           // En caso de error
-    console.log(cont);                                      // Imprime el índice del valor del input en la consola
-    validacionEtiquetas();                                  // Llama a la función para validar las etiquetas
-    cont++;                                                 // Aumenta el contador del index
-});
-
-etiquetas.addEventListener("change",(e2_etiquetas) => {     // Se activa al presionar enter o cambiar de campo de etiquetas en el formulario
-    e2_etiquetas.preventDefault();                          // En caso de error
-    guardarEtiqueta();                                      // Llama a la función que guarda la etiqueta
-    cont++;                                                 // Aumenta el contador del index
-})
-
-/* Esta función es sensible a la presión del Backspace (borrado). Sin embargo, aún hay conflicto con el 
-uso de dicha tecla, por lo que no tiene utilidad de momento */
-/*etiquetas.addEventListener('keyup', (e) => {
-    if(e.key == 'Backspace'){
-        e.preventDefault();
-        cont -= 2;
-        if (cont < 0){
-            cont = 0;
-        }
-    }//if Enter 
-}); */
-
+// Etiquetas
 function validacionEtiquetas(){                             // Función encargada de validar cada caracter ingresado en la etiqueta
-    console.log(etiquetas.value.charAt(cont));              // Impresión de cada caracter ingresado en la consola
     pattern = /^[A-Z\u00E0-\u00FC\u00d1\u0008]+$/i;         // Definir patrón -> letras mayúsculas y minúsculas, acentos, letra ñ y Backspace. 
                                                             // Buscar Unicode de Backspace (U+0008), no lo lee correctamente
-
     if (!etiquetas.value.charAt(cont).match(pattern)){      // Validar que no corresponda al patrón
         if (etiquetas.value.charAt(cont).match(" ")){       // Validar que se haya presionado espacio
             guardarEtiqueta();                              // Llamar a la función que guarda la etiqueta
@@ -110,75 +112,60 @@ function validacionEtiquetas(){                             // Función encargad
     }
 }
 
-function guardarEtiqueta(){                                 // Función encargada de guardar las etiquetas
-    etiquetas.value = etiquetas.value.slice(0,cont)         // Redefinir el valor del input (sin contar el espacio añadido de ser el caso)
-    arreglo_etiquetas.push(etiquetas.value);                // Añadir la etiqueta al array de etiquetas
-    etiquetas.value = "";                                   // Vaciar el valor del input
-    cont = -1;                                              // Reestablecer contador
-    console.log(arreglo_etiquetas);                         // Imprimir en consola el arreglo de etiquetas
-    etiquetas.classList.remove("is-invalid");               // Remover la clase para invalidar el campo
-    etiquetas.classList.add("is-valid");                    // Añadir la clase para validar el campo
+function guardarEtiqueta(){                                         // Función encargada de guardar las etiquetas
+    etiquetas.value = etiquetas.value.slice(0,cont).toLowerCase();  // Redefinir el valor del input (sin contar el espacio añadido de ser el caso) y convertir la cadena a minúsculas
+    arreglo_etiquetas.push(etiquetas.value);                        // Añadir la etiqueta al array de etiquetas
+    etiquetas.value = "";                                           // Vaciar el valor del input
+    cont = -1;                                                      // Reestablecer contador
+    console.log(arreglo_etiquetas);                                 // Imprimir en consola el arreglo de etiquetas
+    etiquetas.classList.remove("is-invalid");                       // Remover la clase para invalidar el campo
+    etiquetas.classList.add("is-valid");                            // Añadir la clase para validar el campo
 }
 
-//EVENTO PARA EL INGRESO DEL LOS PRECIOS DE LOS PRODUCTOS
-precioProd.addEventListener("change", (evento_c)=>{
-    evento_c.preventDefault();
-        validacion_precioProd();
-        campo_precios = habilitar_boton();
-});
-
-//VALIDACIÓN PARA PRECIOS DEL PRODUCTO
-function validacion_precioProd(){
-    let precio = document.getElementById("precio");
-    let precioValor = precio.value;
-    console.dir(precio);
-    
-    let pattern = /^\d*(\.\d{1})?\d{0,1}$/ ; //valida hasta dos cifras con decimal
-
-    if(precioValor.match(pattern) )
-    {
-        precio.classList.remove("is-invalid");
-        precio.classList.add("is-valid");
-        console.log("El precio es válido");  
-        campo_precio = true; 
+// Precio
+function validacion_precio(){
+    let pattern = /^\d*(\.\d{1})?\d{0,1}$/ ;    // Definir patrón. Valida hasta 2 decimales
+    if(precio.value.match(pattern)){            // Comparar valor ingresado y patrón
+        precio.classList.remove("is-invalid");  // Remover la clase que invalida el campo
+        precio.classList.add("is-valid");       // Añadir la clase que valida el campo
+        campo_precio = true;                    // Asignar como verdadero el valor del booleano de validación
+        caracteristicas.focus();                // Cambiar cursor al campo de caracteristicas
     } else {
-        precio.classList.remove("is-valid");
-        precio.classList.add("is-invalid");
-        console.log("El precio es inválido");
-        campo_precio = false;
+        precio.classList.remove("is-valid");    // Remover la clase que valida el campo
+        precio.classList.add("is-invalid");     // Añadir la clase que invalida el campo
+        campo_precio = false;                   // Asignar como falso el valor del booleano de validación
     }
-    return campo_precio;
+    return campo_precio;                        // Retornar el valor del booleano de validación
 };
 
-//EVENTO PARA EL INGRESO DEL LAS CARACTERISTICAS DE LOS PRODUCTOS
-let caracteristicas_mensaje = document.getElementById("letras_mensaje");
-caracteristicas_prod.addEventListener("input", (evento_c)=>{
-    evento_c.preventDefault();
-     campo_caracteres = validacion_caracteres();
-        caracteristicas_mensaje.textContent = 150 - caracteristicas_prod.value.length;
-});
-
-//VALIDACIÓN PARA LAS CARACTERÍSTICAS DEL PRODUCTO
+// Características
 function  validacion_caracteres(){
-    let caracteres = document.getElementById("caracteristicas");
-    let caracteresValor = caracteres.value;
-    console.dir(caracteres);
-    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0020-\u0040\u0013]+$/;
-
-    if((caracteresValor.length >= 3) && (caracteresValor.length <= 150) && (caracteresValor.match(pattern_m)))
-    {
-        caracteres.classList.remove("is-invalid"); 
-        caracteres.classList.add("is-valid");
-        console.log("Las caracteristicas son válidas"); 
-        campo_caracteres = true;  
+    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0020-\u0040\u0013]+$/;    // Definir patrón. Acepta letras, números, caracteres
+    if((caracteristicas.value.length >= 3) && (caracteristicas.value.length <= 150) && (caracteristicas.value.match(pattern_m))){  // Validar longitud del valor ingresado y que coincida con patrón
+        caracteristicas.classList.remove("is-invalid");                     // Remover la clase que invalida el campo
+        caracteristicas.classList.add("is-valid");                          // Añadir la clase que valida el campo
+        campo_caracteres = true;                                            // Asignar como verdadero el booleano de validación
     } else {
-        caracteres.classList.remove("is-valid");
-        caracteres.classList.add("is-invalid")
-        console.log("Las caracteristicas son inválidas");
-        campo_caracteres = false;
+        caracteristicas.classList.remove("is-valid");                       // Remover la clase que valida el campo
+        caracteristicas.classList.add("is-invalid");                        // Añadir la clase que invalida el campo
+        campo_caracteres = false;                                           // Asignar como falso el booleano de validación
     }
-    return campo_caracteres;
+    return campo_caracteres;                                                // Retornar booleano de validación
 };
+
+// Stock
+function validacionStock(){                
+    if(stock.value > 0){                        // Validar que el valor sea mayor que cero
+        stock.classList.remove("is-invalid");   // Remover la clase que invalida el campo
+        stock.classList.add("is-valid");        // Añadir la clase que valida el campo
+        campo_stock = true;                     // Asignar verdadero el booleano de validación
+    } else {
+        stock.classList.remove("is-valid");     // Remover la clase que valida el campo
+        stock.classList.add("is-invalid");      // Añadir la clase que invalida el campo
+        campo_stock = false;                    // Asignar falso el booleano de validación
+    }
+    return campo_stock;                         // Retornar booleano de validación
+}
 
 //Validación de la imagen
 function ValidarImagen(obj){
@@ -257,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function abrirEditor(e) {
         // Obtiene la imagen
         urlImage = URL.createObjectURL(e.target.files[0]);
+        console.log(urlImage);
 
         // Borra editor en caso que existiera una imagen previa
         editor.innerHTML = '';
@@ -310,82 +298,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// S T O C K 
-let stock = document.getElementById("stock");
-
-stock.addEventListener("input", (e_stock)=>{        // Se activa al ingresar valores en el input
-    e_stock.preventDefault();                       // En caso de error
-    
-    campo_stock = validacionStock(stock);           // Llama a la función para validar las etiquetas
-    habilitar_boton();
-});
-
-function validacionStock(stock){
-    if(stock.value > 0){
-        stock.classList.remove("is-invalid");
-        stock.classList.add("is-valid");
-        campo_stock = true;
-    } else {
-        stock.classList.remove("is-valid");
-        stock.classList.add("is-invalid");
-        campo_stock = false;
-    }
-    return campo_stock;
-}
-
-function habilitar_boton(){
-    if(campo_nombre && seleccionado && campo_precio && campo_caracteres && campo_stock && campo_imagen){
-        creacion.disabled = false;
-    } else {
-        creacion.disabled = true;
-    }
-};
-
-let creacion_productos = [
+// ARRAY PARA GUARDAR PRODUCTOS
+let creacion_productos = [      // Estructura donde se guardará cada elemento y sus propiedades
 ];
 
+// EVENTO DE REGISTRO
+creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presionar el botón de registro de producto
+    e_creacion.preventDefault();                        // En caso de error
 
-creacion.addEventListener("click", (e_creacion)=>{        // Se activa al ingresar valores en el input
-    e_creacion.preventDefault();                       // En caso de error
+    if (campo_nombre && seleccion && campo_precio && campo_stock){
+        // Crear array de producto con valores ingresados
+        let array_productos = {
+            "Nombre" : nombre.value,
+            "Categoria": seleccion.value,
+            "Etiquetas": arreglo_etiquetas,
+            "Precio": precio.value,
+            "Caracteristicas": caracteristicas.value,
+            "Stock": stock.value
+        }
+    
+        // Crear JSON
+        creacion_productos.push(array_productos);                   // Ingresar array en la estructura de productos
+        let jsonProducto = JSON.stringify(creacion_productos);      // Convertir estructura en un JSON
+        localStorage.setItem("productosRegistrados",jsonProducto);  // Guardar JSON en Local Storage
 
-    let array_productos = {
-        "Nombre" : creacionProd.value,
-        "Categoria": seleccion.value,
-        "Etiquetas": arreglo_etiquetas,
-        "Precio": precioProd.value,
-        "Caracteristicas": caracteristicas_prod.value,
-        "Stock": stock.value
-    }
+        Swal.fire({                                                 // Se muestra una alerta que indica Éxito
+            title: '¡Excelente!',
+            text: "El producto ha sido registrado en la base de datos",
+            icon: 'success',
+            confirmButtonColor: '#ED959C',
+            confirmButtonText: 'Ok.'
+        });
+        
+        // Llamar a la función de limpieza
+        limpieza();
+    } else {
+        Swal.fire({                                                 // Se muestra una alerta que indica Error
+            title: '¡Cuidado!',
+            text: "Debes llenar los campos correctamente",
+            icon: 'error',
+            confirmButtonColor: '#ED959C',
+            confirmButtonText: 'Ok.'
+        });
+    };
+});
 
+// EVENTO DE LIMPIEZA
+limpiar.addEventListener("click", (e_limpiar) =>{
+    e_limpiar.preventDefault();
+    limpieza();
+});
+
+// FUNCIÓN DE LIMPIEZA
+function limpieza(){
     // Reestablecer todo
-    creacionProd.value = "";
-    seleccion.value = "";
+    document.getElementById("formulario").reset();
     arreglo_etiquetas = ["cerámica"];
-    precioProd.value = "";
-    caracteristicas_prod.value = "";
-    stock.value = "";
-    caracteristicas_contador = 0;
-    caracteristicas_restates = 150;
-    caracteristicas_mensaje.textContent = caracteristicas_restates;
-
-    creacionProd.classList.remove("is-valid");
-    creacionProd.classList.remove("is-invalid");
+    caracteristicas_mensaje.textContent = 150 - caracteristicas.length;
+    nombre.classList.remove("is-valid");
+    nombre.classList.remove("is-invalid");
     seleccion.classList.remove("is-valid");
     seleccion.classList.remove("is-invalid");
     etiquetas.classList.remove("is-valid");
     etiquetas.classList.remove("is-invalid");
-    precioProd.classList.remove("is-valid");
-    precioProd.classList.remove("is-invalid");
-    caracteristicas_prod.classList.remove("is-valid");
-    caracteristicas_prod.classList.remove("is-invalid");
+    precio.classList.remove("is-valid");
+    precio.classList.remove("is-invalid");
+    caracteristicas.classList.remove("is-valid");
+    caracteristicas.classList.remove("is-invalid");
     stock.classList.remove("is-valid");
     stock.classList.remove("is-invalid");
-
-    creacion_productos.push(array_productos);
-    console.log(creacion_productos);
-
-    let jsonProducto = JSON.stringify(creacion_productos);
-    localStorage.setItem("productosRegistrados",jsonProducto);
-
-});
+};

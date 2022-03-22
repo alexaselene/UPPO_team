@@ -82,13 +82,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-8 col-7">
-        <form class="form-group">
+        <form class="form-group" id = "formulario">
           <div class="container_i">
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
               <input type="text" class="form-control text_1" placeholder="Nombre del producto" id="nombre" autofocus>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El nombre del producto es inválido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Debes ingresar un nombre más largo</div>
             </div>
 
 
@@ -113,9 +113,9 @@
 
             <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Precio del producto" id="precio">
+              <input type="number" class="form-control text_1" placeholder="Precio del producto" id="precio">
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El precio del producto es inválido!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Sólo se permite ingreso de dos decimales</div>
             </div>
 
             <div class="container_1">
@@ -124,8 +124,7 @@
                 id="caracteristicas" rows="5"></input>
               <div class="text-muted caracteres" id="letras_mensaje">0 - 150 caracteres</div>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!
-              </div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Sobrepasaste el límite de caracteres</div>
             </div>
 
             <div class="container_1">
