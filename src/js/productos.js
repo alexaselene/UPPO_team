@@ -14,7 +14,7 @@ let productos= [
      "Material": "Cerámica",
      "Precio": "$250 mxn",
      "Stock": "Disponible",   
-     "Imagen": "./../src/img/taza_gato.jpg"
+     "Imagen": "./../src/img/taza_lunar.jpg" //AQUÍ HICE UN CAMBIO
     },
     {
     "Nombre": "Gatitas",
@@ -30,7 +30,7 @@ let productos= [
         "Material": "Cerámica",
         "Precio": "$200 mxn",
         "Stock": "Disponible",
-        "Imagen": "./../src/img/taza_esqueleto.jpg"
+        "Imagen": "./../src/img/taza_cara.jpg"  //AQUÍ HICE UN CAMBIO
     },
     {
         "Nombre": "Mood de lunes",
@@ -55,7 +55,7 @@ let productos= [
       "Material": "Cerámica",
       "Precio": "$200 mxn",
       "Stock": "Disponible" ,
-      "Imagen": "./../src/img/taza_yoda.jpg"
+      "Imagen": "./../src/img/indiferente.jpg"  //AQUÍ HICE UN CAMBIO
   },
 
   {
