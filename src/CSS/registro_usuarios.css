@@ -1,6 +1,12 @@
 /* Estilos generales */
 @import url("./../CSS/main.css");
 
+body{
+    background-image: url(./../img/vaca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /*Jumbotron*/
 .jumbotron{
     background-image: url(../img/perro_acostado.jpeg);
