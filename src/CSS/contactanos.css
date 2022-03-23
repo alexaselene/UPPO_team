@@ -33,7 +33,7 @@
 
 body{
     /*padding: 20px;*/
-    background-color: var(--beige);
+    background-image:url("./../img/vaca.png");
 }
 /*
 body{
@@ -114,10 +114,10 @@ body{
 
 
 /* Container color beige*/
-.beige{
+/*.beige{
     background-color: var(--beige);
 }
-
+*/
 .caracteres{
     text-align: right;
 }
@@ -137,11 +137,18 @@ body{
     .navbar{
         flex-wrap: nowrap;
     }
+    .datos_contactanos{
+        font-size: 100%;
+    }
 }
 
 
 /* Media queery de la phone */ 
 @media screen and (max-width: 600px){    
+
+    .titulo_equipo{
+        font-size: 40px;
+    }
 
     .container{
         
@@ -151,10 +158,10 @@ body{
      /* Tamaño del texto */
     .text_1{
         font-size: 50%;
-        
 
-        
-        
+    }
+    .datos_contactanos{
+        font-size: 100%;
     }
 
 
