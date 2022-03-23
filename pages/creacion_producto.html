@@ -85,52 +85,52 @@
         <form class="form-group" id = "formulario">
           <div class="container_i">
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
+              <small id="" class="form-text text-muted descripcion">Añade el nombre del producto</small>
               <input type="text" class="form-control text_1" placeholder="Nombre del producto" id="nombre" autofocus>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Debes ingresar un nombre más largo</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Ingresa un nombre más largo</div>
             </div>
 
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Selecciona una opción</small>
+              <small id="" class="form-text text-muted descripcion">Selecciona una categoría</small>
               <select class="form-control" id="seleccion">
-                <option class="text-muted">Selecciona</option>
+                <option class="text-muted">Selecciona una categoría</option>
                 <option>Productos</option>
                 <option>Productos personalizados</option>
               </select>
               <div class="valid-feedback">¡Opción válida!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Debes seleccionar una categoría</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">No has seleccionado una categoría</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las etiquetas del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Etiquetas del producto" id="etiquetas">
+              <small id="" class="form-text text-muted descripcion">Añade las etiquetas del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Ejemplo: taza, personalizados" id="etiquetas">
               <div class="valid-feedback">¡Etiqueta guardada!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar letras</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Introduce palabras clave del producto</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
+              <small id="" class="form-text text-muted descripcion">Añade el precio del producto</small>
               <input type="number" class="form-control text_1" placeholder="Precio del producto" id="precio">
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Sólo se permite ingreso de dos decimales</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Introduce el precio con 2 dígitos de centavos</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Características del producto"
+              <small id="" class="form-text text-muted descripcion">Añade la descripción del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Descripción del producto"
                 id="caracteristicas" rows="5"></input>
               <div class="text-muted caracteres" id="letras_mensaje">0 - 150 caracteres</div>
               <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Sobrepasaste el límite de caracteres</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar 150 carácteres</div>
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el número de productos en Stock</small>
+              <small id="" class="form-text text-muted descripcion">Añade el número de productos disponibles</small>
               <input type="number" class="form-control text_1" placeholder="0" id="stock">
-              <div class="valid-feedback">¡Stock establecido!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">No se puede agregar si no existe en Stock</div>
+              <div class="valid-feedback">¡Cantidad establecida!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Ingresa el número de productos que habrá disponibles</div>
             </div>
           </div>
           <button type = "button" class="btn btn-danger mb-2" id ="boton_creacion">Añadir producto</button>
@@ -139,15 +139,15 @@
       </div>
 
       <div class="col-md-6 col-sm-4 col-5">
-        <h1>1 Introduce tu imagen</h1>
+        <h5>Carga la imagen del producto</h5>
         <!-- Input file donde se adjunta la imagen -->
         <input type="file" name="file" onchange = ValidarImagen(this) id = "image">
         
-        <h1>2 Recorta</h1>
+        <h5>Selecciona el área a recortar</h5>
         <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
         <div id="editor"></div>
         
-        <h1>3 Previsualiza el resultado</h1>
+        <h5>Vista previa de la imagen</h5>
         <!-- Previa del recorte -->
         <canvas id="preview"></canvas>
       </div>
