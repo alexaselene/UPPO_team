@@ -53,13 +53,19 @@ precio.addEventListener("change", (evento_c)=>{         // Se activa al presiona
 });
 
 // Características
-caracteristicas.addEventListener("input", (evento_c)=>{ // Se actiba al presionar enter o cambiar de campo de caracteristicas
+caracteristicas.addEventListener("input", (evento_c)=>{ // Se activa al cambiar de valor el input
     evento_c.preventDefault();                          // En caso de error
     campo_caracteres = validacion_caracteres();         // Manda llamar la función para validar las carecterísticas
     caracteristicas_mensaje.textContent = 150 - caracteristicas.value.length; // Imprimir los caracteres restantes
 });
 
-//
+caracteristicas.addEventListener("change", (evento_cc) =>{  // Se activa al presionar enter o cambiar de campo de características
+    if (campo_caracteres){
+        stock.focus();                                      // Mover cursor al campo de Stock
+    }
+});
+
+// Stock 
 stock.addEventListener("change", (e_stock)=>{       // Se activa al presionar enter o cambiar de campo de caracteres
     e_stock.preventDefault();                       // En caso de error
     campo_stock = validacionStock(stock);           // Llama a la función para validar las etiquetas
@@ -167,6 +173,8 @@ function validacionStock(){
     return campo_stock;                         // Retornar booleano de validación
 }
 
+let url_imagen = "";
+
 //Validación de la imagen
 function ValidarImagen(obj){
     var uploadFile = obj.files[0];
@@ -195,8 +203,8 @@ function ValidarImagen(obj){
     }
     else {
         var img = new Image();
-        img.onload = function () 
-        { if (uploadFile.size > 500000)
+        //img.onload = function () { 
+            if (uploadFile.size > 500000)
             {
                 Swal.fire({                                         // Se muestra una alerta que indica Error
                     title: 'Cuidado',
@@ -217,34 +225,36 @@ function ValidarImagen(obj){
                 });          
             }
             img.src = URL.createObjectURL(uploadFile);
+            url_imagen = img.src.toString();
             campo_imagen = true;
-        };
-        
+        //}; 
     }                 
 }
+
 // Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
 document.addEventListener('DOMContentLoaded', () => {
 
     // Input File
-    const inputImage = document.querySelector('#image');
+    const inputImage = document.getElementById("image");
     // Nodo donde estará el editor
-    const editor = document.querySelector('#editor');
+    const editor = document.getElementById("editor");
     // El canvas donde se mostrará la previa
-    const miCanvas = document.querySelector('#preview');
+    const miCanvas = document.getElementById("preview");
     // Contexto del canvas
     const contexto = miCanvas.getContext('2d');
     // Ruta de la imagen seleccionada
     let urlImage = undefined;
+    
     // Evento disparado cuando se adjunte una imagen
-    inputImage.addEventListener('change', abrirEditor, false);
+    inputImage.addEventListener('change', (e) => {
 
-    /**
+        /**
     * Método que abre el editor con la imagen seleccionada
     */
-    function abrirEditor(e) {
-        // Obtiene la imagen
+    
+       // Obtiene la imagen
         urlImage = URL.createObjectURL(e.target.files[0]);
-        console.log(urlImage);
+        let url_imagen = obtener_url(urlImage);
 
         // Borra editor en caso que existiera una imagen previa
         editor.innerHTML = '';
@@ -258,13 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Envia la imagen al editor para su recorte
         document.querySelector('#croppr').setAttribute('src', urlImage);
 
+
+        
         // Crea el editor
         new Croppr('#croppr', {
             aspectRatio: 1,
             startSize: [70, 70],
             onCropEnd: recortarImagen
-        })
-    }
+        });
+    });
+
 
     /**
     * Método que recorta la imagen con las coordenadas proporcionadas con croppr.js
@@ -280,46 +293,57 @@ document.addEventListener('DOMContentLoaded', () => {
         // La imprimo
         miCanvas.width = nuevoAncho;
         miCanvas.height = nuevaAltura;
+
+        
+
         // La declaro
         let miNuevaImagenTemp = new Image();
         // Cuando la imagen se carge se procederá al recorte
         miNuevaImagenTemp.onload = function() {
             // Se recorta
             contexto.drawImage(miNuevaImagenTemp, inicioX, inicioY, nuevoAncho * zoom, nuevaAltura * zoom, 0, 0, nuevoAncho, nuevaAltura);
+
             // Se transforma a base64
             imagenEn64 = miCanvas.toDataURL("image/jpeg");
-            // Mostramos el código generado
-            document.querySelector('#base64').textContent = imagenEn64;
-            document.querySelector('#base64HTML').textContent = '<img src="' + imagenEn64.slice(0, 40) + '...">';
-
         }
+
         // Proporciona la imagen cruda, sin editarla por ahora
         miNuevaImagenTemp.src = urlImage;
     }
 });
 
+function obtener_url(url){
+    return url;
+}
+
 // ARRAY PARA GUARDAR PRODUCTOS
 let creacion_productos = [      // Estructura donde se guardará cada elemento y sus propiedades
+{}
 ];
+
+let cont_array = 0;
 
 // EVENTO DE REGISTRO
 creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presionar el botón de registro de producto
     e_creacion.preventDefault();                        // En caso de error
 
-    if (campo_nombre && seleccion && campo_precio && campo_stock){
-        // Crear array de producto con valores ingresados
+    if (campo_nombre && seleccion && campo_precio && campo_stock && campo_imagen){
+        // Crear array de producto con valores ngresados
         let array_productos = {
             "Nombre" : nombre.value,
             "Categoria": seleccion.value,
             "Etiquetas": arreglo_etiquetas,
             "Precio": precio.value,
             "Caracteristicas": caracteristicas.value,
-            "Stock": stock.value
+            "Stock": stock.value,
+            "Imagen": url_imagen
         }
     
         // Crear JSON
-        creacion_productos.push(array_productos);                   // Ingresar array en la estructura de productos
+        creacion_productos[cont_array] = array_productos;           // Ingresar array en la estructura de productos
+        cont_array++;
         let jsonProducto = JSON.stringify(creacion_productos);      // Convertir estructura en un JSON
+        console.log(jsonProducto);
         localStorage.setItem("productosRegistrados",jsonProducto);  // Guardar JSON en Local Storage
 
         Swal.fire({                                                 // Se muestra una alerta que indica Éxito
@@ -344,9 +368,9 @@ creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presiona
 });
 
 // EVENTO DE LIMPIEZA
-limpiar.addEventListener("click", (e_limpiar) =>{
-    e_limpiar.preventDefault();
-    limpieza();
+limpiar.addEventListener("click", (e_limpiar) =>{   // Se activa al presionar el botón de Limpieza
+    e_limpiar.preventDefault();                     // En caso de error
+    limpieza();                                     // Manda a llamar a la función de limpieza de campos
 });
 
 // FUNCIÓN DE LIMPIEZA
