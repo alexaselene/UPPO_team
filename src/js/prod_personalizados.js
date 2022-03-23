@@ -89,12 +89,17 @@ productos_personalizados.forEach(element => {                                   
     <figure >
       <img src=${element.Imagen}  alt="... class="img-fluid" ">
     </figure>
-    <div>
+    <div class="contenido">
       <h5>${element.Nombre}</h5>
       <p>${element.Stock}</p>
-      <p class="card-text"><small class="text-muted">${element.Precio}</small></p>
-        </div>`                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
+      <p >${element.Precio}</p>
+      <a href="#" type="button">Agregar</a>
+        </div>
+  </div> `                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
 });
+
+
+
 
 
 
