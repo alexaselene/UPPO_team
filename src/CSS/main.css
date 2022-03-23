@@ -138,3 +138,17 @@ body{
 .fa{
     border-radius: 10%;
 }
+
+
+
+@media screen and (max-width: 769px){
+    .hamburguesa{
+        order: 2;
+        margin-right: 0;
+    }
+    .iconos{
+        margin-right:auto;
+        margin-left: 0px;
+    }
+ }
+
