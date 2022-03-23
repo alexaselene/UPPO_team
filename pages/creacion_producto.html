@@ -98,7 +98,6 @@
                 <option class="text-muted">Selecciona</option>
                 <option>Productos</option>
                 <option>Productos personalizados</option>
-                <option>Talleres</option>
               </select>
               <div class="valid-feedback">¡Opción válida!</div>
               <div id="validationServer04Feedback" class="invalid-feedback">Debes seleccionar una categoría</div>
@@ -139,12 +138,10 @@
         </form>
       </div>
 
-
       <div class="col-md-6 col-sm-4 col-5">
         <h1>1 Introduce tu imagen</h1>
         <!-- Input file donde se adjunta la imagen -->
-        <input type="file" name="file" onchange="ValidarImagen(this);" id="image">
-        
+        <input type="file" name="file" onchange = ValidarImagen(this) id = "image">
         
         <h1>2 Recorta</h1>
         <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
