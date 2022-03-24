@@ -36,10 +36,6 @@ body{
     /*padding: 20px;*/
     background-image:url("./../img/vaca.png");
 }
-/*
-body{
-    padding: 50px;
-}*/
 
 .contenedor_i{
     display: flexbox;
