@@ -69,8 +69,9 @@
     font-size: 30px;
 }
 
+/*AQUÍ EMPIEZAN LAS CARDS*/
 .card{
-    width: 100%;
+    width: 15%;
     margin: 20px;
     border-radius: 6px;
     overflow: hidden; /* Para que todo elemento que este fuera de la card se oculte*/
@@ -78,7 +79,6 @@
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
     cursor: default;
     transition: all 400ms ease;
-   
 }
 /*Para la sombra y el desplazamiento de la card*/
 .card:hover{
@@ -97,9 +97,10 @@
     
 }
 /*Para el párrafo de la card*/
-.card .contenido .p{
+.card .contenido p{
     line-height: 1.5;
-    color: var(--gris_obscuro);
+    font-size: larger;
+    color: black;
 }
 /*Para el título de la card*/
 .card .contenido h5{
@@ -108,6 +109,19 @@
     color: var(--gris_obscuro);
     font-weight: bolder;
 }
+
+.contenido_card{
+    padding-left: 100px;
+    padding-bottom: 100px;
+    
+}
+/*Cards*/
+.card{
+    width: 20%;
+    
+}
+
+
 /*Para el botón de la card*/
 .card .contenido a{
     text-decoration: none;
@@ -120,16 +134,27 @@
     background-color: var(--cafe_claro);
  
 }
-.contenido_card{
-    padding-left: 100px;
-    padding-bottom: 100px;
-    
+
+
+a.button {
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ED959C;
+    color: white;
+    cursor: pointer; 
+    background: linear-gradient(to right, transparent 50%, #ED959C 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
+    text-decoration: none;
 }
-/*Cards*/
-.card{
-    width: 30%;
-    
+a.button:hover {
+    background-position: right;
+    color: white;
+    font-weight: 700;
 }
+
 
 /*Media screen de celular*/
 @media screen and (max-width:600px){
@@ -154,7 +179,7 @@
        
           
     } 
-    .card-body{
+    .contenido{
         text-align: center;
         
         line-height:5px
@@ -165,11 +190,11 @@
     .img-fluid{
         max-block-size: 120px;
     }
-    .card-body h5{
+    .card .contenido h5{
         font-size: 10px;
         
     }
-    .card-body p{
+    .card .contenido p{
       font-size: 10px;
     
     }

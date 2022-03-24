@@ -264,6 +264,12 @@
     .acuarela{
         display:none;
     }
+
+    .container{
+        padding-right: 6%;
+        padding-left: 6%;
+
+    }
 }
 
 /*Resposive de tablet*/
