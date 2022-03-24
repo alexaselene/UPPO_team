@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Carga de productos</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="stylesheet" href="./../src/CSS/creacion_producto.css">
+  <!--Recorte de imagen-->
   <link href="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.css" rel="stylesheet" />
 </head>
 
 <body>
 
-<div class="container-xxl">
+  <div class="container-xxl">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg ">
-      <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width="100px"
-        height="100px">
+      <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width="150px" height="150px">
       <!--menú de hamburguesa-->
       <nav class="navbar navbar-expand-lg navbar-light hamburguesa ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,8 +49,9 @@
                 Contáctanos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de Maria haro Ceramica </a>
+                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de María Haro Cerámica</a>
                 <a class="dropdown-item" href="../pages/about_us.html">Acerca de UPPO-Team</a>
+                <a class="dropdown-item" href="../pages/contactanos.html">Escríbenos</a>
 
               </div>
             </li>
@@ -61,97 +62,97 @@
       <!--Barra de Busqueda-->
       <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
       <form class="w-50 me-3 barra_busqueda">
-        <input class="form-control mr-sm-2" type="search" placeholder="🔍  Encuentra la magia " aria-label="Search">
+        <input class="form-control mr-sm-2 busqueda" type="search" placeholder="Encuentra la magia " aria-label="Search">
       </form>
       <!--Iconos de usuario y compras hay que agregarles el link-->
       <div class="iconos">
-        <img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px">
+        <a href="./registro_usuarios.html"><img class="inicio_sesion"   src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px"></a>
         <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
       </div>
-</div>
-
-<!-- F O R M U L A R I O -->
-<div class = "container">
-  <div class = "row">
-    <div class = "col-md-6 col-sm-8 col-7">
-      <form class = "form-group">
-          <div class = "container_i">
-            <div class = "container_1">
-              <small id="" class="form-text text-muted descripcion">Añadir el nombre del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id = "nombre" autofocus>
-              <div class="valid-feedback">¡Muy bien!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">¡El nombre del producto es inválido!</div>
-            </div>
-
-                            
-          <div class = "container_1">
-            <small id="" class="form-text text-muted descripcion">Selecciona una opción</small>
-            <select class="form-control" id="seleccion">
-              <option class = "text-muted">Selecciona</option>
-              <option>Productos</option>
-              <option>Productos personalizados</option>
-              <option>Talleres</option>
-            </select>
-            <div class = "valid-feedback">¡Opción válida!</div>
-            <div id="validationServer04Feedback" class="invalid-feedback">Debes seleccionar una categoría</div>
-          </div>
-
-          <div class = "container_1">
-            <small id="" class="form-text text-muted descripcion">Añadir las etiquetas del producto</small>
-              <input type="text" class="form-control text_1" placeholder="Etiquetas del producto" id = "etiquetas">
-              <div class = "valid-feedback">¡Etiqueta guardada!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar letras</div>
-          </div>
-          
-          <div class = "container_1">
-            <small id="" class="form-text text-muted descripcion">Añadir el precio del producto</small>
-            <input type="text" class="form-control text_1" placeholder="Precio del producto" id = "precio">
-            <div class="valid-feedback">¡Muy bien!</div>
-                <div id="validationServer04Feedback" class="invalid-feedback">¡El precio del producto es inválido!</div>
-          </div>
-          
-          <div class = "container_1">
-            <small id="" class="form-text text-muted descripcion">Añadir las características del producto</small>
-            <textarea type="text" class="form-control text_1" placeholder="Características del producto" id = "carecterísticas" rows="5"></textarea>
-            <div class = "text-muted caracteres" id = "letras_mensaje">0 - 150 caracteres</div>
-            <div class="valid-feedback">¡Muy bien!</div>
-            <div id="validationServer04Feedback" class="invalid-feedback">¡El número de caracteres es incorrecto!</div>
-
-          </div>
-
-          <div class = "container_1">
-            <small id = "" class = "form-text text-muted descripcion">Añadir el número de productos en Stock</small>
-            <div class = "row"> 
-              <input type="number" class="form-control text_1" placeholder="0" id = "stock">
-            </div>                
-          </div>
-        </div>
-      </form>
-    </div>
-    
-    <div class = "col-md-6 col-sm-4 col-5">
-      	<!--Titulo de carga de la imagen-->
-        <h5>Carga la imagen del producto</h5>
-        <!-- Input file donde se adjunta la imagen -->
-        <input type="file" id="image" class="img-fluid" name="file" onchange="ValidarImagen(this);" />
-        <!--Titulo del recorte de la imagen-->
-        <h5>Recorta la imagen del producto</h5>
-        <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
-        <div id="editor"></div>
-        <!--Titulo de la imagen recortada-->
-        <h5>Así se verá la imagen:</h5>
-        <!-- Vista previa del recorte -->
-        <canvas id="preview" class="img-fluid"></canvas>
-        <!--Descomentar cuando lleguemos a base de datos(Aquí se guarda la imagen recortada)-->
-        <!--<h1>4 Resultado en Base64</h1>-->
-        <!-- Muestra de la imagen recortada en Base64 -->
-        <!--<code id="base64"></code>-->
-        <!-- <img src = "./../src/img/florero.jpg" alt = "imagen del producto" class = "img-fluid imagen"> -->
-        <button class="btn btn-danger mb-2 btn-block">Añadir producto</button>
+  </div>
+  <!--Jumbotron-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container desaparece">
+      <h1 class="display-4 titulo_equipo">Carga de productos</h1>
+      <p class="lead texto_equipo">Carga nuevos productos para tu página</p>
     </div>
   </div>
-</div>
 
+  <!-- F O R M U L A R I O -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-7">
+        <form class="form-group" id = "formulario">
+          <div class="container_i">
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Añade el nombre del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Nombre del producto" id="nombre" autofocus>
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Ingresa un nombre más largo</div>
+            </div>
+
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Selecciona una categoría</small>
+              <select class="form-control" id="seleccion">
+                <option class="text-muted">Selecciona una categoría</option>
+                <option>Productos</option>
+                <option>Productos personalizados</option>
+              </select>
+              <div class="valid-feedback">¡Opción válida!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">No has seleccionado una categoría</div>
+            </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Añade las etiquetas del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Ejemplo: taza, personalizados" id="etiquetas">
+              <div class="valid-feedback">¡Etiqueta guardada!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Introduce palabras clave del producto</div>
+            </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Añade el precio del producto</small>
+              <input type="number" class="form-control text_1" placeholder="Precio del producto" id="precio">
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Introduce el precio con 2 dígitos de centavos</div>
+            </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Añade la descripción del producto</small>
+              <input type="text" class="form-control text_1" placeholder="Descripción del producto"
+                id="caracteristicas" rows="5"></input>
+              <div class="text-muted caracteres" id="letras_mensaje">0 - 150 caracteres</div>
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Sólo puedes ingresar 150 carácteres</div>
+            </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Añade el número de productos disponibles</small>
+              <input type="number" class="form-control text_1" placeholder="0" id="stock">
+              <div class="valid-feedback">¡Cantidad establecida!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Ingresa el número de productos que habrá disponibles</div>
+            </div>
+          </div>
+          <button type = "button" class="btn btn-danger mb-2" id ="boton_creacion">Añadir producto</button>
+          <button type="reset" value="limpiar formulario" class="btn btn-secondary mb-2" id="btn_limpiar">Limpiar</button>
+        </form>
+      </div>
+
+      <div class="col-md-6 col-sm-4 col-5">
+        <h5>Carga la imagen del producto</h5>
+        <!-- Input file donde se adjunta la imagen -->
+        <input type="file" name="file" onchange = ValidarImagen(this) id = "image">
+        
+        <h5>Selecciona el área a recortar</h5>
+        <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
+        <div id="editor"></div>
+        
+        <h5>Vista previa de la imagen</h5>
+        <!-- Previa del recorte -->
+        <canvas id="preview"></canvas>
+      </div>
+    </div>
+  </div>
 
   <!--Footer-->
   <footer class="pie_pagina">
@@ -170,7 +171,7 @@
       </div>
 
       <div class="box redes">
-        <h5 class="text-white siguenos">SIGUENOS</h5>
+        <h5 class="text-white siguenos">SÍGUENOS</h5>
         <div class="red_social">
           <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
           <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
@@ -178,10 +179,12 @@
       </div>
     </div>
     <div class="grupo_2">
-      <small>Copyright © 2022 María Haro Cerámica All Rights Reserved</small>
+      <small>Copyright © 2022 María Haro Cerámica. Todos los derechos reservados</small>
 
     </div>
   </footer>
+  <!--Script para el footer-->
+  <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
 
   <!-- JS bootsrap -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -192,7 +195,10 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
   <script src="./../src/js/creacion_producto.js"></script>
+  <!--Recorte de imagen-->
   <script src="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.js"></script>
+  <!--Sweet alert-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

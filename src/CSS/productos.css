@@ -1,53 +1,6 @@
-/*GENERAL*/
-:root{
-    --font_base: "Roboto", sans-serif;
-    --gris_obscuro: #6B6A7A;
-    --gris_claro: #a5a5b1;
-    --beige: #EAE2D7;
-    --rosa: #ED959C;
-    --cafe_claro: #DFC9CB;
-    --azul_claro: #ECF7FB;
-    --lila: #D99BFF;
+/* Estilos generales */
+@import url("./../CSS/main.css");
 
-}
-/*Navbar*/
-.navbar{
-    background-color: var(--gris_obscuro) ;
-    display: flex;
-    justify-content: space-between;
-
-  }
-.contactanos{
-    font-size: 22px;
-}
- #logo{
-     margin-left: 50px;
- }
- .form-inline{
-     margin-left: 20px;
- }
- .collapse{
-    margin-left: 50px;
- }
- .iconos{
-    
-    margin-left: 100px; 
-    display: flex;
-    align-items: flex-end;
- }
- .inicio_sesion{
-     margin-right: 30px;
- }
- .carrito_compra{
-     margin-right: 30px;
- }
-
-
-/* Padding general de la página */
-body{
-    
-    background-color: var(--cafe_claro);
-}
 /* media query para celular de navbar*/
 @media screen and (max-width: 600px){
 
@@ -109,14 +62,16 @@ body{
 }
 .titulo_equipo{
     font-weight: bolder;
+    letter-spacing: 30px;
 }
 .texto_equipo{
     color:var(--azul_claro);
     font-size: 30px;
 }
 
+/*AQUÍ EMPIEZAN LAS CARDS*/
 .card{
-    width: 100%;
+    width: 15%;
     margin: 20px;
     border-radius: 6px;
     overflow: hidden; /* Para que todo elemento que este fuera de la card se oculte*/
@@ -139,11 +94,13 @@ body{
 .card .contenido{
     padding: 15px;
     text-align: center;
+    
 }
 /*Para el párrafo de la card*/
-.card .contenido .p{
+.card .contenido p{
     line-height: 1.5;
-    color: var(--gris_obscuro);
+    font-size: larger;
+    color: black;
 }
 /*Para el título de la card*/
 .card .contenido h5{
@@ -152,6 +109,19 @@ body{
     color: var(--gris_obscuro);
     font-weight: bolder;
 }
+
+.contenido_card{
+    padding-left: 100px;
+    padding-bottom: 100px;
+    
+}
+/*Cards*/
+.card{
+    width: 20%;
+    
+}
+
+
 /*Para el botón de la card*/
 .card .contenido a{
     text-decoration: none;
@@ -164,92 +134,28 @@ body{
     background-color: var(--cafe_claro);
  
 }
-.contenido_card{
-    padding-left: 100px;
-    padding-bottom: 100px;
-}
-/*Cards*/
-.card{
-    width: 30%;
-}
 
 
-
-/*Footer*/
-
-.pie_pagina{
-    width: 100%;
-    background-color: black;
-}
-.pie_pagina .grupo_1{
-    width: 100%;
-    max-width: 1200px;
-    margin:auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
-    padding: 20px 0px;
-}
-.pie_pagina .grupo_1 .box figure{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pie_pagina .grupo_1 .box .btn-block{
-    border-radius: 400px;
-    background-color:#ED959C;
-}
-.pie_pagina .grupo_1 .box figure img{
-    width: 200px;
-}
-
-.pie_pagina .grupo_1 .box h4{
-    color:white;
-    margin-bottom: 50px;
-    margin-top: 40px;
-    font-size: 20px;
-}
-.pie_pagina .grupo_1 .box .btn{
-    color:white;
-    margin-bottom: 50px;
-    margin-top: 60px;
-}
-.pie_pagina .grupo_1 .red_social a{
-    font-size: 40px;
-    display: inline-block;
+a.button {
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ED959C;
+    color: white;
+    cursor: pointer; 
+    background: linear-gradient(to right, transparent 50%, #ED959C 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
     text-decoration: none;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    color: black;
-    margin-right: 20px;
-    background-color: var(--cafe_claro);
-    text-align: center;
-    transition: all 300ms ease;
 }
-.pie_pagina .grupo_1 .red_social a:hover{
-     color:rgb(235, 164, 211);
+a.button:hover {
+    background-position: right;
+    color: white;
+    font-weight: 700;
 }
-.pie_pagina .grupo_2{
-    background-color: var(--cafe_claro);
-    padding: 15px 10px;
-    text-align: center;
-    color:black;
-}
-.pie_pagina .grupo_2 small{
-    font-size: 15px;
-}
-.redes{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.siguenos{
-    margin-right: 50px;
-}
+
+
 /*Media screen de celular*/
 @media screen and (max-width:600px){
     .pie_pagina .grupo_1{
@@ -273,7 +179,7 @@ body{
        
           
     } 
-    .card-body{
+    .contenido{
         text-align: center;
         
         line-height:5px
@@ -284,11 +190,11 @@ body{
     .img-fluid{
         max-block-size: 120px;
     }
-    .card-body h5{
+    .card .contenido h5{
         font-size: 10px;
         
     }
-    .card-body p{
+    .card .contenido p{
       font-size: 10px;
     
     }

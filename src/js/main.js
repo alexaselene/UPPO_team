@@ -19,7 +19,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Mascota personalizada",
-        "Características": "Perros y gatos. Texturas corrugadas y lisas, tamaños medianos y chicos, los colores pueden personalizarse",
+        "Características": "Perros y gatos. Texturas corrugadas y lisas, tamaños medianos y chicos. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$350 mxn",
         "Stock": "Disponible",
@@ -27,7 +27,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Recipiente para los pinceles del taller",
-        "Características": "Un recipiente para pinceles, base color beige, tamaño mediano y grande, los colores pueden personalizarse",
+        "Características": "Un recipiente para pinceles, base color beige, tamaño mediano y grande. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$300 mxn",
         "Stock": "Disponible",
@@ -35,7 +35,7 @@ let productos_personalizados = [
     },
     {
         "Nombre": "Florero",
-        "Características": "Un florero color mármol, diseño rústico, tamaño mediano y grande, los colores pueden personalizarse",
+        "Características": "Un florero color mármol, diseño rústico, tamaño mediano y grande. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$350 mxn",
         "Stock": "Disponible", 
@@ -100,14 +100,14 @@ let productos= [
         "Stock": "Disponible",
         "Imagen": "./../src/img/taza_abstracta.jpg"
     },
-    {
+    /*{
         "Nombre": "Colibrí",
         "Caracteristicas": "Taza color blanco con asa color rosa, diseño minimalista,  tamaño mediano",
         "Material": "Cerámica",
         "Precio": "$200 mxn",
         "Stock": "Disponible" ,
         "Imagen": "./../src/img/taza_colibri.png"
-    },
+    },*/
 ];
 tarjeta_p = document.getElementById("p_producto");                         // Obtener el elemento donde irá la plantilla
 productos.forEach(elementp => {                                          // Recorrer el arreglo
