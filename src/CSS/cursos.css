@@ -230,7 +230,12 @@ button:focus{
     margin: 50px;
 }
 
-
+@media screen and (min-width:800px) and (max-width:2000px) {
+    .telefono{
+        display:none;
+    }
+    
+}
 
 /*Media screen de celular*/
 @media screen and (max-width:600px){
@@ -240,17 +245,60 @@ button:focus{
         grid-gap:30px;
         padding: 0px 0px;
     }
+    
+    .cards{
+        display:none;
+    }
+    .texto_intro{
+        font-size:15px;
+    }
+    .aprenderas{
+      
+        font-size:30px;
+        letter-spacing: normal;
+        height: 100px;
+        width: 300px;
+       
+        
+    }
+    .titulo{
 
-    .primera_parte{
+        font-size:30px;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+    }
+    .aprender{
+        font-size:15px;
+        letter-spacing: normal;
+
+    }
+    .horario{
+        margin:0px;
+       
+        margin-top: 100px;
+        margin-bottom: 40px;
+        font-size:15px;
+        letter-spacing: normal;
+        height: 100px;
+        width: 300px;
+    }
+    .btn_1{
+        margin-bottom: 20px;
+    }
+    .boton_horario{
+    
+        display: flex;
+        justify-content: center;
+    }
+    .foto_movile{
+        
+       width: 300px;
+       
     }
     
-    .img_cursos{    
-        width: 300px;
-        align-content: center;
-        margin: 15px;
-    }
+    
+
+
    
    
 }
@@ -266,6 +314,12 @@ button:focus{
     /* Navbar */
     .navbar{
         flex-wrap: nowrap;
+    }
+    .cards{
+        display: none;
+    }
+    .btn_1{
+        margin-bottom: 20px;
     }
 
 }
