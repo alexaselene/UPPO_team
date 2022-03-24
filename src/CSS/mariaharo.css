@@ -93,16 +93,35 @@ body{
 }
 
 /*Video*/
-.video{
-    
-    border-radius: 20px;
+
+.informacion{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 700px;
+    
+    margin-top: 100px;
 }
 
+
+.proyect{
+    text-align: center;
+    font-size: 50px;
+    color: var(--rosa);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    
+    
+}
+
+
+/*Información */
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
 
 
 /*Información */
@@ -117,7 +136,7 @@ body{
     text-align: center;
     font-size: 50px;
     color: var(--rosa);
-    margin-top: 300px;
+    margin-top: 120px;
     margin-bottom: 50px;
 }
 .nombre_marcela{
@@ -134,9 +153,6 @@ body{
 
 .texto{
     background-color:  #f1c6d89a;
- 
-   
-  
     height: 400px;
     width: 1200px;
     display: flex;
@@ -165,12 +181,21 @@ body{
 }
 
 /*siguenos*/
-.siguenos{
+.siguenos_t{
     text-align: center;
     font-weight: bolder;
     color: var(--gris_obscuro);
     margin-top: 100px;
+    font-size: 45px;
    
+}
+
+.sig{
+    background-color: #ead7deec;
+    border-radius: 10px;
+    margin: 10%;
+    
+    
 }
 /*Redes sociales de las chicas*/
 .instagram {
@@ -205,6 +230,9 @@ body{
     .mapa_2{
         display: none;
     }
+    .video{
+        display: none;
+    }
 }
 
 /*Media screen de celular*/
@@ -235,6 +263,13 @@ body{
    .info{
        display: block;
        margin:0px;
+   }
+
+   .sig{
+       margin:0px;
+   }
+   .redes_h{
+       font-size: 25px;
    }
    .foto{
        height: 250px;
@@ -271,6 +306,23 @@ body{
         padding: 0px 0px;
         display: block;
     }
+
+
+    .proyect{
+        display: none;
+    }
+
+    .video{
+       
+         width: 1px;
+        
+        
+    }
+
+    .informacion{
+        display: none;
+    }
+
 }
 
 
