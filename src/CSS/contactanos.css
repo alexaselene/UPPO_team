@@ -11,13 +11,14 @@
     text-align: center;
     color: var(--azul_claro);
 }
+
 .titulo_equipo{
     font-weight: bolder;
-    letter-spacing: 30px;
+    letter-spacing: 18px;
 }
 .texto_equipo{
     color:var(--azul_claro);
-    font-size: 30px;
+    font-size: 18px;
 }
 
 .busqueda{
@@ -138,7 +139,7 @@ body{
         flex-wrap: nowrap;
     }
     .datos_contactanos{
-        font-size: 100%;
+        font-size: 20px;
     }
 }
 
@@ -192,6 +193,7 @@ body{
         
         background-position: 2%;
         background-size: 6%;
+        padding-left: 10%;
        
     }
     
@@ -201,8 +203,11 @@ body{
     
     
    
-}
+    }
 
+    .form-control{
+        font-size: 18px;
+    }
 
 
 
@@ -261,5 +266,3 @@ body{
         display:none;
     }
 }
-
-
