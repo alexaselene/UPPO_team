@@ -65,7 +65,6 @@ body{
     padding-bottom: 20px;
 }
 .container_2{
-    margin-left: 70px;
     border-radius: 20px;
 }
 
@@ -123,7 +122,7 @@ body{
 
     /* Texto en los input */
     .descripcion{
-        font-size: 90%;
+        font-size: 20px;
     }
 
     /*Separación entre inputs*/
@@ -153,6 +152,10 @@ body{
     
     .imagen_f{
         display: none;
+    }
+
+    .form-control{
+        font-size: 20px;
     }
 }
 

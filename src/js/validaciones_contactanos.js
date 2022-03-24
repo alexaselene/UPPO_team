@@ -1,10 +1,12 @@
 // OBTENER ELEMENTOS 
-let contactanos = document.getElementById("btn_contacto");      // Botón encargado de enviar los inputs del formulario (cuando sean válidos)
-let ingreso_nombre = document.getElementById("nombre");         // Input donde se ingresa el nombre
-let ingreso_email = document.getElementById("email");           // Input donde se ingresa el email
-let ingreso_telefono = document.getElementById("telefono");     // Input donde se ingresa el teléfono
-let ingreso_mensaje = document.getElementById("mensaje");       // Input donde se ingresa el mensaje
-let limpieza = document.getElementById("btn_limpiar");          // Botón encargado de limpiar los campos del formulario
+const contactanos = document.getElementById("btn_contacto");      // Botón encargado de enviar los inputs del formulario (cuando sean válidos)
+const ingreso_nombre = document.getElementById("nombre");         // Input donde se ingresa el nombre
+const ingreso_email = document.getElementById("email");           // Input donde se ingresa el email
+const ingreso_telefono = document.getElementById("telefono");     // Input donde se ingresa el teléfono
+const ingreso_mensaje = document.getElementById("mensaje");       // Input donde se ingresa el mensaje
+const caracteres_mensaje = document.getElementById("caracteres_mensaje"); // Espacio donde se imprimen los caracteres restantes
+const limpieza = document.getElementById("btn_limpiar");          // Botón encargado de limpiar los campos del formulario
+
 
 // INICIALIZACIÓN DE BOOLEANOS PARA LA VÁLIDACIÓN / INVALIDACIÓN DE LOS CAMPOS DEL FORMULARIO
 let val_n = false;          // Booleano para el nombre
@@ -42,8 +44,6 @@ ingreso_mensaje.addEventListener("change",(evento_m)=>{     // Se activa al pres
     activacion(val_n, val_e, val_t, val_tx);                // Llamar a la función que activará el botón en caso de que todos los campos se validen    
 });
 
-let caracteres_mensaje = document.getElementById("caracteres_mensaje"); // Espacio donde se imprimen los caracteres restantes
-
 let cont_caracter = 0;
 ingreso_mensaje.addEventListener("input",(evento_c)=>{                  // Se activa cada que el campo del mensaje se ve modificado
     evento_c.preventDefault;                                            // En caso de error
@@ -75,8 +75,8 @@ function validacion_name(nombre){                               // La función r
   
 // Email
 function validacion_email(mail){                                // La función recibe el elemento input correspondiente al email
-    let pattern = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;    // Definir un patrón
-    if(mail.value.match(pattern)){                              // Comparar el valor ingresado con el patrón
+    const pattern_e = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;    // Definir un patrón
+    if(mail.value.match(pattern_e)){                              // Comparar el valor ingresado con el patrón
         mail.classList.remove("is-invalid");                    // Remover la clase para invalidar el campo
         mail.classList.add("is-valid");                         // Añadir la clase para validar el campo
         val_e = true;                                           // Asignar verdadero el valor del booleano de validación
@@ -91,9 +91,9 @@ function validacion_email(mail){                                // La función r
 
 // Teléfono
 function validacion_tel(telefono){
-    let pattern_m =/((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/; // Definir un patrón
+    const pattern_t =/((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/; // Definir un patrón
     
-    if (telefono.value.match(pattern_m) && telefono.value.length >= 10 && telefono.value.length <= 12){ // Evaluar longitud del valor ingresado y compararlo con el patrón
+    if (telefono.value.match(pattern_t) && telefono.value.length >= 10 && telefono.value.length <= 12){ // Evaluar longitud del valor ingresado y compararlo con el patrón
             telefono.classList.remove("is-invalid");    // Remover la clase para invalidar el campo
             telefono.classList.add("is-valid");         // Añadir la clase para validar el campo
             val_t = true;                               // Asignar verdadero el valor del booleano de validación
@@ -109,8 +109,7 @@ function validacion_tel(telefono){
 // Mensaje 
 function validacion_texto(mensaje){
     let mensajeValor = mensaje.value;                                   // Obtener el valor del campo de mensaje
-    let pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040\s]+$/;
-    let pattern_m2 = /^[\s]+$/;
+    const pattern_m = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040\s]+$/;
 
     if ((mensajeValor.length >= 1) && (mensajeValor.length <= 150) && (mensajeValor.match(pattern_m)) && (val_tx_i == true)){   // Evaluar la longitud del valor ingresado
         mensaje.classList.remove("is-invalid");                         // Remover la clase para invalidar el campo
@@ -127,10 +126,10 @@ function validacion_texto(mensaje){
 }
 
 function validacion_caracteres(caracter){                               // Validación para cada caracter
-    pattern = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040]+$/;            // Definir patrón
+    const pattern_c = /^[a-zA-Z\u00E0-\u00FC\u00d1\u0021-\u0040]+$/;            // Definir patrón
 
     mensajeValor = caracter.value;                                      // Obtener el valor del input
-    if ((mensajeValor.charAt(cont_caracter).match(pattern))){           // Validar que contenga algún caracter (letra, número, símbolo)
+    if ((mensajeValor.charAt(cont_caracter).match(pattern_c))){           // Validar que contenga algún caracter (letra, número, símbolo)
         val_tx_i = true;                                                // Asignar verdadero el valor del booleano de validación
     }
     return val_tx_i;                                                    // Retornar booleano de validación

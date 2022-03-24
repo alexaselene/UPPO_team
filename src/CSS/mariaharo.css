@@ -2,17 +2,31 @@
 @import url("./../CSS/main.css");
 
 /*Body*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 body{
-    background-image: url(./../img/mh7.png);
-    background-repeat: no-repeat;
+
+    background-image: url(./../img/vaca.png);
     background-size: cover;
-    background-position-x: -200px;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+  
+    
+   
+    
     
  
 }
 
 /* media query para celular de navbar*/
 @media screen and (max-width: 600px){
+    .navbar{
+        flex-wrap: wrap;
+    }
 
     .titulo_equipo{
         
@@ -60,16 +74,6 @@ body{
 }
 
 /*Jumbotron*/
-/*.jumbotron{
-    background-image: url(./../img/color_pastel.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    opacity: 0.5;
-    display: flex;
-
-}*/
-/*Jumbotron*/
 .jumbotron{
     background-image: url(./../img//cenicero.jpeg);
     background-repeat: no-repeat;
@@ -84,20 +88,40 @@ body{
     letter-spacing: 30px;
 }
 .texto_equipo{
-    color:var(--gris_obscuro);
+    color:var(--azul_claro);
     font-size: 30px;
 }
 
-/*Título*/
-/*.titulo_qsomos{
+/*Video*/
 
-    padding-top: 50px;
-    padding-bottom: 50px;
+.informacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 100px;
+}
+
+
+.proyect{
     text-align: center;
-    color: var(--gris_obscuro);
+    font-size: 50px;
+    color: var(--rosa);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    
+    
+}
 
-}*/
 
+/*Información */
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
 
 
 /*Información */
@@ -112,7 +136,7 @@ body{
     text-align: center;
     font-size: 50px;
     color: var(--rosa);
-    margin-top: 300px;
+    margin-top: 120px;
     margin-bottom: 50px;
 }
 .nombre_marcela{
@@ -128,7 +152,7 @@ body{
 }
 
 .texto{
-    background-color:  #f1c6d8c0;
+    background-color:  #f1c6d89a;
     height: 400px;
     width: 1200px;
     display: flex;
@@ -139,7 +163,7 @@ body{
     text-align: center;
     font-weight: bolder;
     color: var(--gris_obscuro);
-    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+   /* box-shadow: 5px 10px rgba(0, 0, 0, 0.2);*/
 
 }
 .mapa{
@@ -157,12 +181,21 @@ body{
 }
 
 /*siguenos*/
-.siguenos{
+.siguenos_t{
     text-align: center;
     font-weight: bolder;
     color: var(--gris_obscuro);
     margin-top: 100px;
+    font-size: 45px;
    
+}
+
+.sig{
+    background-color: #ead7deec;
+    border-radius: 10px;
+    margin: 10%;
+    
+    
 }
 /*Redes sociales de las chicas*/
 .instagram {
@@ -197,6 +230,9 @@ body{
     .mapa_2{
         display: none;
     }
+    .video{
+        display: none;
+    }
 }
 
 /*Media screen de celular*/
@@ -227,6 +263,13 @@ body{
    .info{
        display: block;
        margin:0px;
+   }
+
+   .sig{
+       margin:0px;
+   }
+   .redes_h{
+       font-size: 25px;
    }
    .foto{
        height: 250px;
@@ -263,15 +306,26 @@ body{
         padding: 0px 0px;
         display: block;
     }
+
+
+    .proyect{
+        display: none;
+    }
+
+    .video{
+       
+         width: 1px;
+        
+        
+    }
+
+    .informacion{
+        display: none;
+    }
+
 }
 
-/*RESPOSIVE DE TABLET*/
-@media screen and (max-width: 800px){
-    /* Navbar */
-    .navbar{
-        flex-wrap: nowrap;
-    }
-}
+
 
 /*Resposive de tablet*/
 @media screen and (min-width:600px) and (max-width:800px){ 

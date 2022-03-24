@@ -1,11 +1,11 @@
 // OBTENER ELEMENTOS
-let registro = document.getElementById("btn_registro");                 // Botón encargado de enviar los inputs del formulario (cuando sean válidos)
-let nombre = document.getElementById("nombre");                         // Input donde se ingresa el nombre
-let email = document.getElementById("email");                           // Input donde se ingresa el email
-let telefono = document.getElementById("telefono");                     // Input donde se ingresa el teléfono
-let password = document.getElementById("password");                     // Input donde se ingresa la contraseña
-let confirma_password = document.getElementById("confirmar_password");  // Input donde se ingresa la contraseña por segunda vez
-let limpiar = document.getElementById("btn_limpiar");                   // Botón encargado de limpiar los campos del formulario
+const registro = document.getElementById("btn_registro");                 // Botón encargado de enviar los inputs del formulario (cuando sean válidos)
+const nombre = document.getElementById("nombre");                         // Input donde se ingresa el nombre
+const email = document.getElementById("email");                           // Input donde se ingresa el email
+const telefono = document.getElementById("telefono");                     // Input donde se ingresa el teléfono
+const password = document.getElementById("password");                     // Input donde se ingresa la contraseña
+const confirma_password = document.getElementById("confirmar_password");  // Input donde se ingresa la contraseña por segunda vez
+const limpiar = document.getElementById("btn_limpiar");                   // Botón encargado de limpiar los campos del formulario
 
 // ESTRUCTURA DONDE SE GUARDA LA INFORMACIÓN
 let array_usuarios = [];
@@ -64,9 +64,9 @@ limpiar.addEventListener("click", (e_limpiar)=>{
 // Nombre
 function validacion_name(nombre){                               // La función recibe el elemento input correspondiente al nombre
     let nombreValor = nombre.value;                             // Obtener el valor del input de nombre
-    let pattern_n =  /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/;                   // Definir un patrón
-    let pattern_n3 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
-    let pattern_n4 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
+    const pattern_n =  /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/;                   // Definir un patrón
+    const pattern_n3 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
+    const pattern_n4 = /^[a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+ [a-zA-Z\u00E0-\u00FC\u00d1]+$/
 
     if(nombreValor.length >= 5 && ((nombreValor.match(pattern_n)) || (nombreValor.match(pattern_n3)) || (nombreValor.match(pattern_n4)))){// Evaluar la longitud del valor ingresado y compararlo con el patrón
         nombre.classList.remove("is-invalid");                  // Remover la clase para invalidar el campo
@@ -83,9 +83,9 @@ function validacion_name(nombre){                               // La función r
 
 // Email
 function validacion_email(email){                                // La función recibe el elemento input correspondiente al email
-    let pattern = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;       // Definir un patrón
+    const pattern_e = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;       // Definir un patrón
     
-    if(email.value.match(pattern)){                              // Comparar el valor ingresado con el patrón
+    if(email.value.match(pattern_e)){                              // Comparar el valor ingresado con el patrón
         email.classList.remove("is-invalid");                    // Remover la clase para invalidar el campo
         email.classList.add("is-valid");                         // Añadir la clase para validar el campo
         val_e = true;                                           // Asignar verdadero el valor del booleano de validación
@@ -100,7 +100,7 @@ function validacion_email(email){                                // La función 
 
 // Teléfono
 function validacion_tel(telefono){
-    let pattern_m =/((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/; // Definir un patrón
+    const pattern_m =/((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/; // Definir un patrón
     
     if (telefono.value.match(pattern_m) && telefono.value.length >= 10 && telefono.value.length <= 13){ // Evaluar longitud del valor ingresado y compararlo con el patrón
             telefono.classList.remove("is-invalid");    // Remover la clase para invalidar el campo
@@ -117,9 +117,8 @@ function validacion_tel(telefono){
 
 // Contraseña
 function validacion_pass(password){
-    let pattern_p = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&/()#.])[A-Za-z\d$@$!%*?&/()#.]{8,20}/;  // Definir un patrón
-
-        
+    const pattern_p = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&/()#.])[A-Za-z\d$@$!%*?&/()#.]{8,20}/;  // Definir un patrón
+   
     if (password.value.match(pattern_p)){           // Evaluar el valor ingresado y compararlo con el patrón
         password.classList.remove("is-invalid");    // Remover la clase para invalidar el campo
         password.classList.add("is-valid");         // Añadir la clase para validar el campo
@@ -169,7 +168,6 @@ function limpieza(){
 
 // Todos los campos
 function validacion_general(){
-    console.log ("Entra")
     if (val_n && val_e && val_t && val_p && val_cp){    
         // Alarma de Sweet Alert para indicar Éxito
         Swal.fire(
@@ -206,30 +204,4 @@ function validacion_general(){
         });             
     }                        // En caso de error     
 }
-
-
-      
-
-    //  
-       
-    //  }
-
-//     let l =localStorage;
-
-//    nombre.addEventListener("focusout", function() {
-//         l.setItem("nom", nombre.value);
-//       })
-    
-//       correo.addEventListener("focusout", function() {
-//         l.setItem("co", correo.value);
-//       })
-    
-//       telefono.addEventListener("focusout", function() {
-//         l.setItem("te", telefono.value);
-//       })
-//       contraseña.addEventListener("focusout", function() {
-//         l.setItem("co", contraseña.value);
-//       })
-
-
     

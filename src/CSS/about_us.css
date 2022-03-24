@@ -184,7 +184,9 @@
 .fondo_card{
     background-color: var(--azul_claro);
     color: var(--gris_obscuro);
+    border-radius: 30px;
 }
+
 /*Boton card*/
 .btn-block{
     background-color: var(--rosa);
@@ -261,6 +263,12 @@
 
     .acuarela{
         display:none;
+    }
+
+    .container{
+        padding-right: 6%;
+        padding-left: 6%;
+
     }
 }
 
