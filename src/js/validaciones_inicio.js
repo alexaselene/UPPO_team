@@ -52,8 +52,8 @@ function validacion_contrasena(contrasena){                                // La
         val_contrasena = true;                                           // Asignar verdadero el valor del booleano de validación
         contrasena.focus();                               // Cambiar el cursor al campo del teléfono
     } else {
-        correo_1.classList.remove("is-valid");                      // Remover la clase para validar el campo
-        correo_1.classList.add("is-invalid");                       // Añadir la clase para invalidar el campo 
+        contrasena.classList.remove("is-valid");                      // Remover la clase para validar el campo
+        contrasena.classList.add("is-invalid");                       // Añadir la clase para invalidar el campo 
         val_contrasena = false;                                          // Asignar falso el valor del booleano de validación
     }
     return val_contrasena;                                               // Retornar el booleano de validacion
