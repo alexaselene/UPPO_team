@@ -67,6 +67,7 @@ function validacion_email(correo_1){                                // La funci�
     return val_contrasena;                                  // Retornar el booleano de validación
 };
 
+
 function validacion_pass_enter(contrasena){
      
    
@@ -163,5 +164,22 @@ let session_iniciada=false;
     //     alert("La contraseña no puede contener espacios");
     //     contrasena.focus( contrasena.value.length - 1 );
     // }
+
+function validacion_contrasena(contrasena){                                // La función recibe el elemento input correspondiente al email
+    const pattern_c = /^[a-z\u00E0-\u00FC\u00d1\u0021-\u0040\u005f]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/;    // Definir un patrón
+    if(contrasena.value.match(pattern_c)){                              // Comparar el valor ingresado con el patrón
+        contrasena.classList.remove("is-invalid");                    // Remover la clase para invalidar el campo
+        contrasena.classList.add("is-valid");                         // Añadir la clase para validar el campo
+        val_contrasena = true;                                           // Asignar verdadero el valor del booleano de validación
+        contrasena.focus();                               // Cambiar el cursor al campo del teléfono
+    } else {
+        correo_1.classList.remove("is-valid");                      // Remover la clase para validar el campo
+        correo_1.classList.add("is-invalid");                       // Añadir la clase para invalidar el campo 
+        val_contrasena = false;                                          // Asignar falso el valor del booleano de validación
+    }
+    return val_contrasena;                                               // Retornar el booleano de validacion
+};
+
+
 
 
