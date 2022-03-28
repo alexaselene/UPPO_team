@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema maria_haro_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `maria_haro_db` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `maria_haro_db` DEFAULT CHARACTER SET utf16 ;
 USE `maria_haro_db` ;
 
 -- -----------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `maria_haro_db`.`datos_usuarios` (
   `iddatos_usuarios` INT NOT NULL,
   `nombre_apellidos` VARCHAR(100) NOT NULL,
   `correo` VARCHAR(100) NOT NULL,
-  `#_telefono` INT NOT NULL,
+  `telefono` INT NOT NULL,
   `datos_usuarioscol` VARCHAR(45) NULL,
   `usuarios_idusuario` INT NOT NULL,
   PRIMARY KEY (`iddatos_usuarios`, `usuarios_idusuario`),
@@ -45,12 +45,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `maria_haro_db`.`productos` (
   `idproductos` INT NOT NULL AUTO_INCREMENT,
-  `nombre_producto` VARCHAR(80) NOT NULL,
-  `caracteristicas_producto` TEXT(200) NOT NULL,
+  `nombre` VARCHAR(80) NOT NULL,
+  `caracteristicas` TEXT(200) NOT NULL,
+  `material` VARCHAR(45) NOT NULL,
   `precio_producto` INT NOT NULL,
-  `foto` VARCHAR(200) NOT NULL,
-  `carrito_idcarrito` INT NOT NULL,
-  PRIMARY KEY (`idproductos`, `carrito_idcarrito`))
+  `stock` INT NOT NULL,
+  `imagen` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`idproductos`))
 ENGINE = InnoDB;
 
 
@@ -63,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `maria_haro_db`.`pedido` (
   `estado` VARCHAR(45) NOT NULL,
   `total` DOUBLE NOT NULL,
   `usuarios_idusuario` INT NOT NULL,
-  PRIMARY KEY (`idpedido`),
+  PRIMARY KEY (`idpedido`, `usuarios_idusuario`),
   INDEX `fk_pedido_usuarios1_idx` (`usuarios_idusuario` ASC) VISIBLE)
 ENGINE = InnoDB;
 
@@ -86,11 +87,12 @@ CREATE TABLE IF NOT EXISTS `maria_haro_db`.`detalle_pedido` (
   `iddetalle_pedido` INT NOT NULL AUTO_INCREMENT,
   `precio_unitario` DOUBLE NOT NULL,
   `cantidad` INT NOT NULL,
-  `pedido_idpedido` INT NOT NULL,
   `productos_idproductos` INT NOT NULL,
+  `pedido_idpedido` INT NOT NULL,
+  `pedido_usuarios_idusuario` INT NOT NULL,
   PRIMARY KEY (`iddetalle_pedido`, `productos_idproductos`),
-  INDEX `fk_detalle_pedido_pedido1_idx` (`pedido_idpedido` ASC) VISIBLE,
-  INDEX `fk_detalle_pedido_productos1_idx` (`productos_idproductos` ASC) VISIBLE)
+  INDEX `fk_detalle_pedido_productos1_idx` (`productos_idproductos` ASC) VISIBLE,
+  INDEX `fk_detalle_pedido_pedido1_idx` (`pedido_idpedido` ASC, `pedido_usuarios_idusuario` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
