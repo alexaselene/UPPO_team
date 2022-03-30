@@ -1,0 +1,238 @@
+/* Estilos generales */
+@import url("./../CSS/main.css");
+
+/* media query para celular de navbar*/
+@media screen and (max-width: 600px){
+
+    .titulo_equipo{
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+    .texto_equipo{
+        font-size:15px;
+    }
+
+    #logo{
+        display:none;
+    }
+
+    .barra_busqueda{
+     display: none;
+    }
+
+    .inicio_sesion{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .carrito_compra{
+        width: 20px; height: 20px;
+        margin-right: 30px;
+        
+    }
+
+    .iconos{
+        display: flex;
+        flex-wrap: flex-start;   
+    }
+
+    .text-muted{
+        font-weight: bold;
+        font-size: 10px; 
+    }
+}
+
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(./../img/productos.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: var(--azul_claro);
+}
+
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 30px;
+}
+
+.texto_equipo{
+    color:var(--azul_claro);
+    font-size: 30px;
+}
+
+/*AQUÍ EMPIEZAN LAS CARDS*/
+.card{
+    margin: 10px;
+    border-radius: 6px;
+    overflow: hidden; /* Para que todo elemento que este fuera de la card se oculte*/
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+/*Para la sombra y el desplazamiento de la card*/
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+/*Para la imagen de la card*/
+.card img{
+    width: 100%;
+}
+
+/*Para todo el contenido de la card*/
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+    padding-right:0px;
+}
+
+/*Para el párrafo de la card*/
+.card .contenido p{
+    line-height: 1.5;
+    font-size: larger;
+    color: black;
+}
+
+/*Para el título de la card*/
+.card .contenido h5{
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--gris_obscuro);
+    font-weight: bolder;
+}
+
+.contenido_card{
+    padding-left: 0px;
+    padding-bottom: 100px;
+    
+}
+
+/*Cards*/
+.card{
+    width: 20%;  
+}
+
+/*Para el botón de la card*/
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+a.button {
+    padding: 15px 25px;
+    padding-right: 0px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ED959C;
+    color: white;
+    cursor: pointer; 
+    background: linear-gradient(to right, transparent 50%, #ED959C 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
+    text-decoration: none;
+}
+
+a.button:hover {
+    background-position: right;
+    color: white;
+    font-weight: 700;
+}
+
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+    justify-content: space-evenly;
+}
+
+.precio_t{
+    font-weight: bolder;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.btn-success{
+    width: 300px;
+    height: 50px;
+    font-size:large;
+    font-weight: bold;
+}
+.boton_agregar{
+    text-align: right;
+    padding-bottom: 50px;
+}
+
+/*Media screen de tablet*/
+@media screen and (min-width:600px) and (max-width:800px)  {
+    .card{
+        width: 40%;
+    }   
+}
+
+/*Media screen de celular*/
+@media screen and (max-width:600px){
+    .pie_pagina .grupo_1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 0px 0px;
+    }
+    
+    .card{
+        width: 70%;
+    }
+
+    .contenedor_c{
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .contenido_card{
+        padding: 0px;      
+    } 
+
+    .contenido{
+        text-align: center;
+        line-height:5px
+    }
+
+    .card .contenido h5{
+        font-size: 10px;
+        
+    }
+
+    .card .contenido p{
+      font-size: 15px;
+    
+    }
+
+    .titulo_equipo{
+        letter-spacing: normal;
+    }
+}
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+    }
+
+    #logo{
+        display: none;
+    }
+}
