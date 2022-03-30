@@ -1,0 +1,178 @@
+/* Estilos generales */
+@import url("./../CSS/main.css");
+
+ /*Jumbotron*/
+.jumbotron{
+    background-image: url(../img/mascotas_clau.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+/*Título de jumbotron*/
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 18px;
+}
+/*Subtítulo*/
+.texto_equipo{
+    color:white;
+    font-size: 20px;
+   
+}
+/*Barra de búsqueda*/
+.busqueda{
+    background-image: url("./../img/bi_search-heart.png");
+    background-repeat: no-repeat;
+    background-position: 2%;
+    background-size: 4%;
+    background-blend-mode: hard-light;
+    background-color: rgb(231, 211, 214);
+    padding-left: 8%;
+    border-color: rgb(231, 211, 214);
+ }
+
+body{
+    background-image:url("./../img/vaca.png");
+}
+/* Contenedores generales */
+.container{
+    padding-left: 200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/*Acomodo de formulario */
+
+
+.contenedor_i{
+    display: flexbox;
+    flex-wrap: nowrap
+}
+
+/*Separación entre inputs*/
+.container_1{
+    padding-bottom: 25px;
+   
+}
+
+/*Separación entre el botón y la imagen*/
+.container_2{
+    padding-bottom: 15px;
+    border-radius: 20px;
+}
+.row{
+    align-items: center;
+}
+
+/*Datos de formulario*/
+.datos_contactanos{
+    color: var(--gris_obscuro);
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+/*Botón de inicio de sesión*/
+.btn-block{
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    font-weight: bolder;
+}
+
+.caracteres{
+    text-align: right;
+}
+.inicio_registro{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--gris_obscuro);
+}
+.contraseña_olvidada{
+    margin-left: 50px;
+}
+.link{
+    color: var(--gris_obscuro);
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.inicio_registro a:hover{
+    color: var(--rosa);
+}
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .container{
+        padding-left: 0px;
+    }
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}
+
+/* Media queery de la phone */ 
+@media screen and (max-width: 600px){    
+
+    /* Organización del contenedor */
+    .container{
+        padding-left: 10px;
+        padding-top: 10px;
+ 
+    }
+
+     /* Tamaño del texto */
+    .text_1{
+        font-size: 80%;     
+    }
+
+    /* Texto en los input */
+    .descripcion{
+        font-size: 20px;
+    }
+
+    /*Separación entre inputs*/
+    .container_1{
+        padding-bottom: 10px;
+       
+    }
+
+     /*Tamaño de letra del botón */
+    .btn{
+        font-size: 100%;   
+    }
+    
+    /* Contenedor general */
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar{
+        flex-wrap: wrap;
+    }
+    .titulo_equipo{
+        letter-spacing: 10px;
+    }
+    
+    .imagen_f{
+        display: none;
+    }
+
+    .form-control{
+        font-size: 20px;
+    }
+
+    .pie_pagina .grupo_1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 0px 0px;
+    }
+
+}
+
