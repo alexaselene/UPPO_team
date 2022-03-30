@@ -1,0 +1,6 @@
+SELECT * FROM mariaharo_database.usuarios;
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('colindiana6c@gmail.com', 'Diana99.', 'Diana Carolina Colín Ochoa', '3531093907');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('alexa.selene25@gmail.com', 'Alexa.123', 'Alexa Selene Alcántara Torres', '5627578707');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('maricruz.bautista1229@gmail.com', 'Maricruz.123', 'Maricruz Bautista', '5575459288');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('hercules_de_100@outlook.com', 'Hercules123#', 'José García Ramírez', '5576475525');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('amizaday.hean@gmail.com', 'Hean*123', 'Amizaday Hernández', '5519627590');
