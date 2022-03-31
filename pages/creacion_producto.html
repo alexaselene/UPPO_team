@@ -104,13 +104,6 @@
             </div>
 
             <div class="container_1">
-              <small id="" class="form-text text-muted descripcion">Etiquetas</small>
-              <input type="text" class="form-control text_1" placeholder="Ejemplo: taza, personalizados" id="etiquetas">
-              <div class="valid-feedback">¡Etiqueta guardada!</div>
-              <div id="validationServer04Feedback" class="invalid-feedback">Introduce palabras clave del producto</div>
-            </div>
-
-            <div class="container_1">
               <small id="" class="form-text text-muted descripcion">Precio</small>
               <input type="number" class="form-control text_1" placeholder="Precio del producto" id="precio">
               <div class="valid-feedback">¡Muy bien!</div>
@@ -139,17 +132,13 @@
       </div>
 
       <div class="col-md-6 col-sm-4 col-5">
-        <h5>Carga la imagen del producto</h5>
+        <h5 class = "titulo_imagen">Carga la imagen del producto</h5>
         <!-- Input file donde se adjunta la imagen -->
-        <input type="file" name="file" onchange = ValidarImagen(this) id = "image">
+        <input type="file" name="file" id = "image">
         
-        <h5>Selecciona el área a recortar</h5>
-        <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
-        <div id="editor"></div>
-        
-        <h5>Vista previa de la imagen</h5>
+        <h5 class = "titulo_imagen">Vista previa de la imagen</h5>
         <!-- Previa del recorte -->
-        <canvas id="preview"></canvas>
+        <div id="preview"></div>
       </div>
     </div>
   </div>

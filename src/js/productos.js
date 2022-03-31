@@ -68,10 +68,20 @@ let productos= [
 },
 ];
 
+productos_local = localStorage.getItem("productos");
+let productos_tarjeta = JSON.parse(productos_local);                         // Conversión de datos JSON
+
+if (productos_local == null){
+  let jsonProducto = JSON.stringify(productos);                         // Convertir estructura en un JSON
+  localStorage.setItem("productos", jsonProducto);                      // Guardar JSON en Local Storage
+  productos_local = localStorage.getItem("productos");
+  productos_tarjeta = JSON.parse(productos_local);                         // Conversión de datos JSON
+}
+
 //CARD VERTICAL
 // Envío de los productos con sus propiedades a sus respectivas cards
 tarjeta = document.getElementById("plantilla");                         // Obtener el elemento donde irá la plantilla
-productos.forEach(element => {                                          // Recorrer el arreglo
+productos_tarjeta.forEach(element => {                                          // Recorrer el arreglo
   tarjeta.innerHTML += `<div class="card">
   <figure >
     <img src=${element.Imagen}  alt="... class="img-fluid"">
