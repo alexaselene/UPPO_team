@@ -38,6 +38,10 @@
    
 }
 
+.titulo_imagen{
+    color: var(--gris_obscuro)
+}
+
 /* Medias queery */
 
 /* Media queery de la tablet */ 

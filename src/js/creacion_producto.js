@@ -14,6 +14,8 @@ let caracteristicas = document.getElementById("caracteristicas");       // Input
 let caracteristicas_mensaje = document.getElementById("letras_mensaje");// Espacio donde se imprimen los caracteres restantes del input de características
 let precio = document.getElementById("precio");                         // Input donde se ingresan el precio del producto
 let stock = document.getElementById("stock");                           // Input donde se ingresa el Stock del producto
+let imagen = document.getElementById("image");                          // Input donde se coloca la imagen
+let visualizacion = document.getElementById("preview");                 // Contenedor donde se coloca la imagen
 let creacion = document.getElementById("boton_creacion");               // Botón para guardar los valores del producto
 let limpiar = document.getElementById("btn_limpiar");                   // Botón para limpiar el producto
 
@@ -28,22 +30,6 @@ nombre.addEventListener("change", (evento_p)=>{         // Evento que se activa 
 seleccion.addEventListener("click",(e_seleccion) => {   // Evento que se activa al presionar sobre la lista de Selección
     e_seleccion.preventDefault();                       // En caso de error
     seleccionado = validar_seleccionado();              // Manda a llamar a la función para validar la opción seleccionada
-});
-
-// Etiquetas
-let cont = 0;                                           // Contador para los index del valor ingresado
-let arreglo_etiquetas = ["cerámica"];                   // Declarar un arreglo donde la etiqueta "cerámica" viene por Default
-
-etiquetas.addEventListener("input", (e_etiquetas)=>{    // Se activa al ingresar valores en el input
-    e_etiquetas.preventDefault();                       // En caso de error
-    validacionEtiquetas();                              // Llama a la función para validar las etiquetas
-    cont++;                                             // Aumenta el contador del index
-});
-
-etiquetas.addEventListener("change",(e2_etiquetas) => { // Se activa al presionar enter o cambiar de campo de etiquetas en el formulario
-    e2_etiquetas.preventDefault();                      // En caso de error
-    guardarEtiqueta();                                  // Llama a la función que guarda la etiqueta
-    cont++;                                             // Aumenta el contador del index
 });
 
 // Precio
@@ -71,6 +57,12 @@ stock.addEventListener("change", (e_stock)=>{       // Se activa al presionar en
     campo_stock = validacionStock(stock);           // Llama a la función para validar las etiquetas
 });
 
+// Imagen
+imagen.addEventListener("change", (e_imagen)=>{
+    e_imagen.preventDefault();
+    campo_imagen = validacionImagen(imagen);
+});
+
 // FUNCIONES DE VALIDACIÓN
 // Nombre
 function validacion_nombre(){
@@ -89,43 +81,17 @@ function validacion_nombre(){
 
 // Selección
 function validar_seleccionado(){                                // Función que valida la opción seleccionada
-    if (seleccion.value != "Selecciona") {                      // Valida si la opción es diferente de la Default
+    if (seleccion.value != "Selecciona una categoría") {        // Valida si la opción es diferente de la Default
         seleccionado = true;                                    // Asignar como verdadero el booleano de selección
         seleccion.classList.remove("is-invalid");               // Remover la clase para invalidar el campo
         seleccion.classList.add("is-valid");                    // Añadir la clase para validar el campo
-        etiquetas.focus();                                      // Cambiar cursor al campo de etiquetas
+        precio.focus();                                      // Cambiar cursor al campo de etiquetas
     } else {
         seleccionado = false;                                   // Asignar como falso al booleano de selección
         seleccion.classList.remove("is-valid");                 // Remover la clase para validar el campo
         seleccion.classList.add("is-invalid");                  // Añadir la clse para invalidar el campo
     }
     return seleccionado;                                        // Retornar el booleano de selección
-}
-
-// Etiquetas
-function validacionEtiquetas(){                             // Función encargada de validar cada caracter ingresado en la etiqueta
-    pattern = /^[A-Z\u00E0-\u00FC\u00d1\u0008]+$/i;         // Definir patrón -> letras mayúsculas y minúsculas, acentos, letra ñ y Backspace. 
-                                                            // Buscar Unicode de Backspace (U+0008), no lo lee correctamente
-    if (!etiquetas.value.charAt(cont).match(pattern)){      // Validar que no corresponda al patrón
-        if (etiquetas.value.charAt(cont).match(" ")){       // Validar que se haya presionado espacio
-            guardarEtiqueta();                              // Llamar a la función que guarda la etiqueta
-        } else {                                            // No pertenece al patrón y no es espacio 
-            etiquetas.classList.remove("is-valid");         // Remover la clase para validar el campo
-            etiquetas.classList.add("is-invalid");          // Añadir la clase para invalidar el campo
-            etiquetas.value = "";                           // Vaciar el valor del input
-            cont = -1;                                      // Reestablecer el contador
-        }
-    }
-}
-
-function guardarEtiqueta(){                                         // Función encargada de guardar las etiquetas
-    etiquetas.value = etiquetas.value.slice(0,cont).toLowerCase();  // Redefinir el valor del input (sin contar el espacio añadido de ser el caso) y convertir la cadena a minúsculas
-    arreglo_etiquetas.push(etiquetas.value);                        // Añadir la etiqueta al array de etiquetas
-    etiquetas.value = "";                                           // Vaciar el valor del input
-    cont = -1;                                                      // Reestablecer contador
-    console.log(arreglo_etiquetas);                                 // Imprimir en consola el arreglo de etiquetas
-    etiquetas.classList.remove("is-invalid");                       // Remover la clase para invalidar el campo
-    etiquetas.classList.add("is-valid");                            // Añadir la clase para validar el campo
 }
 
 // Precio
@@ -159,9 +125,11 @@ function  validacion_caracteres(){
     return campo_caracteres;                                                // Retornar booleano de validación
 };
 
+let disponible = "";
 // Stock
 function validacionStock(){                
     if(stock.value > 0){                        // Validar que el valor sea mayor que cero
+        disponible = "Disponible";
         stock.classList.remove("is-invalid");   // Remover la clase que invalida el campo
         stock.classList.add("is-valid");        // Añadir la clase que valida el campo
         campo_stock = true;                     // Asignar verdadero el booleano de validación
@@ -173,11 +141,9 @@ function validacionStock(){
     return campo_stock;                         // Retornar booleano de validación
 }
 
-let url_imagen = "";
-
-//Validación de la imagen
-function ValidarImagen(obj){
-    var uploadFile = obj.files[0];
+// Imagen
+function validacionImagen(){
+    var uploadFile = imagen.files[0];
     
     if (!window.FileReader) {
         Swal.fire({                                         // Se muestra una alerta que indica Error
@@ -202,8 +168,6 @@ function ValidarImagen(obj){
         campo_imagen = false;
     }
     else {
-        var img = new Image();
-        //img.onload = function () { 
             if (uploadFile.size > 500000)
             {
                 Swal.fire({                                         // Se muestra una alerta que indica Error
@@ -222,99 +186,14 @@ function ValidarImagen(obj){
                     icon: 'success',
                     confirmButtonColor: '#ED959C',
                     confirmButtonText: 'Ok.'
-                });          
+                });  
+                campo_imagen = true;
+                let url = imagen.value.substr(12);
+                visualizacion.innerHTML = `<figure><img src="./../src/img/${url}"  alt="..." class="img-fluid"></h1>`;        
             }
-            img.src = URL.createObjectURL(uploadFile);
-            url_imagen = img.src.toString();
-            campo_imagen = true;
-        //}; 
-    }                 
-}
-
-// Esperamos a que todo el HTML esté cargado antes de ejecutar Javascrip
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Input File
-    const inputImage = document.getElementById("image");
-    // Nodo donde estará el editor
-    const editor = document.getElementById("editor");
-    // El canvas donde se mostrará la previa
-    const miCanvas = document.getElementById("preview");
-    // Contexto del canvas
-    const contexto = miCanvas.getContext('2d');
-    // Ruta de la imagen seleccionada
-    let urlImage = undefined;
-    
-    // Evento disparado cuando se adjunte una imagen
-    inputImage.addEventListener('change', (e) => {
-
-        /**
-    * Método que abre el editor con la imagen seleccionada
-    */
-    
-       // Obtiene la imagen
-        urlImage = URL.createObjectURL(e.target.files[0]);
-        let url_imagen = obtener_url(urlImage);
-
-        // Borra editor en caso que existiera una imagen previa
-        editor.innerHTML = '';
-        let cropprImg = document.createElement('img');
-        cropprImg.setAttribute('id', 'croppr');
-        editor.appendChild(cropprImg);
-
-        // Limpia la previa en caso que existiera algún elemento previo
-        contexto.clearRect(0, 0, miCanvas.width, miCanvas.height);
-
-        // Envia la imagen al editor para su recorte
-        document.querySelector('#croppr').setAttribute('src', urlImage);
-
-
-        
-        // Crea el editor
-        new Croppr('#croppr', {
-            aspectRatio: 1,
-            startSize: [70, 70],
-            onCropEnd: recortarImagen
-        });
-    });
-
-
-    /**
-    * Método que recorta la imagen con las coordenadas proporcionadas con croppr.js
-    */
-    function recortarImagen(data) {
-        // Variables
-        const inicioX = data.x;
-        const inicioY = data.y;
-        const nuevoAncho = data.width;
-        const nuevaAltura = data.height;
-        const zoom = 1;
-        let imagenEn64 = '';
-        // La imprimo
-        miCanvas.width = nuevoAncho;
-        miCanvas.height = nuevaAltura;
-
-        
-
-        // La declaro
-        let miNuevaImagenTemp = new Image();
-        // Cuando la imagen se carge se procederá al recorte
-        miNuevaImagenTemp.onload = function() {
-            // Se recorta
-            contexto.drawImage(miNuevaImagenTemp, inicioX, inicioY, nuevoAncho * zoom, nuevaAltura * zoom, 0, 0, nuevoAncho, nuevaAltura);
-
-            // Se transforma a base64
-            imagenEn64 = miCanvas.toDataURL("image/jpeg");
-        }
-
-        // Proporciona la imagen cruda, sin editarla por ahora
-        miNuevaImagenTemp.src = urlImage;
     }
-});
-
-function obtener_url(url){
-    return url;
-}
+    return campo_imagen;
+};
 
 // ARRAY PARA GUARDAR PRODUCTOS
 let creacion_productos = [      // Estructura donde se guardará cada elemento y sus propiedades
@@ -327,24 +206,33 @@ let cont_array = 0;
 creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presionar el botón de registro de producto
     e_creacion.preventDefault();                        // En caso de error
 
-    if (campo_nombre && seleccion && campo_precio && campo_stock && campo_imagen){
+    if (campo_nombre && seleccionado && campo_precio && campo_stock && campo_imagen){
+
         // Crear array de producto con valores ngresados
         let array_productos = {
             "Nombre" : nombre.value,
-            "Categoria": seleccion.value,
-            "Etiquetas": arreglo_etiquetas,
-            "Precio": precio.value,
             "Caracteristicas": caracteristicas.value,
-            "Stock": stock.value,
-            "Imagen": url_imagen
+            "Precio": `$${precio.value} mxn`,
+            "Stock": disponible,
+            "Imagen": `./../src/img/${imagen.value.substr(12)}`
         }
     
-        // Crear JSON
-        creacion_productos[cont_array] = array_productos;           // Ingresar array en la estructura de productos
-        cont_array++;
-        let jsonProducto = JSON.stringify(creacion_productos);      // Convertir estructura en un JSON
-        console.log(jsonProducto);
-        localStorage.setItem("productosRegistrados",jsonProducto);  // Guardar JSON en Local Storage
+        // Guardar en Local Storage de acuerdo a su categoría
+        if (seleccion.value == "Productos"){
+            let p_almacenados = localStorage.getItem("productos");      // Obtener elementos del Local Storage
+            let p_almacenados_c = JSON.parse(p_almacenados);            // Conversión de datos JSON
+
+            p_almacenados_c.push(array_productos);
+            jsonProducto = JSON.stringify(p_almacenados_c);
+            localStorage.setItem("productos", jsonProducto);            // Guardar JSON en Local Storage
+        } else {
+            let pp_almacenados = localStorage.getItem("productos_personalizados");  // Obtener elementos del Local Storage
+            let pp_almacenados_c = JSON.parse(pp_almacenados);                      // Conversión de datos JSON
+
+            pp_almacenados_c.push(array_productos);
+            jsonProducto = JSON.stringify(pp_almacenados_c);
+            localStorage.setItem("productos_personalizados", jsonProducto);         // Guardar JSON en Local Storage
+        }
 
         Swal.fire({                                                 // Se muestra una alerta que indica Éxito
             title: '¡Excelente!',
