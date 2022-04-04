@@ -167,6 +167,44 @@ a.button:hover {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+.imagen{
+    display: inline-block;
+    position: relative;
+}
+
+.imagen .edit{
+    background-image: url("./../img/edit-icon.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--rosa);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 5%;
+    padding:12px;
+}
+
+.imagen .trash{
+    background-image: url("./../img/trash-icon.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--rosa);
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    border-radius: 5%;
+    color:white;
+    text-transform:uppercase;
+    padding:12px;
+}
+
+.admin{
+    display: none;
+}
+
+
 /*Media screen de tablet*/
 @media screen and (min-width:600px) and (max-width:800px)  {
     .card{

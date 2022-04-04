@@ -83,9 +83,11 @@ if (productos_local == null){
 tarjeta = document.getElementById("plantilla");                         // Obtener el elemento donde irá la plantilla
 productos_tarjeta.forEach(element => {                                          // Recorrer el arreglo
   tarjeta.innerHTML += `<div class="card">
-  <figure >
+  <div class = "imagen">
+    <a class = "edit admin" href = "./../pages/creacion_producto.html"></a>
+    <a class = "trash admin" href = "./../pages/creacion_producto.html"></a>
     <img src=${element.Imagen}  alt="... class="img-fluid"">
-  </figure>
+  </div>
   <div class="contenido">
     <h3>${element.Nombre}</h3>
     <p class = "disponible">${element.Stock}</p>
