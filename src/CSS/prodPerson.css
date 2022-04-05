@@ -167,6 +167,15 @@ a.button:hover {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+.producto_nuevo{
+    display: flex;
+    justify-content: center;
+}
+
+.pn_desaparecer{
+    display: none;
+}
+
 /*Media screen de tablet*/
 @media screen and (min-width:600px) and (max-width:800px)  {
     .card{
