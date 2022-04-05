@@ -121,7 +121,7 @@
 
 /*Jumbotron*/
 .jumbotron{
-    background-image: url(../img/pinturas_1.jpg);
+    background-image: url(./../img/1florero.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
