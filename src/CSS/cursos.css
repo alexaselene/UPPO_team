@@ -1,55 +1,6 @@
-/*GENERAL*/
-:root{
-    --font_base: "Roboto", sans-serif;
-    --gris_obscuro: #6B6A7A;
-    --gris_claro: #a5a5b1;
-    --beige: #EAE2D7;
-    --rosa: #ED959C;
-    --cafe_claro: #DFC9CB;
-    --azul_claro: #ECF7FB;
-    --lila: #D99BFF;
+/* Estilos generales */
+@import url("./../CSS/main.css");
 
-}
-
-/*Navbar*/
-.navbar{
-    background-color: var(--gris_obscuro) ;
-    display: flex;
-    justify-content: space-between;
-
-  }
-.contactanos{
-    font-size: 22px;
-}
- #logo{
-     margin-left: 50px;
- }
- .form-inline{
-     margin-left: 20px;
- }
- .collapse{
-    margin-left: 50px;
- }
- .iconos{
-    
-    margin-left: 100px; 
-    display: flex;
-    align-items: flex-end;
- }
- .inicio_sesion{
-     margin-right: 30px;
- }
- .carrito_compra{
-     margin-right: 30px;
- }
-
-
-/* Color general de la página */
-body{
-    /*padding: 20px;*/
-    background-color: var(--cafe_claro);
-    
-}
 /* media query para celular de navbar*/
 @media screen and (max-width: 600px){
 /*Diseño del jumbotrón*/
@@ -102,13 +53,14 @@ body{
 
 /*Jumbotron*/
 .jumbotron{
-    background-image: url(./../img/fondo_papel_envolver.jpeg);
+    background-image: url(./../img/Tazas_3.jpeg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position:center;
+    background-size:cover;
    /* background-color: var(--beige)*/
     text-align: center;
-    color: var(--rosa);
+    color: var(--gris_obscuro);
+    height: max-content;
 }
 .titulo_equipo{
     font-weight: bolder;
@@ -119,45 +71,30 @@ body{
     font-size: 30px;
 }
 
-/*Espacio de prueba*/
-.imagen {
-    width: 100%;
-    height: 100%;
-    object-fit:cover; /*Para que la imagen no se apachurre*/
-}
-/* Tamaño de la geleria de imagenes*/
-.hexagonal{
-width: 85%;
-max-width: 1200px;
-margin-left: auto;
-margin-right: auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, 133px); /*Lo pone en columnas y cada columna mide 133px*/
-grid-auto-rows: 200px; /*Lo que mide la fila*/
-justify-content: center;
-gap:1rem;
-
+.caja_intro{
+    display: flex;
+    justify-content: center;
 }
 
-.galeria{
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Para recortar en forma de hexagono*/
-    grid-column: span 2;
-    height: 283px; 
-    transition: 0.5s filter;
-    backface-visibility: hidden;
-    transition: 1s;
+.cuadro_intro{
+    background-color: #ebfafd9c;
+
+    width: 1000px;
+    height: 300px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
 }
-/*Efecto hover en los hexagonos*/
-.galeria:hover{
- filter:brightness(0.3);
+.texto_intro{
+    text-align:center;
+    font-size: 30px;
+    color: var(--gris_obscuro);
+    padding: 50px;
 }
-/* Acomodo de los hexagonos mediante grid*/
-.galeria:first-of-type {
-    grid-column: 2/ span 2; /*Inicia en la segunda grid y se va a extender 2 columnas*/
-}
-.galeria:nth-of-type(7n + 1){
-    grid-column: 2 / span 2;
-}
+
+
 /*Texto Aprenderás a hacer*/
 .aprenderas{
     text-align: center;
@@ -165,10 +102,12 @@ gap:1rem;
     letter-spacing: 20px;
     font-weight:bolder;
     font-weight: 400;
-    margin: 200px;
-    background-image: url(./../img/fondo_papel_envolver.jpeg);
-  
+    margin: 100px;
+    background-color: #ebfafd9c;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
     padding: 30px;
+    
 
 }
 
@@ -188,7 +127,7 @@ gap:1rem;
     overflow:hidden;
     border-radius: 6px;
     box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
-    cursor: pointer;
+    cursor:default;
     margin-left: 20px;
    
 
@@ -238,37 +177,55 @@ gap:1rem;
     font-weight:bolder;
     font-weight: 400;
     margin: 100px;
-    background-image: url(./../img/fondo_papel_envolver.jpeg);
-  
+    background-color: #ebfafd9c;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     padding: 30px;
 }
+
+.t_horarios{
+    text-align: center;
+    color: var(--gris_obscuro);
+}
+
 /*Botón horarios*/
 button{
     background-color: transparent;
     border:2px solid;
     border-radius: 10px;
     cursor: pointer;
-    margin:0 20px;
+    margin:0 15px;
     padding: 15px;
     font-weight: bold;
-    font-size: 20px;
-    color:white;
-    
-
+    font-size: 18px;
+    color:var(--gris_claro);
 }
+
 .botones{
     display: flex;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
 }
+
+#btn_contacto{
+    margin-top: 20px;
+}
+
 button:focus{
     outline: 0;
 }
 .btn_1{
     border-color: var(--rosa);
     transition: box-shadow 0.2s ease-in-out;
+    
 }
 .btn_1:hover{
     box-shadow: 0 0 40px 40px var(--rosa) inset;
+    cursor: default;
+    color: var(--gris_obscuro);
 }
 
 
@@ -286,84 +243,13 @@ button:focus{
     margin: 50px;
 }
 
-
-
-
-/*Footer*/
-
-.pie_pagina{
-    width: 100%;
-    background-color: black;
-}
-.pie_pagina .grupo_1{
-    width: 100%;
-    max-width: 1200px;
-    margin:auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
-    padding: 20px 0px;
-}
-.pie_pagina .grupo_1 .box figure{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pie_pagina .grupo_1 .box .btn-block{
-    border-radius: 400px;
-    background-color:#ED959C;
-}
-.pie_pagina .grupo_1 .box figure img{
-    width: 200px;
+@media screen and (min-width:800px) and (max-width:2000px) {
+    .telefono{
+        display:none;
+    }
+    
 }
 
-.pie_pagina .grupo_1 .box h4{
-    color:white;
-    margin-bottom: 50px;
-    margin-top: 40px;
-    font-size: 20px;
-}
-.pie_pagina .grupo_1 .box .btn{
-    color:white;
-    margin-bottom: 50px;
-    margin-top: 60px;
-}
-.pie_pagina .grupo_1 .red_social a{
-    font-size: 40px;
-    display: inline-block;
-    text-decoration: none;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    color: black;
-    margin-right: 20px;
-    background-color: var(--cafe_claro);
-    text-align: center;
-    transition: all 300ms ease;
-}
-.pie_pagina .grupo_1 .red_social a:hover{
-     color:rgb(235, 164, 211);
-}
-.pie_pagina .grupo_2{
-    background-color: var(--cafe_claro);
-    padding: 15px 10px;
-    text-align: center;
-    color:black;
-}
-.pie_pagina .grupo_2 small{
-    font-size: 15px;
-}
-.redes{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-.siguenos{
-    margin-right: 50px;
-}
 /*Media screen de celular*/
 @media screen and (max-width:600px){
     .pie_pagina .grupo_1{
@@ -372,21 +258,63 @@ button:focus{
         grid-gap:30px;
         padding: 0px 0px;
     }
+    
+    .cards{
+        display:none;
+    }
+    .texto_intro{
+        font-size:15px;
+    }
+    .aprenderas{
+      
+        font-size:30px;
+        letter-spacing: normal;
+        height: 100px;
+        width: 300px;
+       
+        
+    }
+    .titulo{
 
-    .primera_parte{
+        font-size:30px;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+    }
+    .aprender{
+        font-size:15px;
+        letter-spacing: normal;
+
+    }
+    .horario{
+        margin:0px;
+       
+        margin-top: 100px;
+        margin-bottom: 40px;
+        font-size:15px;
+        letter-spacing: normal;
+        height: 100px;
+        width: 300px;
+    }
+    .btn_1{
+        margin-bottom: 20px;
+    }
+    .boton_horario{
+    
+        display: flex;
+        justify-content: center;
+    }
+    .foto_movile{
+        
+       width: 300px;
+       
     }
     
-    .img_cursos{    
-        width: 300px;
-        align-content: center;
-        margin: 15px;
-    }
+    
+
+
    
    
 }
-
 
 /*RESPOSIVE DE TABLET*/
 @media screen and (max-width: 800px){
@@ -399,6 +327,12 @@ button:focus{
     /* Navbar */
     .navbar{
         flex-wrap: nowrap;
+    }
+    .cards{
+        display: none;
+    }
+    .btn_1{
+        margin-bottom: 20px;
     }
 
 }

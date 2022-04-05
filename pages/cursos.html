@@ -1,313 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="./../src/CSS/cursos.css">
-     <!-- Bootstrap -->
-    <title>Talleres</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="./../src/CSS/cursos.css">
+  <link rel="shortcut icon" href="./src/img/logo_maria-removebg-preview">
+  <!-- Bootstrap -->
+  <title>Talleres</title>
 </head>
+
 <body>
-  <div class="container-xxl">   
+  <div class="container-xxl">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg ">
-      <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width= "100px" height= "100px">
+      <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width="150px"
+        height="150px">
       <!--menú de hamburguesa-->
       <nav class="navbar navbar-expand-lg navbar-light hamburguesa ">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-white contactanos" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-              Catálogo
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../pages/productos.html">Productos</a>
-              <a class="dropdown-item" href="../pages/cursos.html">Talleres</a>
-              <a class="dropdown-item" href="../pages/prodPerson.html">Productos Personalizados</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-              Contáctanos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de Maria haro Ceramica </a>
-              <a class="dropdown-item" href="../pages/about_us.html">Acerca de UPPO-Team</a>
-              
-            </div>
-          </li>
-         </ul>
-        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white contactanos" href="../index.html">Inicio<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Catálogo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../pages/productos.html">Productos</a>
+                <a class="dropdown-item" href="../pages/cursos.html">Talleres</a>
+                <a class="dropdown-item" href="../pages/prodPerson.html">Productos Personalizados</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Contáctanos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de María Haro Cerámica</a>
+                <a class="dropdown-item" href="../pages/about_us.html">Acerca de UPPO-Team</a>
+                <a class="dropdown-item" href="../pages/about_us.html">Escríbenos</a>
+
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+      <!--Barra de Busqueda-->
+      <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
+      <form class="w-50 me-3 barra_busqueda">
+        <input class="form-control mr-sm-2 busqueda" type="search" placeholder="Encuentra la magia "
+          aria-label="Search">
+      </form>
+      <!--Iconos de usuario y compras hay que agregarles el link-->
+      <div class="iconos">
+        <a href="./registro_usuarios.html"><img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png"
+            width="40px" height="40px"></a>
+        <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
       </div>
-    </nav>
-        <!--Barra de Busqueda-->
-           <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
-            <form class="w-50 me-3 barra_busqueda">
-            <input class="form-control mr-sm-2" type="search" placeholder="🔍  Encuentra la magia " aria-label="Search"> 
-            </form>
-         <!--Iconos de usuario y compras hay que agregarles el link-->
-         <div class="iconos">
-          <img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px">
-          <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
-          </div> 
-       
-    </div> <!--Termina navbar-->
+
+  </div>
+  <!--Termina navbar-->
 
 
- 
- <!-- Aquí empieza el jumbotron-->
- 
- 
 
- <div class="jumbotron jumbotron-fluid">
-  <div class="container desaparece">
-    <h1 class="display-4 titulo_equipo ">Talleres</h1>
-    <p class="lead texto_equipo ">Crea tus propios artículos de cerámica</p>
+  <!-- Aquí empieza el jumbotron-->
+
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container desaparece">
+      <h1 class="display-4 titulo_equipo ">Talleres</h1>
+      <p class="lead texto_equipo ">Crea tus propios artículos de cerámica</p>
+    </div>
+  </div>
+
+  <!-- Aquí termina el jumbotron-->
+  <div class="container caja_intro">
+    <div class="cuadro_intro">
+      <p class="texto_intro">Inscríbete a nuestro taller de cerámica donde realizarás piezas únicas desde cero,
+        aprenderás distintas figuras y formas para que expreses tu creatividad como más te guste.
+        El costo incluye 1 clase a la semana y todos los materiales que necesitarás.</p>
+      <p>
+    </div>
+</body>
+
+
+
+
+</div>
+
+
+<!--Texto-->
+<div class="container titulo">
+  <div class="aprenderas">
+    <h2 class="aprender"> Aprenderás a hacer </h2>
   </div>
 </div>
-  
-  <!-- Aquí termina el jumbotron-->
+<!--Texto-->
 
-  <!--Panel de abeja-->
-
-  <div class="hexagonal">
-    <!--galería 1-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/maria_haro.jpg" alt="">
-
-    </div><!--galeria 1-->
-    <!--galeria 2-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/dibujo_plato.jpg" alt="">
-
-    </div><!--galeria 2-->
-    <!--galería 3-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_4.jpg" alt="">
-
-    </div><!--galeria 3-->
-    <!--galería 4-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/maria_haro_2.jpg" alt="">
-
-    </div><!--galeria 4-->
-    <!--galería 5-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_6.jpg" alt="">
-
-    </div><!--galeria 5-->
-    <!--galería 6-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_1.jpg" alt="">
-
-    </div><!--galeria 6-->
-    <!--galería 7-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_2.jpg" alt="">
-
-    </div><!--galeria 7-->
-    <!--galería 8-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/dibujo_taza.jpg" alt="">
-
-    </div><!--galeria 8-->
-    <!--galería 9-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_3.jpg" alt="">
-
-    </div><!--galeria 9-->
-    <!--galería 10-->
-    <div class="galeria">
-      <img class="imagen" src="./../src/img/cursos_5.jpg" alt="">
-
-    </div><!--galeria 10-->
-    
-  </div> <!--hexagonal-->
-  <!--Termina panel de abeja-->
-  <!--Texto-->
-    <div class="aprenderas">
-      <h2> Aprenderás a hacer </h2>
-    </div>
-    <!--Texto-->
-
-    <!--Galeria de imagenes-->
-  <div class="container-fluid">
-    
-    <div class="row">
+<!--Movile-->
+<div class="container-fluid telefono">
+  <div class="row foto_movile">
     <!--Figure 1-->
-     <figure>
-       <img src="./../src/img/maceta_cactus.jpeg" alt="Maceta con un cactus">
-       <div class="capa">
-          <h3>Macetas</h3>
-       </div>
-     </figure>
-     <!--Figure 2-->
-     <figure>
+    <figure class="foto_movile">
+      <img class="movile" src="./../src/img/maceta_cactus.jpeg" alt="Maceta con un cactus">
+      <div class="capa capa_1">
+        <h3>Macetas</h3>
+      </div>
+    </figure>
+    <!--Figure 2-->
+    <figure class="foto_movile">
+      <img  src="./../src/img/autoretrato_plato.jpeg" alt="Autorretrato en plato">
+      <div class="capa capa_1">
+        <h3>Autorretrato</h3>
+      </div>
+    </figure>
+    <!--Figure 3-->
+    <figure class="foto_movile">
+      <img  src="./../src/img/ceramica_roku.jpeg" alt="Cerámica raku">
+      <div class="capa capa_1">
+        <h3>Cerámica raku</h3>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+<!--Termina espacio de movile-->
+
+<!--Galeria de imagenes-->
+<div class="container-fluid cards">
+
+  <div class="row">
+    <!--Figure 1-->
+    <figure>
+      <img src="./../src/img/maceta_cactus.jpeg" alt="Maceta con un cactus">
+      <div class="capa">
+        <h3>Macetas</h3>
+      </div>
+    </figure>
+    <!--Figure 2-->
+    <figure>
       <img src="./../src/img/autoretrato_plato.jpeg" alt="Autorretrato en plato">
       <div class="capa">
-         <h3>Autorretrato</h3>
+        <h3>Autorretrato</h3>
       </div>
     </figure>
-     <!--Figure 3-->
-     <figure>
+    <!--Figure 3-->
+    <figure>
       <img src="./../src/img/ceramica_roku.jpeg" alt="Cerámica raku">
       <div class="capa">
-         <h3>Cerámica raku</h3>
+        <h3>Cerámica raku</h3>
       </div>
     </figure>
-     <!--Figure 4-->
-     <figure>
+    <!--Figure 4-->
+    <figure>
       <img src="./../src/img/florero_morado.jpeg" alt="Florero morado">
       <div class="capa">
-         <h3>Floreros</h3>
+        <h3>Floreros</h3>
       </div>
     </figure>
-     <!--Figure 5-->
-     <figure>
+    <!--Figure 5-->
+    <figure>
       <img src="./../src/img/porta_vasos.jpeg" alt="Porta vasos">
       <div class="capa">
-         <h3>Porta vasos</h3>
+        <h3>Porta vasos</h3>
       </div>
     </figure>
-     <!--Figure 6-->
-     <figure>
+    <!--Figure 6-->
+    <figure>
       <img src="./../src/img/taza_leon.jpg" alt=" Taza del rey león">
       <div class="capa">
-         <h3>Tazas</h3>
+        <h3>Tazas</h3>
       </div>
     </figure>
-     <!--Figure 7-->
-     <figure>
+    <!--Figure 7-->
+    <figure>
       <img src="./../src/img/labrador.jpeg" alt="Figurita de mascota de labrador">
       <div class="capa">
-         <h3>Figurita de nuestra mascota</h3>
+        <h3>Figurita de nuestra mascota</h3>
       </div>
     </figure>
-     <!--Figure 8-->
-     <figure>
+    <!--Figure 8-->
+    <figure>
       <img src="./../src/img/cenicero.jpeg" alt="Cenicero morado de un ojo">
       <div class="capa">
-         <h3>Ceniceros</h3>
+        <h3>Ceniceros</h3>
       </div>
     </figure>
-     <!--Figure 9-->
-     <figure>
+    <!--Figure 9-->
+    <figure>
       <img src="./../src/img/godete_ballena.jpeg" alt="Godete de ballena">
       <div class="capa">
-         <h3>Godetes</h3>
+        <h3>Godetes</h3>
       </div>
     </figure>
-     <!--Figure 10-->
-     <figure>
+    <!--Figure 10-->
+    <figure>
       <img src="./../src/img/autoretrato.jpeg" alt="Autorretrato cumpleaños">
       <div class="capa">
-         <h3>Autorretrato modelado</h3>
+        <h3>Autorretrato modelado</h3>
       </div>
     </figure>
     <!--Figure 11-->
     <figure>
       <img src="./../src/img/porta_pinceles.jpeg" alt="Porta pinceles">
       <div class="capa">
-         <h3>Porta pinceles</h3>
+        <h3>Porta pinceles</h3>
       </div>
     </figure>
     <!--Figure 12-->
     <figure>
       <img src="./../src/img/platos_morado.jpeg" alt="Platos">
       <div class="capa">
-         <h3>Platos</h3>
+        <h3>Platos</h3>
       </div>
     </figure>
-    </div><!--row-->
-  </div><!--Container-fluid-->
+  </div>
+  <!--row-->
+</div>
+<!--Container-fluid-->
 
-  <!--Texto-->
+<!--Texto-->
+<div class="container boton_horario">
   <div class="horario">
     <h2> Horarios </h2>
   </div>
-  <!--Texto-->
-  <div class="row botones">
-   <button class="btn_1">Jueves - 5:00 pm a 8:00 pm</button> 
-   <button class="btn_1">Sábado - 11:00 am a 2:00 pm</button> 
-   <button class="btn_1">Sábado - 3:00 pm a 6:00 pm</button> 
-   <button class="btn_1">Domingo - 11:00 am a 1:00 pm</button> 
-    
-  </div>
+</div>
+<!--Texto-->
+<h1 class = "t_horarios">HORARIOS</h1>
+<div class="row botones">
+  <button class="btn_1">Jueves - 5:00 pm a 8:00 pm</button>
+  <button class="btn_1">Sábado - 11:00 am a 2:00 pm</button>
+  <button class="btn_1">Sábado - 3:00 pm a 6:00 pm</button>
+  <button class="btn_1">Domingo - 11:00 am a 1:00 pm</button>
+  <a href = "./../pages/contactanos.html" class="btn btn-danger mb-2" id="btn_contacto">¡Quiero inscribirme!</a>
+</div>
 
-      
-    <!--<div class = "container general incluye">
-        
-        <h3> Incluye</h3>
-        <ul class="incluye_lista">
-          <span> ⭐ Barro</span>
-          <span> ⭐ Pasta cerámica</span>
-          <span> ⭐ Esmaltes</span>
-          <span> ⭐ Bajo Esmaltes</span> 
-          <span> ⭐ Engobes</span>
-          <span> ⭐ Lustre de oro</span>
-          <span> ⭐ Kit de cerámica </span>
-          <span> ⭐ Quemas de sancocho, esmalte y raku</span>
-      </ul> 
-    </div>
-        
-    </div>-->
-  <!--Fin de la lista de cursos-->
 
-  <div class="precio">
-   <h1 class="texto"> $2,200.00 </h1>
 
-  </div>
-
-  <div class = "row botones">
-    
-    
-    <button type="submit" class="btn btn-danger mb-2 btn-block" id="btn_contacto">¡Quiero inscribirme!</button> 
-    <!--Se comenta el siguiente botón para conservar sólo 1 medio de inscripción-->
-    <!--<button type="button" class="btn_2 btn-light"><img src="./../src/img/carrito.png" class = "boton_img"  alt="carrito"></button> -->
-
-             
-  </div>
-  <!--Footer-->
+<!--Footer-->
 <footer class="pie_pagina">
   <div class="grupo_1">
     <div class="box primero">
-     <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
-     <a href="./contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</a>
-    </div> 
-  
+      <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
+      <a href="./pages/contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo
+        electrónico →</a>
+    </div>
+
     <div class="box">
       <figure>
+        <a href="#">
           <img src="./../src/img/logo_maria-removebg-preview (1).png">
+        </a>
       </figure>
     </div>
-  
+
     <div class="box redes">
-      <h5 class="text-white siguenos">SIGUENOS</h5>
+      <h5 class="text-white siguenos">SÍGUENOS</h5>
       <div class="red_social">
-      <a href="https://www.facebook.com/mariaelena.sepulvedaharo" class="fa fa-facebook"></a>
-      <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
+        <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
       </div>
     </div>
   </div>
   <div class="grupo_2">
-    <small>Copyright © 2022 María Haro Cerámica All Rights Reserved</small>
-  
+    <small>Copyright © 2022. Todos los derechos reservados</small>
   </div>
-  </footer>
+</footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <!--Script para el footer-->
 <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
-<script src = "./../src/js/talleres.js"></script>
+<script src="./../src/js/talleres.js"></script>
 </body>
+
 </html>

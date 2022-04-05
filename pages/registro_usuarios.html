@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!--Link CSS-->
+  <link rel="stylesheet" href="./../src/CSS/registro_usuarios.css">
+</head>
+
+<body>
+
+  <div class="container-xxl">
+    <!--NavBar-->
+    <nav class="navbar navbar-expand-lg ">
+      <img id="logo" src="./../src/img/logo_maria-removebg-preview (1).png" href="../index.html" width="150px"
+        height="150px">
+      <!--menú de hamburguesa-->
+      <nav class="navbar navbar-expand-lg navbar-light hamburguesa ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white contactanos" href="../index.html">Inicio<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Catálogo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../pages/productos.html">Productos</a>
+                <a class="dropdown-item" href="../pages/cursos.html">Talleres</a>
+                <a class="dropdown-item" href="../pages/prodPerson.html">Productos Personalizados</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white contactanos" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-expanded="false">
+                Contáctanos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../pages/mariaharo.html">Acerca de María Haro Cerámica</a>
+                <a class="dropdown-item" href="../pages/about_us.html">Acerca de UPPO-Team</a>
+                <a class="dropdown-item" href="../pages/contactanos.html">Escríbenos</a>
+
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+      <!--Barra de Busqueda-->
+      <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
+      <form class="w-50 me-3 barra_busqueda">
+        <input class="form-control mr-sm-2 busqueda" type="search" placeholder="Encuentra la magia " aria-label="Search">
+      </form>
+      <!--Iconos de usuario y compras hay que agregarles el link-->
+      <div class="iconos">
+        <img class="inicio_sesion"   src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px"></a>
+        <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
+      </div>
+  </div>
+  <!--Jumbotron-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container desaparece">
+      <h1 class="display-4 titulo_equipo">¡Únete!</h1>
+      <p class="lead texto_equipo">Regístrate y forma parte de nuestra comunidad</p>
+    </div>
+  </div>
+
+  <!-- F O R M U L A R I O -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-12">
+        <form class="form-group" id="formulario">
+          <div class="container_i">
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Ingresa tu nombre</small>
+              <input type="text" class="form-control text_1" placeholder="Nombre y apellido"  id="nombre" autofocus>
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">Debes ingresar nombre y apellido</div>
+            </div>
+
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Ingresa tu correo electrónico</small>
+              <input type="text" class="form-control text_1" placeholder="ejemplo@correo.com"  id="email" >
+              <div class="valid-feedback">¡Muy bien!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">El correo es inválido</div>
+            </div>
+
+            <div class="container_1">
+                <small id="" class="form-text text-muted descripcion">Ingresa tu teléfono</small>
+                <input type="number" class="form-control text_1" placeholder="Teléfono"  id="telefono" >
+                <div class="valid-feedback">¡Muy bien!</div>
+                <div id="validationServer04Feedback" class="invalid-feedback">El teléfono debe incluir por lo menos 10 dígitos</div>
+              </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Contraseña</small>
+              <input type="password" class="form-control text_1" placeholder="Escribe tu contraseña"  id="password">
+              <div class="valid-feedback">¡Contraseña Válida!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback"> La contraseña debe contener 8 - 20 caracteres, incluyendo al menos una mayúscula, un número y un caracter especial</div>
+            </div>
+
+            <div class="container_1">
+              <small id="" class="form-text text-muted descripcion">Confirma tu contraseña</small>
+              <input type="password" class="form-control text_1" placeholder="Confirma tu contraseña"  id="confirmar_password">
+              <div class="valid-feedback">¡Las contraseñas coinciden!</div>
+              <div id="validationServer04Feedback" class="invalid-feedback">¡La contraseña no coincide con la anterior!</div>
+            </div>
+            <button type="button" class="btn btn-danger mb-2" id="btn_registro">Registrarse</button>
+            <button type="reset" value="limpiar formulario" class="btn btn-secondary mb-2" id="btn_limpiar">Limpiar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-6 col-sm-4 imagen_f">
+        <img src="./../src/img/corazon.jpeg" class="container_2 img-fluid">
+        
+      </div>
+
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="pie_pagina">
+    <div class="grupo_1">
+      <div class="box primero">
+        <h4>SUSCRÍBETE A NUESTRO NEWSLETTER</h4>
+        <a href="./contactanos.html" type="button" class="btn btn-light btn-block text-white">Escribe tu correo electrónico →</a>
+      </div>
+
+      <div class="box">
+        <figure>
+         
+            <img src="./../src/img/logo_maria-removebg-preview (1).png">
+        
+        </figure>
+      </div>
+
+      <div class="box redes">
+        <h5 class="text-white siguenos">SÍGUENOS</h5>
+        <div class="red_social">
+          <a href="https://www.facebook.com/mariaelena.sepulvedaharo " class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/mariaharo.ceramica/" class="fa fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo_2">
+      <small>Copyright © 2022 María Haro Cerámica. Todos los derechos reservados</small>
+
+    </div>
+  </footer>
+  <!--Script para el footer-->
+  <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./../src/js/resgistroUsuarios.js"></script>
+
+</body>
+
+</html>

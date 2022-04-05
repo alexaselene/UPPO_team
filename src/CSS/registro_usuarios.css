@@ -1,0 +1,189 @@
+/* Estilos generales */
+@import url("./../CSS/main.css");
+
+body{
+    background-image: url(./../img/vaca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(../img/perro_acostado.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50px;
+    background-position-x: left;
+  
+    background-size: cover;
+    text-align: center;
+    color: var(--azul_claro);
+  
+}
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 30px;
+}
+.texto_equipo{
+    color:var(--azul_claro);
+    font-size: 30px;
+}
+
+/* Formulario */
+
+/* Contenedores generales */
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.row{
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Inputs del formulario */
+.descripcion{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.text_1{
+    font-size: 18px;
+}
+
+
+/* Botón */
+.btn-block{
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    font-weight: bolder;
+}
+
+/* Imagen*/
+
+.imagen{
+    padding-bottom: 20px;
+}
+.container_2{
+    border-radius: 20px;
+}
+
+/* Contenedor de cada input */
+.container_1{
+    padding-bottom: 25px;
+   
+}
+
+/* Acomodo del formulario */
+.contenedor_i{
+    display: flexbox;
+    flex-wrap: nowrap
+}
+
+/* Medias queery */
+
+/* Media queery de la tablet */ 
+@media screen and (max-width: 800px){
+    /* Organización del contenedor */
+    .container{
+        padding-left: 0px;
+    }
+
+    .navbar{
+        flex-wrap: nowrap;
+    }
+    .imagen_f{
+        margin:0px;
+    }
+    /* Tamaño del texto */
+    .text_1{
+        font-size: 20px;     
+    }
+
+    /* Texto en los input */
+    .descripcion{
+        font-size: 25px;
+    }
+    /*Tamaño de letra del botón */
+    .btn{
+        font-size: 20px;   
+    }
+    
+
+}
+
+/* Media queery de la phone */ 
+@media screen and (max-width: 600px){    
+
+    /* Organización del contenedor */
+    .container{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+     /* Tamaño del texto */
+    .text_1{
+        font-size: 50%;     
+    }
+
+    /* Texto en los input */
+    .descripcion{
+        font-size: 20px;
+    }
+
+    /*Separación entre inputs*/
+    .container_1{
+        padding-bottom: 10px;
+       
+    }
+
+     /*Tamaño de letra del botón */
+    .btn{
+        font-size: 70%;   
+    }
+    
+    /* Contenedor general */
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: right;
+    }
+
+    .navbar{
+        flex-wrap: wrap;
+    }
+    .titulo_equipo{
+        letter-spacing: 10px;
+    }
+    
+    .imagen_f{
+        display: none;
+    }
+
+    .form-control{
+        font-size: 20px;
+    }
+}
+
+/*Media screen de celular*/
+@media screen and (max-width:600px){
+    .pie_pagina .grupo_1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 0px 0px;
+    }
+
+    
+}
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+}
+
