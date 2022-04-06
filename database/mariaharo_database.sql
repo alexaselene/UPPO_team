@@ -20,23 +20,10 @@ USE `mariaharo_database` ;
 CREATE TABLE IF NOT EXISTS `mariaharo_database`.`usuarios` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `nombre_usuario` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(20) NOT NULL,
+  `contraseña` VARCHAR(500) NOT NULL,
   `nombre_apellidos` VARCHAR(100) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idusuario`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mariaharo_database`.`datos_usuarios`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mariaharo_database`.`datos_usuarios` (
-  `iddatos_usuarios` INT NOT NULL AUTO_INCREMENT,
-  `nombre_apellidos` VARCHAR(100) NOT NULL,
-  `telefono` VARCHAR(45) NOT NULL,
-  `usuarios_idusuario` INT NOT NULL,
-  PRIMARY KEY (`iddatos_usuarios`, `usuarios_idusuario`),
-  INDEX `fk_datos_usuarios_usuarios1_idx` (`usuarios_idusuario` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -59,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `mariaharo_database`.`productos` (
   `caracteristicas` TEXT(200) NOT NULL,
   `precio_producto` INT NOT NULL,
   `stock` INT NOT NULL,
-  `imagen` VARCHAR(200) NOT NULL,
+  `imagen` VARCHAR(500) NOT NULL,
   `categoria_idcategoria` INT NOT NULL,
   PRIMARY KEY (`idproductos`, `categoria_idcategoria`),
   INDEX `fk_productos_categoria1_idx` (`categoria_idcategoria` ASC) VISIBLE)
@@ -86,7 +73,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mariaharo_database`.`administradores` (
   `idadministradores` INT NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(80) NOT NULL,
-  `contraseña` VARCHAR(20) NOT NULL,
+  `contraseña` VARCHAR(500) NOT NULL,
   PRIMARY KEY (`idadministradores`))
 ENGINE = InnoDB;
 
