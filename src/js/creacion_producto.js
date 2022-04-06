@@ -27,7 +27,7 @@ nombre.addEventListener("change", (evento_p)=>{         // Evento que se activa 
 });
 
 // Categoría
-seleccion.addEventListener("click",(e_seleccion) => {   // Evento que se activa al presionar sobre la lista de Selección
+seleccion.addEventListener("change",(e_seleccion) => {   // Evento que se activa al presionar sobre la lista de Selección
     e_seleccion.preventDefault();                       // En caso de error
     seleccionado = validar_seleccionado();              // Manda a llamar a la función para validar la opción seleccionada
 });
@@ -265,7 +265,12 @@ limpiar.addEventListener("click", (e_limpiar) =>{   // Se activa al presionar el
 function limpieza(){
     // Reestablecer todo
     document.getElementById("formulario").reset();
-    arreglo_etiquetas = ["cerámica"];
+    precio.classList.remove("is-valid");
+    precio.classList.remove("is-invalid");
+    caracteristicas.classList.remove("is-valid");
+    caracteristicas.classList.remove("is-invalid");
+    stock.classList.remove("is-valid");
+    stock.classList.remove("is-invalid");
     caracteristicas_mensaje.textContent = 150 - caracteristicas.length;
     nombre.classList.remove("is-valid");
     nombre.classList.remove("is-invalid");
@@ -273,10 +278,5 @@ function limpieza(){
     seleccion.classList.remove("is-invalid");
     etiquetas.classList.remove("is-valid");
     etiquetas.classList.remove("is-invalid");
-    precio.classList.remove("is-valid");
-    precio.classList.remove("is-invalid");
-    caracteristicas.classList.remove("is-valid");
-    caracteristicas.classList.remove("is-invalid");
-    stock.classList.remove("is-valid");
-    stock.classList.remove("is-invalid");
+    
 };

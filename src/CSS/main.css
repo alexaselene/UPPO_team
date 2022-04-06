@@ -30,13 +30,11 @@
     margin-left: 50px;
  }
  .iconos{
-    
-    margin-left: 100px; 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
  }
  .inicio_sesion{
-     margin-right: 30px;
+     margin-right: 0px;
  }
  .carrito_compra{
      margin-right: 30px;
@@ -53,6 +51,21 @@
     border-color: rgb(231, 211, 214);
  }
 
+ .boton_inicio{
+    background-color: var(--gris_obscuro);
+ }
+
+ .nav-link{
+     color: var(--gris_obscuro);
+ }
+
+ .text{
+     color: var(--gris_obscuro);
+ }
+
+ a.nav-link.dropdown-toggle.btn.boton_inicio::after{
+     display: none;
+ }
 
 /* C U E R P O */
 body{
@@ -139,6 +152,10 @@ body{
     border-radius: 10%;
 }
 
+.desaparecer{
+    display: none;
+}
+
 
 
 @media screen and (max-width: 769px){
@@ -150,5 +167,8 @@ body{
         margin-right:auto;
         margin-left: 0px;
     }
- }
 
+    .contactanos{
+        font-size: 15px;
+    }
+ }

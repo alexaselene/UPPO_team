@@ -26,7 +26,7 @@ let productos_personalizados = [
         "Imagen": "./../src/img/mascota_per.jpg"  
     },
     {
-        "Nombre": "Pinceleye. Recipiente",
+        "Nombre": "Recipiente Pinceleye",
         "Características": "Un recipiente para pinceles, base color beige, tamaño mediano y grande. Los colores pueden personalizarse",
         "Material": "Cerámica",
         "Precio": "$300 mxn",

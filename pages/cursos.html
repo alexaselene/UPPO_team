@@ -59,17 +59,19 @@
         </div>
       </nav>
       <!--Barra de Busqueda-->
-      <!--<form class="form-inline my-2 my-lg-0 barra_busqueda"> -->
-      <form class="w-50 me-3 barra_busqueda">
-        <input class="form-control mr-sm-2 busqueda" type="search" placeholder="Encuentra la magia "
-          aria-label="Search">
-      </form>
-      <!--Iconos de usuario y compras hay que agregarles el link-->
       <div class="iconos">
-        <a href="./registro_usuarios.html"><img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png"
-            width="40px" height="40px"></a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle btn boton_inicio" role="button" data-toggle="dropdown" aria-expanded="false">
+            <img class="inicio_sesion" src="./../src/img/iniciar-sesion (1).png" width="40px" height="40px">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="./../pages/inicio_sesion.html" id = "inicio">Inicia sesión</a>
+            <a class="dropdown-item" href="./../pages/registro_usuarios.html" id = "registro">Regístrate</a>
+            <a class="dropdown-item desaparecer" href="./../index.html" id = "cerrar">Cerrar sesión</a>
+          </div>
+        </div> 
         <img class="carrito_compra" src="./../src/img/carro-de-la-carretilla (1).png" width="40px" height="40px">
-      </div>
+      </div> 
 
   </div>
   <!--Termina navbar-->
@@ -235,12 +237,6 @@
 <!--Container-fluid-->
 
 <!--Texto-->
-<div class="container boton_horario">
-  <div class="horario">
-    <h2> Horarios </h2>
-  </div>
-</div>
-<!--Texto-->
 <h1 class = "t_horarios">HORARIOS</h1>
 <div class="row botones">
   <button class="btn_1">Jueves - 5:00 pm a 8:00 pm</button>
@@ -290,6 +286,7 @@
 <!--Script para el footer-->
 <script src="https://kit.fontawesome.com/7910a721ec.js" crossorigin="anonymous"></script>
 <script src="./../src/js/talleres.js"></script>
+<script src="./../src/js/sesion_iniciada.js"></script>
 </body>
 
 </html>
