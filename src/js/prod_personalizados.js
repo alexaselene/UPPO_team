@@ -55,7 +55,7 @@ let productos_personalizados = [
       "Material": "Cerámica",
       "Precio": "$450 mxn",
       "Stock": "Disponible", 
-      "Imagen": "./../src/img/enamorados.jpg" 
+      "Imagen": "./../src/img/Enamorados.jpg" 
   },
   {
       "Nombre": "Freedom",
@@ -83,7 +83,7 @@ let productos_personalizados = [
   productos_tarjeta.forEach(element => {                                          // Recorrer el arreglo
     tarjeta.innerHTML += `<div class="card">
     <figure >
-      <img src=${element.Imagen}  alt="... class="img-fluid"">
+      <img src=${element.Imagen}  alt="..." class="img-fluid">
     </figure>
     <div class="contenido">
       <h3>${element.Nombre}</h3>
