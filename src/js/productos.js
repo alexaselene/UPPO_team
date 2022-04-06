@@ -86,7 +86,7 @@ productos_tarjeta.forEach(element => {                                          
   <div class = "imagen">
     <a class = "edit admin" href = "./../pages/creacion_producto.html"></a>
     <a class = "trash admin" href = "./../pages/creacion_producto.html"></a>
-    <img src=${element.Imagen}  alt="... class="img-fluid"">
+    <img src=${element.Imagen}  alt="..." class="img-fluid">
   </div>
   <div class="contenido">
     <h3>${element.Nombre}</h3>
