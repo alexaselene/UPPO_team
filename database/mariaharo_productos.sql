@@ -1,18 +1,18 @@
 SELECT * FROM mariaharo_database.productos;
-INSERT INTO productos( nombre, caracteristicas, precio_producto, stock, imagen, categoria_idcategoria)
-VALUES ('Happy Doggo', 'Taza de color beige con asa color azul claro, tamaño mediano', 200, 3, 'URL', 1);
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Happy Doggo', 'Taza de color beige con asa color azul claro, tamaño mediano', '200', '4', './../src/img/taza_perro.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Lunática', 'Taza de color blanco, texura rugosa, tamaño mediano', '250', '5', './../src/img/taza_lunar.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Ying Cat', 'Taza de color blanco con asa color rosa, tamaño mediano', '250', '6', './../src/img/taza_gatitas.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Estilo Olmeca', 'Taza de color verde, estilo olmeca, asa color rojo,  tamaño mediano', '200', '5', './../src/img/taza_cara.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Mood de lunes', 'Serigrafiada con diseño, mango e interior collage', '200', '5', './../src/img/taza_abstracta.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Colibrí', 'Taza color blanco con asa color rosa, diseño minimalista,  tamaño mediano', '200', '4', './../src/img/taza_colibri.png', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Indiferente', 'Taza color blanco  con asa y plato de color azul, diseño animado,  tamaño mediano', '200', '6', './../src/img/indiferente.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Melodía', 'Taza color beige, estampado con instrumento músical,  tamaño mediano', '200', '5', './../src/img/musica.jpg', '1');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Mini platos Talia', 'Dos platos color beige, cara triste y alegre, respectivamente. Sets chicos y medianos', '200', '4', './../src/img/emocionales_per.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Plato de alta temperatura', 'Un plato de color mármol, diseño rústico, tamaño chico', '300', '6', 'irregular_per.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Tu mascota favorita', 'Perros y gatos. Texturas corrugadas y lisas, tamaños medianos y chicos. Los colores pueden personalizarse', '350', '6', './../src/img/mascota_per.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Recipiente Pinceleye', 'Un recipiente para pinceles, base color beige, tamaño mediano y grande. Los colores pueden personalizarse', '300', '5', './../src/img/recipiente_per.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Florece', 'Un florero color mármol, diseño rústico, tamaño mediano y grande. Los colores pueden personalizarse', '350', '3', './../src/img/florero_per.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Platillos', 'Platos chicos, diseño minimalista, ideales para la decoración de tu hogar', '350', '1', './../src/img/platos.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('In love', 'Personaliza tus figuras, del tamaño y colores que más te agraden', '450', '3', './../src/img/Enamorados.jpg', '2');
+INSERT INTO `mariaharo_database`.`productos` (`nombre`, `caracteristicas`, `precio_producto`, `stock`, `imagen`, `categoria_idcategoria`) VALUES ('Freedom', 'Personaliza tus figuras, del tamaño y colores que más te agraden', '450', '2', './../src/img/escultura_1.jpg', '2');
 
-INSERT INTO productos( nombre, caracteristicas, precio_producto, stock, imagen, categoria_idcategoria)
-VALUES ('Lunática', 'Taza de color blanco, texura rugosa, tamaño mediano', 250, 4, 'URL', 1);
-
-INSERT INTO productos( nombre, caracteristicas, precio_producto, stock, imagen, categoria_idcategoria)
-VALUES ('Ying Cat', 'Taza de color blanco con asa color rosa, tamaño mediano', 250, 3, 'URL', 1);
-DELETE FROM `mariaharo_database`.`productos` WHERE (`idproductos` = '4') and (`categoria_idcategoria` = '1');
-UPDATE `mariaharo_database`.`productos` SET `idproductos` = '4' WHERE (`idproductos` = '5') and (`categoria_idcategoria` = '1');
-UPDATE `mariaharo_database`.`productos` SET `idproductos` = '5' WHERE (`idproductos` = '6') and (`categoria_idcategoria` = '1');
-
-INSERT INTO productos( nombre, caracteristicas, precio_producto, stock, imagen, categoria_idcategoria)
-VALUES ('Estilo Olmeca', 'Taza de color verde, estilo olmeca, asa color rojo,  tamaño mediano', 200, 2, 'URL', 1);
-
-INSERT INTO productos( nombre, caracteristicas, precio_producto, stock, imagen, categoria_idcategoria)
-VALUES ('Mood de lunes', 'Serigrafiada con diseño, mango e interior collage', 200, 3, 'URL', 1);
