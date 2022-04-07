@@ -15,7 +15,6 @@ window.onload = () => {
         response.json().then(function (json) {
             console.log(json);
             console.log(json.length);
-            if(json.categoria_idcategoria == 1){
                 div.innerHTML += `<div class = "column col-md-4">
                 <div>
                     <h3>${json.nombre}</h3>
@@ -31,9 +30,9 @@ window.onload = () => {
                     <h1 class = "precio">$${json.precio_producto} MXN</h1>
                 </div>
                 <div class = "agregar">
-                    <button type = "button" class = "btn btn-danger carrito">Agregar al carrito</button>
+                    <a type = "button" href="./../pages/carrito.html" class = "btn btn-danger carrito">Agregar al carrito</a>
                 </div>
-            </div>`};
+            </div>`
         });//then
     }).catch(function(err) {
         console.log(err);
