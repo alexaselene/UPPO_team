@@ -1,5 +1,5 @@
 const URL_MAIN ='http://localhost:8080/api/productos/';
-function addItems(plantilla) {
+function addItems(div_Productos) {
     fetch(URL_MAIN, {
         method: 'get'
     }).then(function(response) {
@@ -8,8 +8,8 @@ function addItems(plantilla) {
             console.log(json.length);
             productos=json;
             Array.from(json).forEach(element => {
-                if(element.categoria_idcategoria == 1){
-                plantilla.innerHTML += `<div class="card">
+                if(element.categoria_idcategoria == 2){
+                div_Productos.innerHTML += `<div class="card">
                 <div class = "imagen">
                   <a class = "edit admin" href = "./../pages/creacion_producto.html"></a>
                   <a class = "trash admin" href = "./../pages/creacion_producto.html"></a>
@@ -22,8 +22,8 @@ function addItems(plantilla) {
                   <a href="#" type="button" class ="btn btn-danger" >Agregar</a>
                   </div>
               </div>
-              `}
-              ;
+              `
+            };
             }); // foreach
         });//then
     }).catch(function(err) {
@@ -33,7 +33,7 @@ function addItems(plantilla) {
    
 }// addItems
 window.addEventListener("load", function (){
-    let div = document.getElementById("plantilla");
+    let div = document.getElementById("div_Productos");
     addItems(div);
    
 });
