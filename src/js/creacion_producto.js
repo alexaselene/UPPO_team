@@ -202,23 +202,34 @@ let creacion_productos = [      // Estructura donde se guardará cada elemento y
 
 let cont_array = 0;
 
+let cat;
+
 // EVENTO DE REGISTRO
 creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presionar el botón de registro de producto
     e_creacion.preventDefault();                        // En caso de error
 
     if (campo_nombre && seleccionado && campo_precio && campo_stock && campo_imagen){
 
+        if (seleccion.value == "Productos"){
+            cat = 1;
+        } else {
+            cat = 2;
+        }
+
         // Crear array de producto con valores ngresados
         let array_productos = {
-            "Nombre" : nombre.value,
-            "Caracteristicas": caracteristicas.value,
-            "Precio": `$${precio.value} mxn`,
-            "Stock": disponible,
-            "Imagen": `./../src/img/${imagen.value.substr(12)}`
+            "nombre" : nombre.value,
+            "caracteristicas": caracteristicas.value,
+            "precio_producto": precio.value,
+            "stock": stock.value,
+            "imagen": `./../src/img/${imagen.value.substr(12)},
+            "categoria_idcategoria": ${cat}`
         }
+
+        let json_productos = JSON.stringify(array_productos);
     
         // Guardar en Local Storage de acuerdo a su categoría
-        if (seleccion.value == "Productos"){
+        /*if (seleccion.value == "Productos"){
             let p_almacenados = localStorage.getItem("productos");      // Obtener elementos del Local Storage
             let p_almacenados_c = JSON.parse(p_almacenados);            // Conversión de datos JSON
 
@@ -232,7 +243,23 @@ creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presiona
             pp_almacenados_c.push(array_productos);
             jsonProducto = JSON.stringify(pp_almacenados_c);
             localStorage.setItem("productos_personalizados", jsonProducto);         // Guardar JSON en Local Storage
-        }
+        }*/
+
+
+        const URL_MAIN = 'http://localhost:8080/api/productos/';
+        fetch(URL_MAIN, {
+            method: 'POST',
+            body: json_productos,
+            headers: {
+                'Content Type' : 'application/json'
+            }
+        }).then(function(response) {
+            response.json().then(function (json) {
+                console.log("por fi");
+            });//then
+        }).catch(function(err) {
+            console.log(err);
+        });
 
         Swal.fire({                                                 // Se muestra una alerta que indica Éxito
             title: '¡Excelente!',
