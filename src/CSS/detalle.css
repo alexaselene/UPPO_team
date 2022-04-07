@@ -1,0 +1,31 @@
+/* Estilos generales */
+@import url("./../CSS/main.css");
+
+/* Contenedor */
+.contenedor{
+    margin: 5% 10% 5% 10%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5%;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.recomendaciones{
+    margin: 2% 10% 5% 10%;
+}
+
+.precio{
+    font-size: 30px;
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+
+.agregar{
+    display: flex;
+    justify-content: center;
+}
+
+.carrito{
+    font-size: 20px;
+    padding: 10px;
+}

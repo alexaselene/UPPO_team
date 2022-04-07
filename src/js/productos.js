@@ -92,7 +92,7 @@ productos_tarjeta.forEach(element => {                                          
     <h3>${element.Nombre}</h3>
     <p class = "disponible">${element.Stock}</p>
     <h3 class = "precio_t">${element.Precio}</h3>
-    <a href="#" type="button" class ="btn btn-danger" >Agregar</a>
+    <a href="#" type="button" class ="btn btn-danger">Ver detalles</a>
     </div>
 </div>
 `                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
