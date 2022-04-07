@@ -5,8 +5,8 @@ function addItems(plantilla) {
     }).then(function(response) {
         response.json().then(function (json) {
             console.log(json);
-            console.log(json.length);
-            productos=json;
+            //console.log(json.length);
+            //productos=json;
             Array.from(json).forEach(element => {
                 if(element.categoria_idcategoria == 1){
                 plantilla.innerHTML += `<div class="card">
@@ -19,7 +19,7 @@ function addItems(plantilla) {
                   <h3>${element.nombre}</h3>
                   
                   <h3 class = "precio_t">$${element.precio_producto} mxn</h3>
-                  <a href="#" type="button" class ="btn btn-danger" >Agregar</a>
+                  <a href="./../pages/detalle_producto.html?id=${element.id}" type="button" class ="btn btn-danger" >Ver detalles</a>
                   </div>
               </div>
               `}
@@ -32,11 +32,14 @@ function addItems(plantilla) {
     console.log(document.getElementById("div_Productos"));
    
 }// addItems
+
 window.addEventListener("load", function (){
     let div = document.getElementById("plantilla");
     addItems(div);
-   
 });
+
+
+
 function view(index) {
     // console.log(index);
     // console.table(productos[index]);
