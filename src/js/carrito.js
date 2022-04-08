@@ -1,118 +1,94 @@
-// Arreglos de los productos (tazas)
-let productos= [
-    {
-        "Nombre": "Happy Doggo",
-        "Caracteristicas": " Taza de color beige con asa color azul claro, tamaño mediano",
-        "Material": "Cerámica",
-        "Precio": 200,
-        "Stock": 5,
-        "Cantidad": 2,
-        "Imagen": "./../src/img/taza_perro.jpg"
-    },
-    {
-        "Nombre": "Lunática",
-        "Caracteristicas": "Taza de color blanco, texura rugosa, tamaño mediano",
-        "Material": "Cerámica",
-        "Precio": 250,
-        "Stock": 6,
-        "Cantidad": 3, 
-        "Imagen": "./../src/img/taza_lunar.jpg" //AQUÍ HICE UN CAMBIO
-    },
-    {
-        "Nombre": "Ying Cat",
-        "Caracteristicas": "Taza de color blanco con asa color rosa, tamaño mediano",
-        "Material": "Cerámica",
-        "Precio": 250,
-        "Stock": 2,
-        "Cantidad": 1,
-        "Imagen": "./../src/img/taza_gatitas.jpg"
-    },
-    {
-        "Nombre": "Estilo Olmeca",
-        "Caracteristicas": "Taza de color verde, estilo olmeca, asa color rojo,  tamaño mediano",
-        "Material": "Cerámica",
-        "Precio": 250,
-        "Stock": 5,
-        "Cantidad": 3,
-        "Imagen": "./../src/img/taza_cara.jpg"  
-    },
-    {
-        "Nombre": "Mood de lunes",
-        "Caracteristicas": "Serigrafiada con diseño, mango e interior collage",
-        "Material": "Cerámica",
-        "Precio": 200,
-        "Stock": 3,
-        "Cantidad": 1,
-        "Imagen": "./../src/img/taza_abstracta.jpg"
-    },
-    {
-        "Nombre": "Colibrí",
-        "Caracteristicas": "Taza color blanco con asa color rosa, diseño minimalista,  tamaño mediano",
-        "Material": "Cerámica",
-        "Precio": 200,
-        "Stock": 2,
-        "Cantidad": 0,
-        "Imagen": "./../src/img/taza_colibri.png"
-    },
-  ];
+// Obtener productos del Local Storage
+let carritos = localStorage.getItem("carrito");
+let productos = JSON.parse(carritos);
 
-  costo_total = document.getElementById("costo_total");
-  sin_envio = document.getElementById("sin_envio");
+// Obtener los elementos donde se imprimen los calculos del carrito
+costo_total = document.getElementById("costo_total");
+sin_envio = document.getElementById("sin_envio");
 
-  let total = 0;
+// Inicializar total del carrito
+let total = 0;
 
-  let cont = 0;
-  //CARD VERTICAL
-  // Envío de los productos con sus propiedades a sus respectivas cards
-  tarjeta = document.getElementById("plantilla");                         // Obtener el elemento donde irá la plantilla
-  productos.forEach(element => { // Recorrer el arreglo
+// Elemento plantilla
+tarjeta = document.getElementById("plantilla");                         
+  
+// Recorrer el arreglo de los elementos del carrito
+productos.forEach(element => { // Recorrer el arreglo
 
-
+    // Obtener la cantidad de opciones del select de acuerdo al stock
     let acumulador = "";
-    for(let cont = 0; cont <= element.Stock; cont++){
-      acumulador += `<option>${cont}</option>`
+    for(let cont = 1; cont <= element.stock; cont++){
+
+      if (cont == element.cantidad){
+        acumulador += `<option selected>${cont}</option>`
+      } else{
+        acumulador += `<option>${cont}</option>`
+      }
+      
     }
 
-    let subtotal = element.Precio * element.Cantidad;
+    // Calcular costos
+    let subtotal = calcular_subtotal(element);
     total += subtotal;
 
-    cont++;
-
+    // Imprimir card
     tarjeta.innerHTML += `<div class="col-md-4 col-12 tarjeta_c">
-    <img src=${element.Imagen} alt="..." class = "img-fluid">
+    <img src=${element.imagen} alt="..." class = "img-fluid">
   </div>
   <div class="col-md-8 col-12">
     <div class="card-body">
-        <h5 class="card-title">${element.Nombre}</h5>
-        <p class="card-text">${element.Caracteristicas}</p>
+        <h5 class="card-title">${element.nombre}</h5>
+        <p class="card-text">${element.caracteristicas}</p>
       <form>
           <div class="form-group">
               <label for="exampleFormControlSelect1">Cantidad</label>
-              <select class="form-control opcion" id="opcion">
+              <select class="form-control opcion" value = "2" id="opcion_${element.id}">
                 ${acumulador}
               </select>
           </div>
       </form>
 
-      <p class="precio" id = "precio">Total: $${subtotal} MXN</p>
+      <p class="precio" id = "precio_${element.id}">Total: $ ${subtotal} MXN</p>
           
     </div>
   </div> `  
-                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
+                                                    
   });
 
+  // Función que calcula el total por cada producto
+  function calcular_subtotal(element){
+    sub = element.precio * element.cantidad;
+    return sub;
+  }
 
+  // Imprimir los cálculos 
   sin_envio.textContent = `$ ${total} MXN`;
   costo_total.textContent = `$ ${total + 50} MXN`;
 
-  const cantidad = document.querySelectorAll(`.opcion`);
 
+  // Seleccionar los select (cantidad) y recorrer cada botón
+  const cantidad = document.querySelectorAll(`.opcion`);
   cantidad.forEach(button => {
-    button.addEventListener(`change`, ()=>{
-      let cant = document.getElementById("opcion");
-      console.log(cant.value);
-      console.log("prueba");
-      
+    button.addEventListener(`change`, (e)=>{
+
+      // Obtener y elemento por id
+      let num = e.target.id.split("_")[1]; // va a tener el número
+      let precio2 = document.getElementById("precio_"+num);
+
+      // Volver a realizar cálculos
+      let cant_dif = precio2.innerHTML.split(" ")[2];
+      productos[num-1].cantidad = parseInt(button.value);
+      let calc_sub = calcular_subtotal(productos[num-1]);
+      total = total + (calc_sub - cant_dif);
+
+      // Reimprimir cálculos 
+      precio2.textContent = `Total: $ ${calc_sub} MXN`;
+      sin_envio.textContent = `$ ${total} MXN`
+      costo_total.textContent = `Total: $ ${total + 50} MXN`
+
+      // Guardar los nuevos valores en el Local Storage
+      jsonProducto = JSON.stringify(productos);                       
+      localStorage.setItem("carrito", jsonProducto);                     
 
     });
   });
