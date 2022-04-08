@@ -1,6 +1,6 @@
 SELECT * FROM mariaharo_database.usuarios;
-INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('colindiana6c@gmail.com', 'Diana99.', 'Diana Carolina Colín Ochoa', '3531093907');
-INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('alexa.selene25@gmail.com', 'Alexa.123', 'Alexa Selene Alcántara Torres', '5627578707');
-INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('maricruz.bautista1229@gmail.com', 'Maricruz.123', 'Maricruz Bautista', '5575459288');
-INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('hercules_de_100@outlook.com', 'Hercules123#', 'José García Ramírez', '5576475525');
-INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('amizaday.hean@gmail.com', 'Hean*123', 'Amizaday Hernández', '5519627590');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('colindiana6c@gmail.com', 'b5dd70e751a219b5dcb9b44f2f9dddc598818120b2ce95ca4397e12d84dd0457', 'Diana Carolina Colín Ochoa', '3531093907');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('alexa.selene25@gmail.com', '71e3e10cadf194fc45a3b0db0d73b3cd6500a973d7e2a62714b02ecbda8ba5f6', 'Alexa Selene Alcántara Torres', '5627578707');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('maricruz.bautista1229@gmail.com', 'b377c7ad7907ca76a66583f02aea989d27fdf8e7c3cdbe52e553d4114df13b8b', 'Maricruz Bautista', '5575459288');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('hercules_de_100@outlook.com', 'f2be6abcad1b8ef317ff73054bdd0dc4380a17f217c13dad4266353df38bfabe', 'José García Ramírez', '5576475525');
+INSERT INTO `mariaharo_database`.`usuarios` (`nombre_usuario`, `contraseña`, `nombre_apellidos`, `telefono`) VALUES ('amizaday.hean@gmail.com', '9acf07eb76e780ad0dfeaa9402dca0e999dc71823f4521df231e132b4020dfc0', 'Amizaday Hernández', '5519627590');

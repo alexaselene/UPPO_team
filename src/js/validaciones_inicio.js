@@ -90,7 +90,7 @@ function sesion_valida (){
 
     // For en donde se recorren todos los elementos del arreglo de los usuarios registrados
     for(let i = 0; i < registrados.length; i++){
-        if(((registrados[i].correo_usuario == correo.value) && (registrados[i].contra_usuario == contrasena.value)) || ((correo.value == "mariaharo@admin.com") && (contrasena.value == "admin"))){
+        if(((registrados[i].correo_usuario == correo.value) && (registrados[i].contra_usuario == btoa(contrasena.value))) || ((correo.value == "mariaharo@admin.com") && (contrasena.value == "admin"))){
             localStorage.setItem("sesion_iniciada", correo.value);                      // Guardar JSON en Local Storage
             window.location.href = "./../../index.html";      
         } else {

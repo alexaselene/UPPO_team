@@ -1,0 +1,184 @@
+/*Jumbotron*/
+.jumbotron{
+    background-image: url(./../img/plato_perro_tacones.jpeg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    text-align: center;
+   
+    height: max-content;
+}
+.grande{
+     display: flex;
+    flex-wrap: wrap;
+}
+
+.titulo_equipo{
+    font-weight: bolder;
+    letter-spacing: 30px;
+    color: white;
+}
+.texto_equipo{
+    
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+
+.card{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden; /* Para que todo elemento que este fuera de la card se oculte*/
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.precio{
+    font-size: 20px;
+    padding-left: 170px;
+    font-weight: bolder;
+}
+
+.btn_carrito{
+    margin-left: 200px;
+    background-color: #D99BFF;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.btn_carrito2{
+    background-color: #db7ed7;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.acumc{
+    padding-left: 800px;
+}
+
+
+.row{
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.tarjeta_c{
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_t{
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+.tarjeta_total{
+    padding: 3%;
+}
+
+.card-title{
+    font-size: 2.5em;
+
+}
+
+.card-text{
+    font-size: 1.2em;
+
+}
+
+.precio{
+    font-size: 2em;
+}
+
+/*Media screen de celular*/
+@media screen and (max-width:600px){
+    .pie_pagina .grupo_1{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 0px 0px;
+    }
+    
+    .contenedor_c{
+        padding: 0px;
+        margin: 30px;
+
+    }
+      
+
+    .card-body{
+        text-align: center;
+        
+    }
+
+    
+    .precio{
+        font-size: 20px;
+        padding:0px;
+    }
+
+    .container {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-text{
+        padding:0px;
+    }
+
+    .texto_equipo{
+        font-size: 18px;
+
+    }
+
+    .titulo_equipo{
+        font-size: 22px;
+    }
+
+}
+
+
+
+/*Media screen de tablet*/
+@media screen and (min-width:600px) and (max-width:800px)  {
+    
+    .card{
+        width: 100%;
+    }
+    .acumc{
+        padding-left: 0px;
+    }
+    .precio{
+        padding:0px
+    }
+    
+    
+}
+
+/*Resposive de tablet*/
+@media screen and (max-width:800px){ 
+    .barra_busqueda{
+        display: none;
+   
+       }
+    #logo{
+        display:none;
+    }
+    .acumc{
+        padding-left: 0px;
+    }
+}

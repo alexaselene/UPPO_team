@@ -1,5 +1,3 @@
 SELECT * FROM mariaharo_database.categoria;
-INSERT categoria (nombre_categoria)
-VALUES ('productos');
-INSERT categoria (nombre_categoria)
-VALUES ('productos personalizados');
+INSERT INTO `mariaharo_database`.`categoria` (`nombre_categoria`) VALUES ('productos');
+INSERT INTO `mariaharo_database`.`categoria` (`nombre_categoria`) VALUES ('productos personalizados');

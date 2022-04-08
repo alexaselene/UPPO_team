@@ -1,0 +1,14 @@
+SELECT * FROM mariaharo_database.detalle_pedido;
+DELETE FROM `mariaharo_database`.`detalle_pedido` WHERE (`iddetalle_pedido` = '1') and (`productos_idproductos` = '20') and (`pedido_idpedido` = '1');
+DELETE FROM `mariaharo_database`.`detalle_pedido` WHERE (`iddetalle_pedido` = '2') and (`productos_idproductos` = '21') and (`pedido_idpedido` = '2');
+DELETE FROM `mariaharo_database`.`detalle_pedido` WHERE (`iddetalle_pedido` = '27') and (`productos_idproductos` = '22') and (`pedido_idpedido` = '3');
+DELETE FROM `mariaharo_database`.`detalle_pedido` WHERE (`iddetalle_pedido` = '28') and (`productos_idproductos` = '23') and (`pedido_idpedido` = '4');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '3', '20', '1');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('250', '4', '21', '2');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '5', '22', '3');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '4', '23', '4');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '1', '24', '5');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '4', '25', '6');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '2', '26', '7');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('250', '3', '27', '1');
+INSERT INTO `mariaharo_database`.`detalle_pedido` (`precio_unitario`, `cantidad`, `productos_idproductos`, `pedido_idpedido`) VALUES ('200', '4', '28', '8');

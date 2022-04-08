@@ -1,3 +1,4 @@
+
 // BOOLEANOS DE VALIDACIÓN
 let campo_nombre = false;
 let seleccionado = false;
@@ -181,7 +182,7 @@ function validacionImagen(){
             }
             else {
                 Swal.fire({                                         // Se muestra una alerta que indica Éxito
-                    title: '¡Excelente',
+                    title: '¡Excelente!',
                     text: "Has seleccionado una imagen válida",
                     icon: 'success',
                     confirmButtonColor: '#ED959C',
@@ -202,38 +203,47 @@ let creacion_productos = [      // Estructura donde se guardará cada elemento y
 
 let cont_array = 0;
 
+let cat;
+
 // EVENTO DE REGISTRO
 creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presionar el botón de registro de producto
     e_creacion.preventDefault();                        // En caso de error
 
     if (campo_nombre && seleccionado && campo_precio && campo_stock && campo_imagen){
 
+        if (seleccion.value == "Productos"){
+            cat = 1;
+        } else {
+            cat = 2;
+        }
+
         // Crear array de producto con valores ngresados
         let array_productos = {
-            "Nombre" : nombre.value,
-            "Caracteristicas": caracteristicas.value,
-            "Precio": `$${precio.value} mxn`,
-            "Stock": disponible,
-            "Imagen": `./../src/img/${imagen.value.substr(12)}`
-        }
-    
-        // Guardar en Local Storage de acuerdo a su categoría
-        if (seleccion.value == "Productos"){
-            let p_almacenados = localStorage.getItem("productos");      // Obtener elementos del Local Storage
-            let p_almacenados_c = JSON.parse(p_almacenados);            // Conversión de datos JSON
-
-            p_almacenados_c.push(array_productos);
-            jsonProducto = JSON.stringify(p_almacenados_c);
-            localStorage.setItem("productos", jsonProducto);            // Guardar JSON en Local Storage
-        } else {
-            let pp_almacenados = localStorage.getItem("productos_personalizados");  // Obtener elementos del Local Storage
-            let pp_almacenados_c = JSON.parse(pp_almacenados);                      // Conversión de datos JSON
-
-            pp_almacenados_c.push(array_productos);
-            jsonProducto = JSON.stringify(pp_almacenados_c);
-            localStorage.setItem("productos_personalizados", jsonProducto);         // Guardar JSON en Local Storage
+            "nombre" : nombre.value,
+            "caracteristicas": caracteristicas.value,
+            "precio_producto": precio.value,
+            "stock": stock.value,
+            "imagen": `./../src/img/${imagen.value.substr(12)}`,
+            "categoria_idcategoria": `${cat}`
         }
 
+
+        let json_productos = JSON.stringify(array_productos);
+        const URL_MAIN = 'http://localhost:8080/api/productos/';
+        fetch(URL_MAIN, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json'
+            },
+            body: json_productos
+        }).then(function(response) {
+            response.json().then(function (json) {
+                console.log("por fi");
+            });//then
+        }).catch(function(err) {
+            console.log(err);
+        });
         Swal.fire({                                                 // Se muestra una alerta que indica Éxito
             title: '¡Excelente!',
             text: "El producto ha sido registrado en la base de datos",
@@ -241,6 +251,7 @@ creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presiona
             confirmButtonColor: '#ED959C',
             confirmButtonText: 'Ok.'
         });
+        
         
         // Llamar a la función de limpieza
         limpieza();
@@ -254,6 +265,8 @@ creacion.addEventListener("click", (e_creacion)=>{      // Se activa al presiona
         });
     };
 });
+
+
 
 // EVENTO DE LIMPIEZA
 limpiar.addEventListener("click", (e_limpiar) =>{   // Se activa al presionar el botón de Limpieza

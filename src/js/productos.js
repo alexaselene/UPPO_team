@@ -86,13 +86,13 @@ productos_tarjeta.forEach(element => {                                          
   <div class = "imagen">
     <a class = "edit admin" href = "./../pages/creacion_producto.html"></a>
     <a class = "trash admin" href = "./../pages/creacion_producto.html"></a>
-    <img src=${element.Imagen}  alt="... class="img-fluid"">
+    <img src=${element.Imagen}  alt="..." class="img-fluid">
   </div>
   <div class="contenido">
     <h3>${element.Nombre}</h3>
     <p class = "disponible">${element.Stock}</p>
     <h3 class = "precio_t">${element.Precio}</h3>
-    <a href="#" type="button" class ="btn btn-danger" >Agregar</a>
+    <a href="#" type="button" class ="btn btn-danger">Ver detalles</a>
     </div>
 </div>
 `                                                    // Acumular mediante innerHTML las plantillas y enviarlas a su elemento correspondiente 
