@@ -182,7 +182,7 @@ function validacionImagen(){
             }
             else {
                 Swal.fire({                                         // Se muestra una alerta que indica Éxito
-                    title: '¡Excelente',
+                    title: '¡Excelente!',
                     text: "Has seleccionado una imagen válida",
                     icon: 'success',
                     confirmButtonColor: '#ED959C',
