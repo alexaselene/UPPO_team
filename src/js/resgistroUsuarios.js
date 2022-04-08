@@ -185,7 +185,7 @@ function validacion_general(){
             "nombre_usuario" : nombre.value,
             "correo_usuario" : email.value,
             "telefono_usuario" : telefono.value,
-            "contra_usuario" : password.value
+            "contra_usuario" : btoa(password.value)
         };     
         array_usuarios.push(array_usuario);                         // Acumular información de usuarios en el array
         let jsonUsuarios = JSON.stringify(array_usuarios);          // Conversión a JSON
