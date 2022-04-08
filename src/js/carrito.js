@@ -93,4 +93,19 @@ productos.forEach(element => { // Recorrer el arreglo
     });
   });
 
+  //Evento de compra
+  compra = document.getElementById("compra");
+  compra.addEventListener("click", (e_compra)=>{
+    e_compra.preventDefault();
+
+    Swal.fire({                                         // Se muestra una alerta que indica Éxito
+      title: '¡Gracias por tu compra!',
+      text: "Pedido realizado",
+      icon: 'success',
+      confirmButtonColor: '#ED959C',
+      confirmButtonText: 'Ok.'
+    }); 
+  });
+
+
 
