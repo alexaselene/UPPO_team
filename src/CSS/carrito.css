@@ -23,6 +23,11 @@
     font-size: 30px;
     color: white;
 }
+
+
+
+
+
 .card{
     width: 100%;
     margin: 20px;
@@ -165,11 +170,5 @@
     }
     .acumc{
         padding-left: 0px;
-    }
-    .titulo_equipo{
-        font-size: 20px;
-    }
-    .texto_equipo{
-        font-size: 15px;
     }
 }
