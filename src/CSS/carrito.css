@@ -140,7 +140,17 @@
         padding:0px;
     }
 
+    .texto_equipo{
+        font-size: 18px;
+
+    }
+
+    .titulo_equipo{
+        font-size: 22px;
+    }
+
 }
+
 
 
 /*Media screen de tablet*/
