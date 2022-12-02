@@ -28,4 +28,4 @@ Nuestros mentores lideres de equipo:
 👩‍🎤 Aline Nuestra Harley Queen, 👩‍🏫 Andrea la mujer Maravilla 
 dueñas indiscutibles de las mejores mentorias.
 
-"No lo olvides nosotros somos soporte, sumos support, somos UPPO_Team"
+"No lo olvides nosotros somos soporte, somos support, somos UPPO_Team"
